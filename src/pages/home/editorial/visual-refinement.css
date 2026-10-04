@@ -1,0 +1,64 @@
+/* Local visual refinement of the current rendered Home.
+   No copy, data, navigation, section order or protected portfolio/map changes. */
+.bc-editorial .bc-hero-slide--refined .bc-hero-copy :is(h1,h2) {
+ font-size:clamp(2.5rem,4.2vw,3.5rem);
+ line-height:1.1;
+ letter-spacing:0;
+ color:var(--ui-white);
+}
+.bc-editorial .bc-hero-slide--refined .bc-hero-copy { gap:18px; }
+.bc-editorial .bc-hero-slide--refined .bc-hero-description { font-family:Onest,sans-serif; font-size:1.0625rem; line-height:1.65; max-width:44ch; }
+.bc-editorial .bc-hero-slide--refined :is(.flow-hero-accent,.text-bc-cyan) { color:var(--ui-turquoise); }
+.bc-editorial .bc-hero-slide--refined .bc-hero-scrim {
+ background:linear-gradient(90deg,color-mix(in srgb,var(--ui-navy) 94%,transparent),color-mix(in srgb,var(--ui-navy) 86%,transparent) 52%,transparent 88%);
+}
+.bc-editorial .bc-hero-slide--refined .be-button {
+ background:var(--ui-yellow); color:var(--ui-navy);
+ font:600 1rem/1.4 Onest,sans-serif;
+ box-shadow:none; min-height:48px; filter:none;
+}
+.bc-editorial .bc-hero-slide--refined .be-button:hover { background:var(--ui-yellow); color:var(--ui-navy); box-shadow:none; transform:none; text-decoration:underline; text-underline-offset:4px; }
+.bc-editorial .bc-hero-slide--refined :is(.be-button,.bc-hero-secondary):focus-visible { outline:3px solid var(--ui-white); outline-offset:5px; }
+.bc-editorial .bc-hero-slide--refined .bc-hero-secondary { font:600 1rem/1.5 Onest,sans-serif; }
+.bc-editorial .bc-hero-slide--refined .bc-hero-trust { font:400 .875rem/1.6 Onest,sans-serif; color:var(--ui-white); }
+.bc-reference-home .be-movement--editorial { gap:40px; align-items:start; padding-block:24px 56px; }
+.bc-reference-home .be-movement--editorial .be-movement-copy { gap:20px; }
+.bc-reference-home .be-movement--editorial .be-pillar-narrative { gap:24px 32px; }
+.bc-reference-home .be-movement--editorial .be-pillar-narrative dt { font:600 1.125rem/1.4 Onest,sans-serif; }
+.bc-reference-home .be-movement--editorial .be-movement-photo { padding:12px; background:color-mix(in srgb,var(--ui-green) 7%,var(--ui-white)); }
+.bc-reference-home .be-movement--editorial .be-movement-photo img { border-radius:4px; }
+.bc-reference-home .be-content .be-section-heading h2 {
+ font:700 clamp(1.75rem,2.5vw,2.25rem)/1.2 Onest,sans-serif;
+ max-width:26ch;
+}
+.bc-reference-home .be-content-layout { gap:40px; align-items:start; }
+.bc-reference-home .be-content-feature .be-video {
+ border-radius:6px;
+ box-shadow:0 6px 18px color-mix(in srgb,var(--ui-navy) 12%,transparent);
+}
+.bc-reference-home .be-reading-list { gap:24px; padding:24px; background:color-mix(in srgb,var(--ui-green) 5%,var(--ui-white)); }
+.bc-reference-home .be-reading-list h3 { font:600 1.125rem/1.4 Onest,sans-serif; }
+.bc-reference-home .be-faq .be-faq-intro { gap:16px; }
+.bc-reference-home .be-faq .be-faq-column button { min-height:48px; padding-block:20px; }
+.bc-reference-home .be-faq .be-faq-column button[aria-expanded=true] { color:var(--ui-green); }
+.bc-reference-home .be-about-layout { align-items:start; gap:40px; }
+.bc-reference-home .be-about-photo { padding-bottom:12px; background:color-mix(in srgb,var(--ui-green) 8%,var(--ui-white)); }
+.bc-reference-home .be-about-photo img { border-radius:4px; }
+.bc-reference-home .be-about h2 { font:700 clamp(1.875rem,2.5vw,2.5rem)/1.18 Onest,sans-serif; }
+.bc-reference-home .be-conversion { padding-block:24px 48px; }
+.bc-reference-home .be-conversion>.be-wrap { border:0; padding:32px; background:color-mix(in srgb,var(--ui-green) 7%,var(--ui-white)); }
+.bc-reference-home .be-conversion h2 { font:700 clamp(1.75rem,2.5vw,2.25rem)/1.2 Onest,sans-serif; }
+@media(max-width:1023px) {
+ .bc-editorial .bc-hero-slide--refined .bc-hero-scrim { background:linear-gradient(90deg,color-mix(in srgb,var(--ui-navy) 94%,transparent),color-mix(in srgb,var(--ui-navy) 86%,transparent) 72%,transparent); }
+ .bc-reference-home :is(.be-content-layout,.be-about-layout,.be-movement--editorial) { gap:24px; }
+}
+@media(max-width:767px) {
+ .bc-editorial .bc-hero-slide--refined .bc-hero-copy :is(h1,h2) { font-size:2.5rem; }
+ .bc-editorial .bc-hero-slide--refined .bc-hero-scrim { background:color-mix(in srgb,var(--ui-navy) 86%,transparent); }
+ .bc-reference-home .be-movement--editorial { padding-block:16px 40px; }
+ .bc-reference-home .be-reading-list { padding:20px; }
+ .bc-reference-home .be-conversion>.be-wrap { padding:24px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .bc-editorial .bc-hero-slide--refined :is(a,button) { transition:none; transform:none; }
+}

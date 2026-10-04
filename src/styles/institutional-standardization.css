@@ -1,0 +1,63 @@
+/* Editorial de Energia em Movimento — internal body only.
+ * Header, footer, Home, simulator and every opening banner keep their styles.
+ * Existing button colors/variants, content and form behavior are preserved.
+ */
+.bc-inner-editorial {
+ --ui-action-edge:color-mix(in srgb,var(--ui-navy) 18%,transparent);
+ --ui-action-shadow:color-mix(in srgb,var(--ui-navy) 12%,transparent);
+ --ui-action-highlight:color-mix(in srgb,var(--ui-white) 22%,transparent);
+ font-family:Onest,sans-serif;
+ color:var(--ui-navy);
+ background:var(--ui-white);
+}
+.bc-inner-editorial :is(.bc-section-heading h2,.t-h2,.t-h2-lead,.t-h2-mid):not(.bc-reference-banner *) {
+ font-family:'Barlow Condensed',sans-serif;
+ font-weight:700;
+ font-size:clamp(2rem,3vw,2.75rem);
+ line-height:1.15;
+ letter-spacing:normal;
+ text-transform:none;
+}
+.bc-inner-editorial :is(.t-body,.t-body-lg,.t-body-sm,.t-action-label,.t-label):not(.bc-reference-banner *) { font-family:Onest,sans-serif; }
+.bc-inner-editorial :is(.t-body,.t-body-lg):not(.bc-reference-banner *) { font-size:1rem; line-height:1.65; }
+.bc-inner-editorial :is(.bc-card,.bc-form-surface):not(.bc-reference-banner *) { border-radius:8px; box-shadow:none; }
+.bc-inner-editorial .bc-card:hover { transform:none; }
+.bc-inner-editorial .bc-form-surface { max-width:650px; overflow:visible; }
+.bc-inner-editorial .bc-form :is(input:not([type=checkbox]):not([type=radio]):not([type=hidden]),select,textarea) { font-family:Onest,sans-serif; font-size:1rem; min-height:48px; }
+.bc-inner-editorial .bc-form :is(input[type=checkbox],input[type=radio]) { accent-color:var(--ui-green); }
+.bc-inner-editorial :is(.t-action-label,.flow-final-cta a,.bcf-submit):not(.bc-reference-banner *) { min-height:44px; font-family:Onest,sans-serif; }
+.bc-inner-editorial :is(.t-action-label.bg-bc-yellow,.t-action-label.bg-bc-primary,.t-action-label.bg-bc-dark,.t-action-label.bg-bc-gray,.t-action-label.bg-white,.flow-final-cta a.bg-bc-accent,.bcf-submit):not(.bc-reference-banner *) {
+ min-height:48px;
+ border-radius:6px;
+ font-size:1.1875rem;
+ font-weight:700;
+ line-height:1.35;
+ letter-spacing:normal;
+ text-transform:none;
+ box-shadow:inset 0 1px 0 var(--ui-action-highlight),0 3px 0 var(--ui-action-edge),0 5px 8px var(--ui-action-shadow);
+ transition:box-shadow 150ms ease,transform 150ms ease,background-color 150ms ease,color 150ms ease;
+}
+@media(hover:hover) and (pointer:fine) {
+ .bc-inner-editorial :is(.t-action-label.bg-bc-yellow,.t-action-label.bg-bc-primary,.t-action-label.bg-bc-dark,.t-action-label.bg-bc-gray,.t-action-label.bg-white,.flow-final-cta a.bg-bc-accent,.bcf-submit):not(.bc-reference-banner *):not(:disabled):not([aria-disabled=true]):not([aria-busy=true]):hover {
+  transform:translateY(-1px);
+  box-shadow:inset 0 1px 0 var(--ui-action-highlight),0 4px 0 var(--ui-action-edge),0 6px 10px var(--ui-action-shadow);
+ }
+}
+.bc-inner-editorial :is(.t-action-label.bg-bc-yellow,.t-action-label.bg-bc-primary,.t-action-label.bg-bc-dark,.t-action-label.bg-bc-gray,.t-action-label.bg-white,.flow-final-cta a.bg-bc-accent,.bcf-submit):not(.bc-reference-banner *):not(:disabled):not([aria-disabled=true]):not([aria-busy=true]):active {
+ transform:translateY(1px);
+ box-shadow:inset 0 1px 2px var(--ui-action-shadow),0 1px 0 var(--ui-action-edge);
+}
+.bc-inner-editorial :is(a,button,input,select,textarea,summary):not(.bc-reference-banner *):focus-visible { outline:3px solid var(--ui-green); outline-offset:4px; }
+.bc-inner-editorial :is(.bc-page-section--dark,.bg-bc-dark,.bg-surface-dark,.bc-form) :is(a,button,input,select,textarea,summary):not(.bc-reference-banner *):focus-visible { outline-color:var(--ui-yellow); }
+.bc-inner-editorial .bc-form :is(input,select,textarea):focus-visible { outline-color:var(--ui-navy); }
+.bc-inner-editorial :is(button:disabled,[aria-disabled=true],[aria-busy=true]):not(.bc-reference-banner *) { transform:none; box-shadow:none; }
+@media(max-width:767px) {
+ .bc-inner-editorial :is(.bc-form-surface,.bc-media-composition,.bc-territory-composition) { min-width:0; }
+ .bc-inner-editorial .bc-form-surface { padding:20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .bc-inner-editorial :is(.t-action-label,.flow-final-cta a,.bcf-submit):not(.bc-reference-banner *) { transition:none; }
+ .bc-inner-editorial :is(.t-action-label,.flow-final-cta a,.bcf-submit):not(.bc-reference-banner *):is(:hover,:active) { transform:none; }
+}
+/* Repeated background artwork does not establish hierarchy in the editorial body. */
+.bc-inner-editorial .bc-proof-composition::before { display:none; }

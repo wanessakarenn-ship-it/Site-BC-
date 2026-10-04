@@ -1,0 +1,64 @@
+/* Brandbook alignment: official artwork and functional interface geometry.
+   Logos/client marks are never filtered, recolored or stretched. */
+.bc-logo-clearspace {
+  /* Half the symbol at the existing rendered size is approximately 10px.
+     12px provides a conservative protection area on all four sides. */
+  padding: 12px;
+  margin-inline: -12px;
+}
+.bc-footer-logo {
+  box-sizing: content-box;
+  padding: 20px;
+  object-fit: contain;
+}
+.bc-inner-editorial .bc-section-heading :is(h2, h3),
+.bc-inner-editorial .bc-results h2 {
+  font-family: Onest, sans-serif;
+}
+.bc-inner-editorial :is(.bc-card, .bc-operation-gallery article) {
+  border-radius: 8px;
+}
+.bc-inner-editorial .bc-media-composition img {
+  border-radius: 8px;
+}
+.bc-editorial.bc-reference-home .be-process > div {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 12px;
+}
+.bc-editorial.bc-reference-home .be-process > div > img { margin-top: 2px; }
+.bc-reference-home :is(.be-about-photo, .be-operation-layout figure) > img {
+  filter: saturate(.94) contrast(1.02);
+}
+.bc-inner-editorial .bc-proof-composition {
+  position: relative;
+  isolation: isolate;
+}
+.bc-inner-editorial .bc-proof-composition::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(32%, 300px);
+  height: 200px;
+  background: url('/img/brand/bc-elemento-chevrons-light.svg') center / contain no-repeat;
+  opacity: .035;
+  pointer-events: none;
+}
+.bc-inner-editorial .bc-proof-composition > .bc-container {
+  position: relative;
+  z-index: 1;
+}
+.bc-inner-editorial .flow-final-cta a.bg-bc-accent:hover {
+  background: var(--ui-navy);
+  color: var(--ui-white);
+}
+.bc-form .bcf-submit:hover:not(:disabled) {
+  background: var(--ui-yellow) !important;
+  color: var(--ui-navy) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 767px) {
+  .bc-footer-logo { max-width: calc(100% - 40px); }
+}
