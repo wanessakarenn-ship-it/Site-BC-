@@ -21,9 +21,8 @@
   padding-block: 32px;
   background: var(--ui-white);
 }
-.bc-reference-home .be-attribute-band ul { gap: 24px 32px; }
-.bc-reference-home .be-attribute-band h2 { margin-bottom: 8px; }
-.bc-reference-home .be-attribute-band p { font-size: 1rem; }
+.bc-reference-home .be-attribute-band ul { gap: 16px 32px; align-items:center; }
+.bc-reference-home .be-attribute-band h2 { margin-bottom:0; }
 .bc-reference-home .be-solutions--editorial {
   padding-block: 24px var(--be-editorial-space);
 }
@@ -40,7 +39,7 @@
 .bc-reference-home .be-solutions-copy { align-content: start; }
 .bc-reference-home .be-service-list { gap: 28px; }
 .bc-reference-home .be-service-audience {
-  color: var(--ui-green);
+  color: var(--be-green-text);
   font-size: .875rem;
 }
 .bc-reference-home .be-service-entry--primary h3 { font-size: 2rem; }
@@ -163,7 +162,6 @@
   .bc-reference-home .be-attribute-band { padding-block: 24px; }
   .bc-reference-home .be-attribute-band ul { gap: 24px; }
   .bc-reference-home .be-attribute-band h2 { font-size: 1.375rem; }
-  .bc-reference-home .be-attribute-band p { font-size: 1rem; }
   .bc-reference-home .be-solutions--editorial .be-solution-visual { aspect-ratio: 3/2; }
   .bc-reference-home .bc-scale--interactive .bc-presence-copy,
   .bc-reference-home .be-operation-layout { grid-template-columns: 1fr; }

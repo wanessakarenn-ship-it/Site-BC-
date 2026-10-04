@@ -19,6 +19,7 @@
 
 # vite
 /dist
+/dist-ssr
 
 # misc
 .DS_Store

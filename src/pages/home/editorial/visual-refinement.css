@@ -25,7 +25,7 @@
 .bc-reference-home .be-movement--editorial .be-movement-copy { gap:20px; }
 .bc-reference-home .be-movement--editorial .be-pillar-narrative { gap:40px 32px; }
 .bc-reference-home .be-movement--editorial .be-pillar-narrative dt { font:700 clamp(1.75rem,2.2vw,2.125rem)/1.15 'Barlow Condensed',sans-serif; }
-.bc-reference-home .be-movement--editorial .be-movement-photo { padding:12px; background:color-mix(in srgb,var(--ui-green) 7%,var(--ui-white)); }
+.bc-reference-home .be-movement--editorial .be-movement-photo { padding:12px; background:transparent; }
 .bc-reference-home .be-movement--editorial .be-movement-photo img { border-radius:4px; }
 .bc-reference-home .be-content .be-section-heading h2 {
  font:700 clamp(1.75rem,2.5vw,2.25rem)/1.2 Onest,sans-serif;
@@ -40,9 +40,8 @@
 .bc-reference-home .be-reading-list h3 { font:600 clamp(1.25rem,1.6vw,1.5rem)/1.35 Onest,sans-serif; }
 .bc-reference-home .be-faq .be-faq-intro { gap:16px; }
 .bc-reference-home .be-faq .be-faq-column button { min-height:48px; padding-block:20px; }
-.bc-reference-home .be-faq .be-faq-column button[aria-expanded=true] { color:var(--ui-green); }
 .bc-reference-home .be-about-layout { align-items:start; gap:40px; }
-.bc-reference-home .be-about-photo { padding-bottom:12px; background:color-mix(in srgb,var(--ui-green) 8%,var(--ui-white)); }
+.bc-reference-home .be-about-photo { padding-bottom:12px; background:transparent; }
 .bc-reference-home .be-about-photo img { border-radius:4px; }
 .bc-reference-home .be-about h2 { font:700 clamp(1.875rem,2.5vw,2.5rem)/1.18 Onest,sans-serif; }
 .bc-reference-home .be-conversion { padding-block:24px 48px; }
@@ -62,3 +61,24 @@
 @media(prefers-reduced-motion:reduce) {
  .bc-editorial .bc-hero-slide--refined :is(a,button) { transition:none; transform:none; }
 }
+
+/* Consolidated surface roles. Section padding keeps the existing content axis. */
+.bc-reference-home :is(.be-solutions--portfolio,.be-field) {
+ width:100%; max-width:none; margin-inline:0;
+ padding-inline:max(5%,calc((100% - 1320px)/2));
+ padding-block:var(--be-editorial-space);
+}
+.bc-reference-home .be-solutions--portfolio { background:color-mix(in srgb,hsl(var(--bc-gray)) 40%,var(--ui-white)); }
+.bc-reference-home .be-field { background:var(--ui-navy); color:var(--ui-white); }
+.bc-reference-home .be-field :is(h2,h3,p,figcaption) { color:var(--ui-white); }
+.bc-reference-home .be-field .be-editorial-eyebrow { color:var(--ui-turquoise); }
+.bc-reference-home .be-field .be-operation-metric .be-field-number { color:var(--ui-green); }
+.bc-reference-home .be-field .be-link { color:var(--ui-turquoise); }
+.bc-reference-home :is(.be-field,.be-conversion) a:focus-visible { outline-color:var(--ui-turquoise); }
+.bc-reference-home .be-faq #home_faq { background:color-mix(in srgb,var(--ui-green) 4%,var(--ui-white)); padding-block:var(--be-editorial-space); }
+.bc-reference-home :is(.be-attribute-band,.be-movement,.be-segments,.be-content,.be-about) { background:var(--ui-white); }
+.bc-reference-home :is(.be-content,.be-about) { padding-block:var(--be-editorial-space); }
+.bc-reference-home .be-client-band { background:color-mix(in srgb,hsl(var(--bc-gray)) 40%,var(--ui-white)); padding-block:var(--be-editorial-space); }
+
+/* The small white CTA label needs a darker official surface. */
+.bc-reference-home .be-about .be-button-light { background:var(--ui-navy); color:var(--ui-white); }

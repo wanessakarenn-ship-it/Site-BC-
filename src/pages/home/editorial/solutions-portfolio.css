@@ -6,7 +6,7 @@
 .bc-reference-home .be-solutions--portfolio .be-portfolio-heading>div { display:grid; gap:12px; }
 .bc-reference-home .be-solutions--portfolio .be-portfolio-heading>div>p:last-child { max-width:64ch; }
 .bc-reference-home .be-solutions--portfolio .be-portfolio-eyebrow {
- color:var(--ui-green); font:600 .875rem/1.5 Onest,sans-serif; letter-spacing:.06em;
+ color:var(--be-green-text); font:600 .875rem/1.5 Onest,sans-serif; letter-spacing:.06em;
 }
 .bc-reference-home .be-solutions--portfolio .be-solution-layout {
  grid-template-columns:minmax(0,44fr) minmax(0,56fr); align-items:stretch;
@@ -22,7 +22,7 @@
 .bc-reference-home .be-solutions--portfolio .be-portfolio-saving {
  font:700 clamp(2rem,3.5vw,3rem)/1.1 'Barlow Condensed',sans-serif; color:var(--ui-green);
 }
-.bc-reference-home .be-solutions--portfolio .be-service-audience { color:var(--ui-green); font-size:.875rem; }
+.bc-reference-home .be-solutions--portfolio .be-service-audience { color:var(--be-green-text); font-size:.875rem; }
 .bc-reference-home .be-solutions--portfolio .be-service-actions { flex-wrap:wrap; gap:12px 24px; }
 .bc-reference-home .be-solutions--portfolio .be-service-enroll { order:-1; }
 .bc-reference-home .be-solutions--portfolio .be-service-access { display:inline-flex; min-height:44px; align-items:center; gap:6px; }

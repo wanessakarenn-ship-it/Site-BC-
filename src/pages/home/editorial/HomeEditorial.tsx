@@ -1,5 +1,6 @@
 import Link from '@/components/Link'
 import MetricsScale from './MetricsScale'
+import PlantCarousel from './PlantCarousel'
 import YouTubeEmbed from '@/components/YouTubeEmbed'
 import { PRODUCT_HUB_ITEMS, SEGMENT_HUB_ITEMS, HEADER_CLIENT_LINK } from '@/config/navigation'
 import { POWER_PLANTS } from '@/data/powerPlants'
@@ -36,11 +37,10 @@ const HomeEditorial = () => {
       </div>
      </article>
  const episodes=getEpisodes(),articles=getArticles(),featured=episodes[0]
- const hydro=POWER_PLANTS.find(x=>x.id==='aracu')
  const [agro,retail,home]=['/segmentos/agronegocio','/segmentos/varejo','/segmentos/residencial'].map(href=>SEGMENT_HUB_ITEMS.find(x=>x.href===href))
  return <main className="bc-editorial bc-reference-home">
   <Hero/>
-  <section className="be-attribute-band" aria-label="Atributos do Grupo BC Energia"><ul className="be-wrap">{PILLARS.map(pillar=><li key={pillar.title}><h2>{pillar.title}</h2><p>{pillar.text}</p></li>)}</ul></section>
+  <section className="be-attribute-band" aria-label="Atributos do Grupo BC Energia"><ul className="be-wrap">{PILLARS.map(pillar=><li key={pillar.title}><h2>{pillar.title}</h2></li>)}</ul></section>
   <section className="be-solutions be-solutions--editorial be-solutions--portfolio be-wrap" aria-labelledby="be-solutions-title">
    <header className="be-portfolio-heading">
     <div><p className="be-portfolio-eyebrow">SOLUÇÕES PARA CADA PERFIL</p><h2 id="be-solutions-title">Inteligência para cada perfil de consumo</h2><p>Empresas, condomínios e residências: escolha o modelo mais adequado ao seu consumo e à sua conexão.</p></div>
@@ -65,7 +65,7 @@ const HomeEditorial = () => {
    <div className="be-other-sectors">{SEGMENT_HUB_ITEMS.filter(x=>![agro?.href,retail?.href,home?.href].includes(x.href)).map(item=><Link key={item.href} href={item.href} data-cta-name={`home_segmentos_${item.title}`}>{item.title}</Link>)}</div>
   </div></section>
   <section className="be-field be-wrap" aria-labelledby="be-field-title">
-   <div className="be-operation-layout"><figure>{hydro?<><img src={hydro.image} width={1000} height={700} loading="lazy" decoding="async" alt={`${hydro.title}, ${hydro.location}`}/><figcaption>{hydro.title} · {hydro.location}</figcaption></>:null}</figure>
+   <div className="be-operation-layout"><PlantCarousel plants={POWER_PLANTS}/>
    <div className="be-operation-copy"><p className="be-editorial-eyebrow">ESTRUTURA PRÓPRIA</p><h2 id="be-field-title">Energia acontecendo</h2><p>A energia que comercializamos vem de usinas próprias de fonte renovável. Estrutura, operação e certificação I-REC garantem economia com origem limpa e comprovável.</p><div className="be-operation-metric"><p className="be-field-number">{POWER_PLANTS.length}</p><div><h3>Complexos de geração</h3><p>Usinas solares e hidrelétricas próprias no Centro-Oeste e Sudeste.</p></div></div><Link className="be-link" href="/sobre/nossas-usinas" data-cta-name="home_sustentabilidade_usinas">Conhecer nossas usinas<span aria-hidden="true"> →</span></Link></div></div>
   </section>
   {(featured||articles.length>0)?<section className="be-content be-wrap" aria-labelledby="be-content-title"><div className="be-section-heading"><div><p className="be-editorial-eyebrow">CONHECIMENTO</p><h2 id="be-content-title">Conversas e análises sobre energia.</h2></div><Link href="/conteudo" className="be-link" data-cta-name="home_conteudo_explorar">Explorar conteúdos</Link></div><div className="be-content-layout">
