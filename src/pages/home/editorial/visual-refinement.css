@@ -41,16 +41,15 @@
  box-shadow:none;
 }
 .bc-reference-home .be-reading-list { gap:0; padding:0; background:transparent; }
-.bc-reference-home .be-reading-list h3 { font:600 clamp(1.25rem,1.6vw,1.5rem)/1.35 Onest,sans-serif; }
+.bc-reference-home .be-reading-list h3 { font:600 clamp(1.125rem,1.4vw,1.25rem)/1.35 Onest,sans-serif; }
 .bc-reference-home .be-faq .be-faq-intro { gap:16px; }
 .bc-reference-home .be-faq .be-faq-column button { min-height:48px; padding-block:20px; }
 .bc-reference-home .be-about-layout { align-items:end; gap:40px; }
-@media(min-width:768px) {
+@media(min-width:1024px) {
  .bc-reference-home .be-about-layout { grid-template-columns:minmax(0,3fr) minmax(0,2fr); }
 }
 .bc-reference-home .be-about-photo { padding:0; overflow:hidden; border-radius:4px; background:transparent; }
-.bc-reference-home .be-about-photo img { display:block; aspect-ratio:16/10; object-fit:cover; object-position:center 62%; border-radius:0; transform:scale(1.2); transform-origin:center 62%; }
-/* Static magnification closes the crop vertically without animating the photo. */
+.bc-reference-home .be-about-photo img { display:block; aspect-ratio:1600/773; object-fit:contain; object-position:center; border-radius:0; transform:none; transform-origin:center; }
 .bc-reference-home .be-about .be-button-light { box-shadow:none; }
 .bc-reference-home .be-about h2 { font:700 clamp(1.875rem,2.5vw,2.5rem)/1.18 Onest,sans-serif; }
 .bc-reference-home .be-conversion { padding-block:24px 48px; }
@@ -59,6 +58,7 @@
 @media(max-width:1023px) {
  .bc-editorial .bc-hero-slide--refined .bc-hero-scrim { background:linear-gradient(90deg,color-mix(in srgb,var(--ui-navy) var(--be-hero-overlay-start),transparent),color-mix(in srgb,var(--ui-navy) var(--be-hero-overlay-reading),transparent) 78%,transparent); }
  .bc-reference-home :is(.be-content-layout,.be-about-layout,.be-movement--editorial) { gap:24px; }
+ .bc-reference-home .be-about-layout { grid-template-columns:1fr; }
 }
 @media(max-width:767px) {
  .bc-editorial .bc-hero-slide--refined .bc-hero-copy :is(h1,h2) { font-size:2.5rem; }

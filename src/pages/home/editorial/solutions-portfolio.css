@@ -39,14 +39,17 @@
 .bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-audience { grid-column:1; margin:0; }
 .bc-reference-home .be-solutions--portfolio .be-portfolio-strategic h3 { grid-column:1; font-size:1.75rem; }
 .bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-copy>p:last-child { grid-column:2; grid-row:1/3; align-self:center; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary { display:grid; grid-template-columns:1fr; gap:0; margin-top:40px; max-width:70ch; align-items:start; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry { gap:12px; padding-block:24px; background:transparent; border:0; border-top:1px solid color-mix(in srgb,var(--ui-navy) 14%,transparent); box-shadow:none; }
+.bc-reference-home .be-solutions--portfolio .be-service-complementary { display:grid; grid-template-columns:1fr; gap:0; margin-top:40px; max-width:none; align-items:start; }
+.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(208px,.55fr); align-items:start; gap:12px clamp(24px,2.5vw,32px); margin:0; min-width:0; padding-block:24px; background:transparent; border:0; border-top:1px solid color-mix(in srgb,var(--ui-navy) 14%,transparent); box-shadow:none; }
+.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-copy { display:contents; }
+.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-actions { margin:0; align-self:start; justify-content:flex-start; }
 .bc-reference-home .be-solutions--portfolio .be-service-complementary h3 { font:700 1.5rem/1.2 'Barlow Condensed',sans-serif; }
 @media(max-width:1023px) {
  .bc-reference-home .be-solutions--portfolio .be-solution-layout { grid-template-columns:minmax(0,44fr) minmax(0,56fr); gap:24px; }
  .bc-reference-home .be-solutions--portfolio .be-solution-visual { aspect-ratio:auto; }
  .bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-copy { grid-template-columns:1fr; gap:8px; }
  .bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-copy>p:last-child { grid-column:auto; grid-row:auto; }
+ .bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry { grid-template-columns:1fr; gap:12px; }
 }
 @media(max-width:767px) {
  .bc-reference-home .be-solutions--portfolio .be-portfolio-heading { grid-template-columns:1fr; gap:8px; margin-bottom:24px; }
@@ -58,14 +61,10 @@
  .bc-reference-home .be-solutions--portfolio .be-service-complementary { grid-template-columns:1fr; margin-top:24px; }
 }
 
-/* Editorial index: one column, progressive scale and list separators. */
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(1) { max-width:70ch; }
+/* Editorial index: shared columns, progressive scale and list separators. */
 .bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(1) h3 { font-size:2.25rem; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(2) { margin-left:12px; max-width:60ch; }
 .bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(2) h3 { font-size:1.75rem; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(3) { margin-left:24px; max-width:52ch; }
 .bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(3) h3 { font-size:1.5rem; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(4) { margin-left:36px; max-width:44ch; }
 .bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(4) h3 { font:600 1.125rem/1.4 Onest,sans-serif; }
 @media(max-width:767px) {
  .bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(n) { grid-row:auto; grid-column:auto; width:auto; }

@@ -36,16 +36,16 @@
  display:grid;
  grid-template-columns:minmax(0,65fr) minmax(0,35fr);
  gap:var(--be-editorial-gap);
- align-items:center;
+ align-items:start;
 }
 .bc-reference-home .be-content-feature .be-video { border-radius:8px; }
-.bc-reference-home .be-episode-copy { display:grid; gap:16px; align-content:center; }
+.bc-reference-home .be-episode-copy { display:grid; gap:12px; align-content:start; }
 .bc-reference-home .be-episode-copy .be-content-label { margin:0; }
 .bc-reference-home .be-episode-copy h3 {
  font:700 clamp(1.625rem,2.2vw,2rem)/1.2 'Barlow Condensed',sans-serif;
 }
 .bc-reference-home .be-episode-copy .be-episode-guest { font-size:1rem; color:var(--ui-navy); }
-.bc-reference-home .be-episode-copy .be-link { gap:6px; }
+.bc-reference-home .be-episode-copy .be-link { gap:6px; justify-self:start; min-height:44px; margin-top:4px; font-size:1rem; font-weight:600; text-decoration:underline; text-underline-offset:4px; }
 .bc-reference-home .be-reading-list {
  display:flex;
  flex-direction:column;
@@ -54,15 +54,16 @@
 }
 .bc-reference-home .be-reading-list article {
  display:grid;
- grid-template-columns:minmax(80px,1fr) minmax(0,5fr) minmax(0,2fr);
- gap:16px 24px;
- align-items:baseline;
- padding-block:20px;
+ grid-template-columns:88px minmax(0,1.35fr) minmax(0,1fr);
+ gap:12px 24px;
+ align-items:start;
+ padding-block:16px;
  border-top:1px solid color-mix(in srgb,var(--ui-navy) 16%,transparent);
 }
 .bc-reference-home .be-reading-list .be-content-label { margin:0; font:600 .75rem/1.5 Onest,sans-serif; letter-spacing:.06em; text-transform:uppercase; color:var(--be-green-text); }
 .bc-reference-home .be-reading-list h3 { font:600 1.125rem/1.4 Onest,sans-serif; }
 .bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { margin:0; font-size:.875rem; line-height:1.6; }
+.bc-reference-home .be-reading-list article>h3:last-child { grid-column:2/-1; }
 .bc-reference-home .be-faq .be-faq-layout {
  display:grid;
  grid-template-columns:minmax(0,2fr) minmax(0,3fr);
@@ -88,7 +89,7 @@
 @media(max-width:1023px) {
  .bc-reference-home .be-operation-layout { grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:24px; }
  .bc-reference-home .be-content-feature { grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:24px; }
- .bc-reference-home .be-reading-list article { grid-template-columns:80px minmax(0,5fr) minmax(0,2fr); }
+ .bc-reference-home .be-reading-list article { grid-template-columns:80px minmax(0,1.35fr) minmax(0,1fr); }
  .bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { grid-column:3; }
  .bc-reference-home .be-faq .be-faq-layout { grid-template-columns:minmax(0,2fr) minmax(0,3fr); gap:24px; }
 }
@@ -100,8 +101,9 @@
  .bc-reference-home .be-content .be-section-heading>.be-link { margin-top:8px; }
  .bc-reference-home .be-episode-copy { gap:12px; }
  .bc-reference-home .be-reading-list { margin-top:24px; }
- .bc-reference-home .be-reading-list article { grid-template-columns:1fr; gap:8px; padding-block:20px; }
+ .bc-reference-home .be-reading-list article { grid-template-columns:1fr; gap:8px; padding-block:16px; }
  .bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { grid-column:auto; }
+ .bc-reference-home .be-reading-list article>h3:last-child { grid-column:auto; }
  .bc-reference-home .be-operation-metric .be-field-number { font-size:4.5rem; }
 }
 @media(prefers-reduced-motion:reduce) {
@@ -150,7 +152,7 @@
  display:inline-flex; align-items:center; justify-content:center; padding:0;
  background:transparent; color:var(--ui-white); cursor:pointer;
 }
-.bc-reference-home .be-plant-arrows button { width:44px; min-width:44px; min-height:44px; border:1px solid rgb(255 255 255 / 35%); border-radius:999px; font-size:1.5rem; }
+.bc-reference-home .be-plant-arrows button { width:44px; min-width:44px; min-height:44px; border:1px solid rgb(255 255 255 / 35%); border-radius:999px; font-size:1.125rem; }
 .bc-reference-home .be-plant-arrows button:hover { color:var(--ui-turquoise); border-color:var(--ui-turquoise); }
 /* 28×10 plus the pseudo-element = 44×44. Margins reserve that area on both axes. */
 .bc-reference-home .be-plant-indicators button { position:relative; flex:0 0 28px; width:28px; height:10px; margin:17px 4px; border:0; }
@@ -161,6 +163,10 @@
 .bc-reference-home .be-plant-controls button:focus-visible { outline:3px solid var(--ui-turquoise); outline-offset:3px; }
 .bc-reference-home .be-plant-indicators button:focus-visible { outline:none; }
 .bc-reference-home .be-plant-indicators button:focus-visible::after { outline:3px solid var(--ui-turquoise); outline-offset:1px; }
+@media(max-width:1023px) {
+ .bc-reference-home .be-plant-controls { display:grid; grid-template-columns:1fr; justify-items:start; gap:8px; }
+ .bc-reference-home .be-plant-indicators { width:100%; justify-content:flex-start; }
+}
 @media(max-width:767px) {
  .bc-reference-home .be-plant-carousel .be-plant-photo { aspect-ratio:3/2; }
  .bc-reference-home .be-plant-carousel .be-plant-name { font-size:1rem; }
