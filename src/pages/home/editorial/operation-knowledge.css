@@ -54,15 +54,15 @@
 }
 .bc-reference-home .be-reading-list article {
  display:grid;
- grid-template-columns:minmax(80px,1fr) minmax(0,3fr) minmax(0,3fr);
+ grid-template-columns:minmax(80px,1fr) minmax(0,5fr) minmax(0,2fr);
  gap:16px 24px;
  align-items:baseline;
  padding-block:20px;
  border-top:1px solid color-mix(in srgb,var(--ui-navy) 16%,transparent);
 }
-.bc-reference-home .be-reading-list .be-content-label { margin:0; }
+.bc-reference-home .be-reading-list .be-content-label { margin:0; font:600 .75rem/1.5 Onest,sans-serif; letter-spacing:.06em; text-transform:uppercase; color:color-mix(in srgb,var(--ui-green) 90%,var(--ui-navy)); }
 .bc-reference-home .be-reading-list h3 { font:600 1.125rem/1.4 Onest,sans-serif; }
-.bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { margin:0; }
+.bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { margin:0; font-size:.875rem; line-height:1.6; }
 .bc-reference-home .be-faq .be-faq-layout {
  display:grid;
  grid-template-columns:minmax(0,2fr) minmax(0,3fr);
@@ -88,8 +88,8 @@
 @media(max-width:1023px) {
  .bc-reference-home .be-operation-layout { grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:24px; }
  .bc-reference-home .be-content-feature { grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:24px; }
- .bc-reference-home .be-reading-list article { grid-template-columns:80px minmax(0,1fr); }
- .bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { grid-column:2; }
+ .bc-reference-home .be-reading-list article { grid-template-columns:80px minmax(0,5fr) minmax(0,2fr); }
+ .bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { grid-column:3; }
  .bc-reference-home .be-faq .be-faq-layout { grid-template-columns:minmax(0,2fr) minmax(0,3fr); gap:24px; }
 }
 @media(max-width:767px) {
@@ -107,3 +107,7 @@
 @media(prefers-reduced-motion:reduce) {
  .bc-reference-home .be-faq :is(button,[role=region],button>span) { transition:none; }
 }
+
+/* Links inherit the heading scale instead of global navigation link sizing. */
+.bc-reference-home :is(.be-reading-list,.be-episode-copy) h3 a { font:inherit; display:inline-flex; align-items:center; min-height:44px; }
+.bc-reference-home .be-episode-copy .be-content-label { font:600 .75rem/1.5 Onest,sans-serif; letter-spacing:.06em; text-transform:uppercase; color:color-mix(in srgb,var(--ui-green) 90%,var(--ui-navy)); }
