@@ -30,7 +30,7 @@
  align-items:center;
 }
 .bc-reference-home .be-closing-copy { display:grid; gap:12px; }
-.bc-reference-home .be-closing-eyebrow { font:600 .875rem/1.5 Onest,sans-serif; letter-spacing:.06em; color:var(--ui-green); }
+.bc-reference-home .be-closing-eyebrow { font:600 .875rem/1.5 Onest,sans-serif; letter-spacing:.06em; color:var(--ui-navy); }
 .bc-reference-home .be-conversion h2 {
  font:700 clamp(2.25rem,3.2vw,3rem)/1.12 'Barlow Condensed',sans-serif;
 }

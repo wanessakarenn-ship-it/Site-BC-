@@ -40,7 +40,7 @@
 .bc-reference-home .be-reading-list h3 { font:600 1.125rem/1.4 Onest,sans-serif; }
 .bc-reference-home .be-faq .be-faq-intro { gap:16px; }
 .bc-reference-home .be-faq .be-faq-column button { min-height:48px; padding-block:20px; }
-.bc-reference-home .be-faq .be-faq-column button[aria-expanded=true] { color:var(--ui-green); }
+.bc-reference-home .be-faq .be-faq-column button:is(:hover,[aria-expanded=true]) { color:#146E68; }
 .bc-reference-home .be-about-layout { align-items:start; gap:40px; }
 .bc-reference-home .be-about-photo { padding-bottom:12px; background:color-mix(in srgb,var(--ui-green) 8%,var(--ui-white)); }
 .bc-reference-home .be-about-photo img { border-radius:4px; }
@@ -48,6 +48,12 @@
 .bc-reference-home .be-conversion { padding-block:24px 48px; }
 .bc-reference-home .be-conversion>.be-wrap { border:0; padding:32px; background:color-mix(in srgb,var(--ui-green) 7%,var(--ui-white)); }
 .bc-reference-home .be-conversion h2 { font:700 clamp(1.75rem,2.5vw,2.25rem)/1.2 Onest,sans-serif; }
+/* Darker green for small text on the Home's light surfaces. */
+.bc-editorial.bc-reference-home .be-link,
+.bc-reference-home .be-solutions--portfolio :is(.be-portfolio-eyebrow,.be-service-audience,.be-service-access),
+.bc-reference-home :is(.be-field,.be-content,.be-faq) .be-editorial-eyebrow,
+.bc-reference-home .be-faq .t-eyebrow,
+.bc-reference-home .be-pillar-narrative dt { color:#146E68; }
 @media(max-width:1023px) {
  .bc-editorial .bc-hero-slide--refined .bc-hero-scrim { background:linear-gradient(90deg,color-mix(in srgb,var(--ui-navy) 94%,transparent),color-mix(in srgb,var(--ui-navy) 86%,transparent) 72%,transparent); }
  .bc-reference-home :is(.be-content-layout,.be-about-layout,.be-movement--editorial) { gap:24px; }
