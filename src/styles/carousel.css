@@ -88,18 +88,18 @@
   #home_slider .swiper-slide-active .bc-hero-content .bc-hero-step:nth-child(4) { transition-delay: 165ms; }
   #home_slider .swiper-slide-active .bc-hero-content .bc-hero-step:nth-child(5) { transition-delay: 220ms; }
 
-  @media (prefers-reduced-motion: reduce) {
-    #home_slider .bc-hero-content .bc-hero-step {
-      animation: none;
-      opacity: 1;
-      transform: none;
-      transition: none;
-    }
-  }
-
   #home_slider .swiper-button-next,
   #home_slider .swiper-button-prev {
     display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home_slider .bc-hero-content .bc-hero-step {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
