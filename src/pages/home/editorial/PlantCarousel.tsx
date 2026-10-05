@@ -11,7 +11,7 @@ type PlantCarouselProps = { plants: Array<PowerPlant> }
 
 export default function PlantCarousel({ plants }: PlantCarouselProps) {
   const swiperRef = useRef<SwiperClass | null>(null)
-  const [activeIndex, setActiveIndex] = useState(0)
+  const [current, setCurrent] = useState(0)
   const [reducedMotion, setReducedMotion] = useState(false)
 
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function PlantCarousel({ plants }: PlantCarouselProps) {
   }, [])
 
   const syncSlides = (swiper: SwiperClass) => {
-    setActiveIndex(swiper.realIndex)
+    setCurrent(swiper.realIndex)
     swiper.slides.forEach((slide, index) => {
       const inactive = index !== swiper.activeIndex
       slide.toggleAttribute('inert', inactive)
@@ -89,14 +89,7 @@ export default function PlantCarousel({ plants }: PlantCarouselProps) {
             <span aria-hidden="true">→</span>
           </button>
         </div>
-        <div className="be-plant-indicators" role="group" aria-label="Selecionar complexo">
-          {plants.map((plant, index) => <button key={plant.id} type="button"
-            aria-label={`Ir para ${plant.title}, ${plant.location}. ${index + 1} de ${plants.length}`}
-            aria-current={index === activeIndex ? 'true' : undefined}
-            onClick={() => swiperRef.current?.slideToLoop(index)}>
-            <span aria-hidden="true" />
-          </button>)}
-        </div>
+        <div className="be-plant-status" aria-live="polite">Complexo {current + 1} de {plants.length}</div>
       </div>}
     </div>
   )

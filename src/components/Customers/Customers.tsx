@@ -34,7 +34,7 @@ const Customers = ({
 
       <ul className="mt-6 grid grid-cols-3 items-center gap-x-5 gap-y-5 sm:grid-cols-4 sm:gap-x-6 lg:grid-cols-6 lg:gap-x-8 lg:gap-y-6 xl:grid-cols-7">
         {selectLogos(limit).map((logo) => (
-          <li key={logo.id} className="flex h-14 items-center justify-center lg:h-16">
+          <li key={logo.id} className="flex min-h-[56px] items-center justify-center lg:min-h-[64px]">
             <Image
               src={`/img/components/customers/${logo.url}`}
               alt={logo.name ?? logo.title}
@@ -42,7 +42,7 @@ const Customers = ({
               height={200}
               loading="lazy"
               decoding="async"
-              className="max-h-10 w-auto max-w-full object-contain sm:max-h-12 lg:max-h-14"
+              className="h-auto max-h-10 w-auto max-w-full object-contain sm:max-h-12 lg:max-h-14"
             />
           </li>
         ))}

@@ -8,57 +8,61 @@
 .bc-reference-home .be-solutions--portfolio .be-portfolio-eyebrow {
  color:var(--be-green-text); font:600 .875rem/1.5 Onest,sans-serif; letter-spacing:.06em;
 }
-.bc-reference-home .be-solutions--portfolio .be-solution-layout {
- grid-template-columns:minmax(0,44fr) minmax(0,56fr); align-items:stretch;
+.bc-reference-home .be-solutions--portfolio .be-solution-minigallery {
+ display:grid; grid-template-columns:minmax(0,1.45fr) repeat(3,minmax(0,1fr)); gap:16px; align-items:stretch;
 }
-.bc-reference-home .be-solutions--portfolio .be-solution-visual { aspect-ratio:auto; }
-.bc-reference-home .be-solutions--portfolio .be-solution-visual img { object-position:center 70%; }
-.bc-reference-home .be-solutions--portfolio .be-solutions-copy { align-content:center; padding-block:24px; }
-.bc-reference-home .be-solutions--portfolio .be-service-entry--primary { gap:20px; }
-.bc-reference-home .be-solutions--portfolio .be-service-copy { gap:12px; }
-.bc-reference-home .be-solutions--portfolio .be-service-entry--primary h3 {
- font:700 var(--be-type-feature)/1.15 'Barlow Condensed',sans-serif;
+.bc-reference-home .be-solution-mini {
+ display:grid; grid-template-rows:auto 1fr; gap:12px; align-content:stretch;
 }
-.bc-reference-home .be-solutions--portfolio .be-portfolio-saving {
- font:700 clamp(2rem,3.5vw,3rem)/1.1 'Barlow Condensed',sans-serif; color:var(--ui-green);
+.bc-reference-home .be-solution-media {
+ position:relative; display:block; overflow:hidden; aspect-ratio:4/3; background:var(--ui-white);
 }
-.bc-reference-home .be-solutions--portfolio .be-service-audience { color:var(--be-green-text); font-size:.875rem; }
-.bc-reference-home .be-solutions--portfolio .be-service-actions { flex-wrap:wrap; gap:12px 24px; }
-.bc-reference-home .be-solutions--portfolio .be-service-enroll { order:-1; }
-.bc-reference-home .be-solutions--portfolio .be-service-access { display:inline-flex; min-height:44px; align-items:center; gap:6px; }
-.bc-reference-home .be-solutions--portfolio .be-portfolio-strategic {
- margin-top:32px; padding-block:28px;
- border-block:1px solid color-mix(in srgb,var(--ui-navy) 16%,transparent);
+.bc-reference-home .be-solution-media img {
+ display:block; width:100%; height:100%; aspect-ratio:auto; object-fit:cover; object-position:center;
 }
-.bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-entry {
- display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:24px;
+.bc-reference-home .be-solution-mini-copy {
+ display:grid; grid-template-rows:1fr auto; gap:10px; align-content:stretch;
 }
-.bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-copy {
- display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.3fr); column-gap:32px;
+.bc-reference-home .be-solution-media span {
+ position:absolute; left:12px; bottom:12px; display:inline-flex; max-width:calc(100% - 24px);
+ background:var(--ui-navy); color:var(--ui-white); padding:8px 12px; font:600 1rem/1.3 Onest,sans-serif;
 }
-.bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-audience { grid-column:1; margin:0; }
-.bc-reference-home .be-solutions--portfolio .be-portfolio-strategic h3 { grid-column:1; font-size:1.75rem; }
-.bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-copy>p:last-child { grid-column:2; grid-row:1/3; align-self:center; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary { display:grid; grid-template-columns:1fr; gap:0; margin-top:40px; max-width:none; align-items:start; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.5fr) minmax(208px,.55fr); align-items:start; gap:12px clamp(24px,2.5vw,32px); margin:0; min-width:0; padding-block:24px; background:transparent; border:0; border-top:1px solid color-mix(in srgb,var(--ui-navy) 14%,transparent); box-shadow:none; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-copy { display:contents; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-actions { margin:0; align-self:start; justify-content:flex-start; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary h3 { font:700 1.5rem/1.2 'Barlow Condensed',sans-serif; }
+.bc-reference-home .be-solution-mini-copy p {
+ margin:0; color:var(--ui-navy); font-size:1rem; line-height:1.5;
+}
+.bc-reference-home .be-solution-link {
+ display:inline-flex; align-items:center; gap:6px; color:var(--be-green-text);
+ font:600 .9375rem/1.5 Onest,sans-serif; text-decoration:underline; text-underline-offset:4px;
+}
+@media(min-width:1024px) {
+ .bc-reference-home .be-solution-mini--lead .be-solution-media { aspect-ratio:29/15; }
+}
+.bc-reference-home .be-solutions--portfolio .be-service-complementary {
+ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 32px; margin-top:32px; max-width:none; align-items:start;
+}
+.bc-reference-home .be-solutions--portfolio .be-service-row {
+ display:grid; grid-template-columns:minmax(0,1.5fr) auto; gap:12px 24px; align-items:center;
+ padding-block:20px; border-top:1px solid color-mix(in srgb,var(--ui-navy) 14%,transparent); margin:0;
+}
+.bc-reference-home .be-solutions--portfolio .be-service-row .be-service-copy { display:grid; gap:8px; }
+.bc-reference-home .be-solutions--portfolio .be-service-row h3 {
+ font:700 1.5rem/1.2 'Barlow Condensed',sans-serif; margin:0;
+}
+.bc-reference-home .be-solutions--portfolio .be-service-row p {
+ margin:0; color:var(--ui-navy); font-size:1rem; line-height:1.5;
+}
+.bc-reference-home .be-solutions--portfolio .be-service-row .be-service-actions { margin:0; justify-content:flex-start; }
+.bc-reference-home .be-solutions--portfolio .be-service-row .be-service-access {
+ display:inline-flex; min-height:44px; align-items:center; gap:6px; }
 @media(max-width:1023px) {
- .bc-reference-home .be-solutions--portfolio .be-solution-layout { grid-template-columns:minmax(0,44fr) minmax(0,56fr); gap:24px; }
- .bc-reference-home .be-solutions--portfolio .be-solution-visual { aspect-ratio:auto; }
- .bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-copy { grid-template-columns:1fr; gap:8px; }
- .bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-copy>p:last-child { grid-column:auto; grid-row:auto; }
- .bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry { grid-template-columns:1fr; gap:12px; }
+ .bc-reference-home .be-solutions--portfolio .be-solution-minigallery { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .bc-reference-home .be-solutions--portfolio .be-service-complementary { grid-template-columns:1fr; }
 }
 @media(max-width:767px) {
  .bc-reference-home .be-solutions--portfolio .be-portfolio-heading { grid-template-columns:1fr; gap:8px; margin-bottom:24px; }
- .bc-reference-home .be-solutions--portfolio .be-solution-layout { grid-template-columns:1fr; gap:24px; }
- .bc-reference-home .be-solutions--portfolio .be-solution-visual { aspect-ratio:3/2; }
- .bc-reference-home .be-solutions--portfolio .be-solutions-copy { padding:0; }
- .bc-reference-home .be-solutions--portfolio .be-portfolio-strategic { margin-top:24px; padding-block:24px; }
- .bc-reference-home .be-solutions--portfolio .be-portfolio-strategic .be-service-entry { grid-template-columns:1fr; gap:8px; }
- .bc-reference-home .be-solutions--portfolio .be-service-complementary { grid-template-columns:1fr; margin-top:24px; }
+ .bc-reference-home .be-solutions--portfolio .be-solution-minigallery { grid-template-columns:1fr; gap:20px; }
+ .bc-reference-home .be-solutions--portfolio .be-service-complementary { margin-top:24px; }
+ .bc-reference-home .be-solutions--portfolio .be-service-row { grid-template-columns:1fr; gap:8px; }
 }
 
 /* Editorial index: shared columns, progressive scale and list separators. */

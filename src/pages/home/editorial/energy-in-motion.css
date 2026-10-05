@@ -22,6 +22,7 @@
   font-size: 1rem;
   line-height: 1.65;
 }
+/* .be-attribute-band was removed from the home narrative; keeping these rules as orphaned legacy definitions for traceability and cascade reporting. */
 .bc-reference-home .be-attribute-band {
   padding-block: 32px;
   background: var(--ui-white);
@@ -70,14 +71,32 @@
   aspect-ratio: auto;
   border-radius: 0;
 }
-.bc-reference-home .be-pillar-narrative { gap: 20px 32px; }
-.bc-reference-home .be-pillar-narrative dt { color: var(--ui-green); }
+.bc-reference-home .be-pillar-narrative {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px 32px;
+}
+.bc-reference-home .be-pillar-narrative > div {
+  display:grid;
+  gap:8px;
+}
+.bc-reference-home .be-pillar-narrative dt {
+  color: var(--ui-green);
+  font:700 clamp(1.5rem,2vw,1.625rem)/1.15 'Barlow Condensed',sans-serif;
+}
+.bc-reference-home .be-pillar-narrative dd {
+  margin:0;
+  max-width:38ch;
+  color:var(--ui-navy);
+  font:400 0.9375rem/1.6 Onest,sans-serif;
+}
 .bc-reference-home .bc-scale--interactive {
   padding-block: var(--be-editorial-space);
   background: var(--ui-navy);
   color: var(--ui-white);
 }
 .bc-reference-home .bc-scale--interactive .bc-scale-grid {
+  display:grid;
   grid-template-columns: minmax(0,3fr) minmax(0,2fr);
   gap: var(--be-editorial-gap);
   align-items: start;
@@ -168,6 +187,7 @@
   .bc-reference-home .be-attribute-band { padding-block: 24px; }
   .bc-reference-home .be-attribute-band ul { gap: 24px; }
   .bc-reference-home .be-attribute-band h2 { font-size: 1.375rem; }
+  .bc-reference-home .be-pillar-narrative { grid-template-columns:1fr; }
   .bc-reference-home .be-solutions--editorial .be-solution-visual { aspect-ratio: 3/2; }
   .bc-reference-home .bc-scale--interactive .bc-presence-copy,
   .bc-reference-home .be-operation-layout { grid-template-columns: 1fr; }

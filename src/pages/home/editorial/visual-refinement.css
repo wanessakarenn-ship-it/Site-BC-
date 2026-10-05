@@ -52,6 +52,10 @@
 .bc-reference-home .be-faq .be-faq-intro { gap:16px; }
 .bc-reference-home .be-faq .be-faq-column button { min-height:48px; padding-block:20px; }
 .bc-reference-home .be-about-layout { align-items:end; gap:40px; }
+.bc-reference-home .be-about-visual,
+.bc-reference-home .be-about-copy { display:grid; align-content:start; }
+.bc-reference-home .be-about-visual { gap:20px; }
+.bc-reference-home .be-about-copy { gap:12px; }
 @media(min-width:1024px) {
  .bc-reference-home .be-about-layout { grid-template-columns:minmax(0,3fr) minmax(0,2fr); }
 }
@@ -60,12 +64,18 @@
 @media(min-width:1200px) {
  .bc-reference-home .be-about-layout { --be-photo-overlap:clamp(40px,4vw,64px); }
  .bc-reference-home .be-about-layout .be-about-photo { width:calc(100% + 40px + var(--be-photo-overlap)); }
- .bc-reference-home .be-about-layout>div:last-child { padding-left:calc(var(--be-photo-overlap) + 24px); }
+ .bc-reference-home .be-about-layout .be-about-copy { padding-left:calc(var(--be-photo-overlap) + 24px); }
 }
 .bc-reference-home .be-about .be-button-light { box-shadow:none; }
 .bc-reference-home .be-about h2 { font:700 var(--be-type-section)/1.18 Onest,sans-serif; }
-.bc-reference-home .be-conversion { padding-block:24px 48px; }
-.bc-reference-home .be-conversion>.be-wrap { border:0; padding:32px; background:transparent; }
+.bc-reference-home .be-conversion { padding-block:clamp(72px, 8vw, 104px); }
+.bc-reference-home .be-conversion>.be-wrap {
+ border:0;
+ border-radius:0;
+ box-shadow:none;
+ padding:0;
+ background:transparent;
+}
 .bc-reference-home .be-conversion h2 { font:700 var(--be-type-section)/1.2 Onest,sans-serif; }
 @media(max-width:1023px) {
  .bc-editorial .bc-hero-slide--refined .bc-hero-media { top:64px; }
@@ -81,7 +91,8 @@
  .bc-editorial .bc-hero-slide--refined .bc-hero-scrim { background:color-mix(in srgb,var(--ui-navy) var(--be-hero-overlay-reading),transparent); }
  .bc-reference-home .be-movement--editorial { padding-block:16px 40px; }
  .bc-reference-home .be-reading-list { padding:0; }
- .bc-reference-home .be-conversion>.be-wrap { padding:24px; }
+ .bc-reference-home .be-conversion { padding-block:48px; }
+ .bc-reference-home .be-conversion>.be-wrap { padding:0; }
 }
 @media(prefers-reduced-motion:reduce) {
  .bc-editorial .bc-hero-slide--refined :is(a,button) { transition:none; transform:none; }

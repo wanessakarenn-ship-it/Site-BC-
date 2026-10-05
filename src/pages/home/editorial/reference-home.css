@@ -18,13 +18,21 @@
 .bc-reference-home .be-process h3{font-family:Onest,sans-serif;font-size:1.125rem;line-height:1.35;margin-bottom:8px}
 .bc-reference-home .be-process p{font-size:1rem;line-height:1.6}
 .bc-reference-home .bc-scale--reference{background:var(--ui-navy);color:white;padding-block:48px}
-.bc-reference-home .bc-scale-grid{position:relative;z-index:1;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:40px;align-items:center}
+.bc-reference-home .bc-scale-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:40px;align-items:start}
 .bc-reference-home .bc-results{gap:20px}
 .bc-reference-home .bc-results h2{font-size:clamp(1.75rem,2.5vw,2.25rem);max-width:28ch}
-.bc-reference-home .bc-results-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px;align-items:baseline}
-.bc-reference-home .bc-metric--lead{grid-column:1/-1}
+.bc-reference-home .bc-results-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px;align-items:end}
+.bc-reference-home .bc-metric--lead{grid-column:1 / -1}
 .bc-reference-home .bc-metric-value{font-size:clamp(2.75rem,4vw,3.5rem);line-height:1.1;color:var(--ui-turquoise)}
 .bc-reference-home .bc-metric--lead .bc-metric-value{font-size:clamp(3.5rem,6.5vw,6rem);color:white}
+.bc-reference-home .bc-presence{display:grid;align-items:start}
+.bc-reference-home .bc-presence-copy{display:grid;gap:16px;align-content:start}
+.bc-reference-home .bc-presence-copy h3{font-size:1.125rem;line-height:1.4;color:var(--ui-white);margin:0}
+.bc-reference-home .bc-presence-locations{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px;list-style:none;padding:0;margin:0}
+.bc-reference-home .bc-presence-locations li{min-height:44px;display:flex;align-items:center}
+.bc-reference-home .bc-presence-locations a,.bc-reference-home .bc-presence-locations span{color:var(--ui-white);font-size:1rem;line-height:1.5}
+.bc-reference-home .bc-office-legend{font-size:.875rem;line-height:1.5;color:var(--ui-turquoise);margin:0}
+.bc-reference-home .bc-presence .bc-text-link{color:var(--ui-turquoise);font-size:1rem}
 .bc-reference-home .bc-metric-label{font-size:1rem;line-height:1.4;margin-top:8px}
 .bc-reference-home .bc-metric-description{font-size:1rem;line-height:1.6;margin-top:8px;color:white}
 .bc-reference-home .bc-scale--reference .bc-text-link{color:var(--ui-turquoise);font-size:1rem}
