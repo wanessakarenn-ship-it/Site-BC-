@@ -21,7 +21,7 @@ const ContentBody = ({ blocks, ctaName }: { blocks: ContentBlock[]; ctaName?: st
   const headingIds = getHeadingIds(blocks)
 
   return (
-    <div className="mx-auto flex w-full max-w-[78ch] flex-col gap-6">
+    <div className="bc-content-body mx-auto flex w-full max-w-[78ch] flex-col gap-6">
       {blocks.map((block, index) => {
         switch (block.type) {
           case 'heading': {
@@ -75,7 +75,7 @@ const ContentBody = ({ blocks, ctaName }: { blocks: ContentBlock[]; ctaName?: st
           }
           case 'table':
             return (
-              <div key={index} className="-mx-6 overflow-x-auto px-6 lg:mx-0 lg:px-0">
+              <div key={index} tabIndex={0} className="-mx-6 overflow-x-auto px-6 lg:mx-0 lg:px-0">
                 <table className="w-full min-w-[34rem] border-collapse text-left t-body text-text-secondary">
                   {block.caption && (
                     <caption className="mb-3 text-left t-body text-text-secondary">

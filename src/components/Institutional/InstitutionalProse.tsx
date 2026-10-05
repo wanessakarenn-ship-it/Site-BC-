@@ -81,7 +81,7 @@ const InstitutionalProse = ({
   const active = useActiveSection(toc?.map((item) => item.id) ?? [])
 
   const body = (
-    <div className={[widthClass, proseClasses, className].filter(Boolean).join(' ')}>{children}</div>
+    <div className={['bc-legal-prose', widthClass, proseClasses, className].filter(Boolean).join(' ')}>{children}</div>
   )
 
   if (!toc?.length) {
@@ -141,4 +141,3 @@ const InstitutionalProse = ({
 }
 
 export default InstitutionalProse
-

@@ -53,7 +53,7 @@ const WhoWeAre = () => (
         alt: 'Equipe do Grupo BC Energia reunida em encontro interno',
         width: 1600,
         height: 1000,
-        aspect: '16 / 10'
+        aspect: '1600 / 773'
       }}
       belowImage={
       <ul className="grid grid-cols-2 gap-x-5 gap-y-4 lg:grid-cols-4 lg:gap-x-6">

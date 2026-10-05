@@ -47,7 +47,7 @@ const SimuladorDeEconomia = () => {
   const contaParam = Number(searchParams.get('conta'))
 
   return (
-  <div className="min-h-screen">
+  <div className="bc-simulator-page min-h-screen">
     <PageHeader
       align="left"
       variant="banner"

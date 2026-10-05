@@ -103,7 +103,7 @@ const InstitutionalIntro = ({
             sizes={image.sizes ?? '(max-width: 1024px) 100vw, 58vw'}
             loading="lazy"
             decoding="async"
-            style={{ aspectRatio: '4 / 3' }}
+            style={{ aspectRatio: image.aspect ?? 'auto' }}
             className={[
               'flow-institutional-photo w-full object-cover object-center',
               wideImage ? 'lg:sticky lg:top-24' : '',
