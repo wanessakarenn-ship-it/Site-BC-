@@ -89,7 +89,7 @@
 .bc-reference-home .be-faq .be-faq-column button>span[aria-hidden] { font-size:1.5rem; }
 .bc-reference-home .be-faq .be-faq-intro>.be-link { gap:6px; }
 @media(max-width:1023px) {
- .bc-reference-home .be-operation-layout { grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:24px; }
+ .bc-reference-home .be-operation-layout { grid-template-columns:minmax(0,1fr); gap:24px; }
  .bc-reference-home .be-content-feature { grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:24px; }
  .bc-reference-home .be-reading-list article { grid-template-columns:80px minmax(0,1.35fr) minmax(0,1fr); }
  .bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { grid-column:3; }

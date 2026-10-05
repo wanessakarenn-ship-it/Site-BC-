@@ -51,9 +51,8 @@
 .bc-reference-home .be-reading-list h3 { font:600 clamp(1.125rem,1.4vw,1.25rem)/1.35 Onest,sans-serif; }
 .bc-reference-home .be-faq .be-faq-intro { gap:16px; }
 .bc-reference-home .be-faq .be-faq-column button { min-height:48px; padding-block:20px; }
-.bc-reference-home .be-about-layout { display:grid; grid-template-columns:minmax(0,1fr); gap:24px; align-items:start; }
-.bc-reference-home .be-about-content { display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:clamp(24px,3vw,40px); align-items:start; }
-.bc-reference-home .be-about-visual { min-width:0; }
+.bc-reference-home .be-about-layout { display:grid; grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:clamp(24px,3vw,40px); align-items:start; }
+.bc-reference-home .be-about-visual { display:grid; align-content:start; gap:16px; min-width:0; }
 .bc-reference-home .be-about-copy { display:grid; align-content:start; gap:16px; padding:0; }
 .bc-reference-home .be-about-copy p { margin:0; font-size:clamp(1rem,1.2vw,1.125rem); line-height:1.65; }
 .bc-reference-home .be-about-photo { padding:0; overflow:hidden; border-radius:4px; background:transparent; }
@@ -136,6 +135,10 @@
  gap:clamp(32px,4vw,56px);
  align-items:start;
 }
+.bc-reference-home .bc-scale--interactive .bc-results-list {
+ grid-template-columns:minmax(0,1.5fr) repeat(2,minmax(0,1fr));
+}
+.bc-reference-home .bc-scale--interactive .bc-metric--lead { grid-column:auto; }
 .bc-reference-home .bc-scale--interactive .bc-metric-value { color:var(--ui-white); }
 .bc-reference-home .bc-scale--interactive .bc-metric--lead .bc-metric-value {
  position:static;
@@ -145,36 +148,23 @@
  color:var(--ui-yellow);
 }
 .bc-reference-home .bc-scale--interactive .bc-metric:not(.bc-metric--lead) .bc-metric-value {
- color:var(--ui-green-secondary);
-}
-.bc-reference-home .bc-scale--interactive :is(.bc-metric-label,.bc-metric-description,.bc-presence-copy h3,.bc-presence-locations span) {
  color:var(--ui-white);
 }
-.bc-reference-home .bc-scale--interactive .bc-office-legend { color:hsl(var(--bc-gray)); }
-.bc-reference-home .bc-scale--interactive .bc-presence-copy {
- grid-template-columns:minmax(0,1fr);
- gap:16px;
+.bc-reference-home .bc-scale--interactive :is(.bc-metric-label,.bc-metric-description) {
+ color:var(--ui-white);
 }
-.bc-reference-home .bc-scale--interactive .bc-presence-locations {
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:0 16px;
-}
-.bc-reference-home .bc-scale--interactive .bc-presence-locations a,
 .bc-reference-home .bc-scale--interactive .bc-text-link {
  color:var(--ui-turquoise);
  text-decoration:underline;
  text-underline-offset:4px;
 }
-.bc-reference-home .bc-scale--interactive .bc-presence-locations a:hover,
 .bc-reference-home .bc-scale--interactive .bc-text-link:hover {
  color:var(--ui-white);
 }
-.bc-reference-home .bc-scale--interactive .bc-presence-locations a:focus-visible {
- outline-color:var(--ui-yellow);
-}
 @media(max-width:1023px) {
  .bc-reference-home .bc-scale--interactive .bc-scale-grid { grid-template-columns:1fr; }
+ .bc-reference-home .bc-scale--interactive .bc-results-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .bc-reference-home .bc-scale--interactive .bc-metric--lead { grid-column:1/-1; }
 }
 
 .bc-reference-home :is(.be-field,.bc-scale--interactive) h2 {
@@ -188,7 +178,11 @@
 }
 .bc-reference-home .be-movement--editorial .be-pillar-narrative dt { font-family:Onest,sans-serif; }
 .bc-reference-home .be-movement--editorial .be-movement-photo img {
- aspect-ratio:900/506;
+ position:static;
+ display:block;
+ width:100%;
+ height:auto;
+ aspect-ratio:16/9;
  object-fit:cover;
  object-position:center;
 }
@@ -199,8 +193,8 @@
  font-family:'Barlow Condensed',sans-serif;
 }
 @media(max-width:767px) {
- .bc-reference-home .be-movement--editorial .be-movement-photo img { aspect-ratio:3/2; }
+ .bc-reference-home .bc-scale--interactive .bc-results-list { grid-template-columns:minmax(0,1fr); }
 }
 @media(max-width:1023px) {
- .bc-reference-home .be-about-content { grid-template-columns:minmax(0,1fr); }
+ .bc-reference-home .be-about-layout { grid-template-columns:minmax(0,1fr); }
 }

@@ -37,14 +37,13 @@ const HomeEditorial = () => {
  const complementarySolutions = solutions.slice(4)
  const renderMiniature = (item: (typeof solutions)[number], index: number) => {
   const isConsortium = item.href === '/produtos/consorcio-bc-energia'
-  const hook = isConsortium ? 'Até 25% de economia' : item.description
   return <article className={`be-solution-mini ${index === 0 ? 'be-solution-mini--lead' : ''}`} key={item.href}>
    <Link className="be-solution-media" href={item.href} {...(item.external?{target:'_blank',rel:'noopener noreferrer'}:{})} data-cta-name={`home_solucoes_${item.title}`} data-cta-location="solutions">
     <img src={solutionThumbs[item.href] ?? '/img/global/energia-por-assinatura.webp'} alt={item.title} width={1000} height={700} loading="lazy" decoding="async"/>
     <span>{item.title}</span>
    </Link>
    <div className="be-solution-mini-copy">
-    <p>{hook}</p>
+    <p>{isConsortium && <strong>Até 25% de economia </strong>}{item.description}</p>
     <Link className="be-solution-link" href={item.href} {...(item.external?{target:'_blank',rel:'noopener noreferrer'}:{})} data-cta-name={`home_solucoes_${item.title}`} data-cta-location="solutions">{item.external?'Acessar portal':contextualLinks[item.href] ?? 'Conhecer solução'}<span aria-hidden="true"> →</span></Link>
    </div>
   </article>
@@ -66,7 +65,7 @@ const HomeEditorial = () => {
    <div className="be-other-sectors">{SEGMENT_HUB_ITEMS.filter(x=>![agro?.href,retail?.href,home?.href].includes(x.href)).map(item=><Link key={item.href} href={item.href} data-cta-name={`home_segmentos_${item.title}`}>{item.title}</Link>)}</div>
   </div></section>
   <section className="be-movement be-movement--editorial be-wrap" aria-labelledby="be-movement-title">
-   <figure className="be-movement-photo"><img src="/img/pages/usinas/ClareiradeAracu.jpg" alt="Usina do Complexo Clareira de Araçu" width={900} height={506} loading="lazy" decoding="async"/></figure>
+   <figure className="be-movement-photo"><img src="/img/pages/nossas-usinas2.webp" alt="Vista aérea de usina solar fotovoltaica operada pela BC Renováveis" width={1600} height={900} loading="lazy" decoding="async"/></figure>
    <div className="be-movement-copy"><h2 id="be-movement-title">Energia que transforma consumo em resultado.</h2><p className="be-lead">Integramos tecnologia, pessoas e conhecimento para entregar soluções personalizadas, sustentáveis e alinhadas às necessidades de cada cliente.</p>
     <dl className="be-pillar-narrative">{PILLARS.map(pillar=><div key={pillar.title}><dt>{pillar.title}</dt><dd>{pillar.text}</dd></div>)}</dl>
    </div>
@@ -76,7 +75,7 @@ const HomeEditorial = () => {
    <div className="be-operation-layout"><PlantCarousel plants={POWER_PLANTS}/>
    <div className="be-operation-copy"><p className="be-editorial-eyebrow">ESTRUTURA PRÓPRIA</p><h2 id="be-field-title">Energia acontecendo</h2><p>A energia que comercializamos vem de usinas próprias de fonte renovável. Estrutura, operação e certificação I-REC garantem economia com origem limpa e comprovável.</p><div className="be-operation-metric"><p className="be-field-number">{POWER_PLANTS.length}</p><div><h3>Complexos de geração</h3><p>Usinas solares e hidrelétricas próprias no Centro-Oeste e Sudeste.</p></div></div><Link className="be-link" href="/sobre/nossas-usinas" data-cta-name="home_sustentabilidade_usinas">Conhecer nossas usinas<span aria-hidden="true"> →</span></Link></div></div>
   </section>
-  <section className="be-about" aria-labelledby="be-about-title"><div className="be-wrap"><div className="be-about-layout"><h2 id="be-about-title">Energia para gerar valor, eficiência e crescimento.</h2><div className="be-about-content"><div className="be-about-visual"><div className="be-about-photo"><img src="/img/pages/sobre-nos-equipe.webp" width={1600} height={773} loading="lazy" decoding="async" alt="Equipe do Grupo BC Energia reunida em encontro interno"/></div></div><div className="be-about-copy"><p>O Grupo BC Energia desenvolve soluções em geração, gestão e comercialização de energia para empresas e consumidores que buscam economia, eficiência e sustentabilidade.</p><Link className="be-button be-button-light" href="/sobre" data-cta-name="home_institucional_sobre">Conheça o Grupo BC Energia</Link><Link className="be-link" href="/sobre/quem-somos" data-cta-name="home_institucional_quem_somos">Quem somos</Link></div></div></div></div></section>
+  <section className="be-about" aria-labelledby="be-about-title"><div className="be-wrap"><div className="be-about-layout"><div className="be-about-visual"><h2 id="be-about-title">Energia para gerar valor, eficiência e crescimento.</h2><div className="be-about-photo"><img src="/img/pages/sobre-nos-equipe.webp" width={1600} height={773} loading="lazy" decoding="async" alt="Equipe do Grupo BC Energia reunida em encontro interno"/></div></div><div className="be-about-copy"><p>O Grupo BC Energia desenvolve soluções em geração, gestão e comercialização de energia para empresas e consumidores que buscam economia, eficiência e sustentabilidade.</p><Link className="be-button be-button-light" href="/sobre" data-cta-name="home_institucional_sobre">Conheça o Grupo BC Energia</Link><Link className="be-link" href="/sobre/quem-somos" data-cta-name="home_institucional_quem_somos">Quem somos</Link></div></div></div></section>
   <Customers eyebrow="" title="Empresas que confiam na BC Energia" className="be-client-band"/>
   {(featured||articles.length>0)?<section className="be-content be-wrap" aria-labelledby="be-content-title"><div className="be-section-heading"><div><p className="be-editorial-eyebrow">CONHECIMENTO</p><h2 id="be-content-title">Conversas e análises sobre energia.</h2></div><Link href="/conteudo" className="be-link" data-cta-name="home_conteudo_explorar">Explorar conteúdos</Link></div><div className="be-content-layout">
    {featured?<article className="be-content-feature"><YouTubeEmbed height="auto" url={featured.embedUrl} title={getEpisodeLabel(featured)} className="be-video"/><div className="be-episode-copy"><p className="be-content-label">BC Cast #{String(featured.number).padStart(2,'0')}</p><h3><Link href={`/conteudo/bc-cast/${featured.slug}`} data-cta-name={`home_conteudo_destaque_${featured.slug}`}>{featured.title}</Link></h3>{featured.guests?.map(guest=><p className="be-episode-guest" key={guest.name}>{guest.name}</p>)}<Link className="be-link" href={`/conteudo/bc-cast/${featured.slug}`} data-cta-name="home_conteudo_ver_episodio" data-cta-location="knowledge">Ver episódio<span aria-hidden="true"> →</span></Link></div></article>:null}
