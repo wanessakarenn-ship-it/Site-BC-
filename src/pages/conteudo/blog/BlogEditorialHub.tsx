@@ -81,15 +81,9 @@ const BlogEditorialHub = ({
               <Link
                 href={`/conteudo/blog/${featured.slug}`}
                 data-cta-name={`blog_destaque_${featured.slug}`}
-                className="group mt-6 inline-flex min-h-[44px] items-center gap-2 self-start t-action-label font-semibold tracking-[0.08em] text-bc-primary transition-colors duration-200 hover:text-bc-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface motion-reduce:transition-none"
+                className="bc-arrow-action mt-6 self-start t-action-label font-semibold tracking-[0.08em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface motion-reduce:transition-none"
               >
                 Ler artigo
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-200 ease-out group-hover:translate-x-1 motion-reduce:transform-none"
-                >
-                  →
-                </span>
               </Link>
             </div>
 

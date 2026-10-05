@@ -268,3 +268,56 @@ como pendência humana, sem capa inventada.
 ## Próximas etapas (relatório visual)
 - Todas as correções sistêmicas do relatório (S1–S7) foram aplicadas. Pendências agora são de
   conteúdo e fotografia (ver HANDOFF, seção "Decisões humanas pendentes").
+
+## Recomposição editorial da Home (05/10/2026)
+
+- A vitrine mantém quatro soluções com fotografia e dois serviços complementares. O claim do
+  Consórcio fica em um bloco próprio, sem alterar descrição, ordem, links ou tracking.
+- Movimento mantém texto e pilares completos; a foto existente fica à esquerda no desktop e
+  acima da narrativa empilhada em tablet e mobile. No mobile, os pilares formam uma lista
+  vertical. A foto preserva proporção nativa, sem overlay nem filtro.
+- Resultados permanecem em navy, com economia em amarelo e indicadores secundários em branco.
+- Especificações continuam dentro do slide ativo das usinas; mover os dados exigiria alterar o
+  vínculo funcional com o Swiper. `slidesPerView="auto"` mantém um slide por vez e acompanha a
+  largura real do contêiner, sem reimplementar a navegação.
+- Institucional reúne título, descrição e ações ao lado da foto integral da equipe. A faixa de
+  clientes conserva os 21 logos. BC Cast, FAQ, segmentos e demais acessos permanecem presentes.
+- O CTA usa `public/img/editorial/infrastructure.webp`, sem edição nem camada CSS adicionada.
+  A seção tem fundo branco e texto navy; eyebrow e contato usam o verde acessível
+  `--be-green-text`; o botão amarelo mantém texto navy, com hover e foco visíveis.
+
+Não havia captura da referência aprovada nem captura anterior disponível na pasta compartilhada;
+esta rodada foi composta pela especificação textual. A cópia local também não contém metadados
+Git, portanto branch, HEAD e alterações locais anteriores não puderam ser comparados.
+
+## Fechamento conforme revisão editorial (05/10/2026)
+
+- Em Movimento, fotografia e introdução formam a primeira linha editorial; os quatro pilares
+  ocupam uma linha completa abaixo no desktop. Tablet e mobile empilham fotografia, introdução
+  e pilares; a foto preserva os 1524×690 pixels intrínsecos e os pilares mantêm o texto integral.
+- A grade mantém os 21 logos e seus PNGs originais. Dez marcas com menor área visível recebem
+  escala óptica moderadamente maior; nenhum asset é recolorido, filtrado ou reduzido em opacidade.
+- O episódio principal mantém mídia e metadados em proporção aproximada 65/35 no desktop. O
+  índice secundário ocupa a coluna editorial ao lado, com descrições integrais; abaixo de 900px,
+  mídia, identificação e índice fluem em uma coluna.
+- Especificações, identificação e controles das usinas seguem associados ao slide ativo. Rótulos
+  técnicos passaram a 14px, o contador a 16px e os alvos das setas permanecem em 44×44px.
+- A hierarquia de Soluções já separa o claim de economia, mantém quatro imagens e descrições
+  integrais e apresenta Arrendamento e Consultoria como entradas editoriais, sem cards.
+- A revisão de superfícies confirmou contrastes AA nos textos avaliados e foco visível. O relatório
+  recebido mencionava uma captura reduzida (457×2048px), mas ela não foi recebida como arquivo de
+  imagem; portanto, não se declara comparação visual direta com essa referência.
+
+## Apresentação institucional sob o hero (05/10/2026)
+
+- A seção “Energia que transforma consumo em resultado” foi movida no JSX para logo após o
+  carrossel e antes de Soluções. A foto oficial, os textos e os quatro pilares existentes foram
+  preservados; os pilares seguem em duas colunas quando há espaço e passam a uma coluna em telas
+  menores. Não foi encontrada outra faixa que repetisse os mesmos quatro pilares.
+- O claim existente “Até 25% de economia” agora aparece junto ao rótulo “Geração distribuída” e a
+  “Fazer adesão gratuita”. O CTA reutiliza o destino App Energia e o identificador
+  `home_solucoes_adesao` já empregados no CTA de adesão de Soluções. O claim e as ações daquela
+  seção permanecem intactos.
+- Copy proposta pendente de aprovação — não publicada: “Na conta de energia com geração
+  distribuída.” Não foi localizada no projeto uma frase equivalente aprovada para esse destaque.
+  Substituir ou incluir essa explicação exige aprovação editorial.

@@ -100,9 +100,9 @@ const MobileEntry = ({ entry, active }: { entry: NavEntry; active: boolean }) =>
         {entry.viewAll ? (
           <Link
             href={entry.viewAll.href}
-            className="flex min-h-11 items-center pl-1 t-label text-bc-cyan"
+            className="bc-arrow-action bc-arrow-action--dark t-label"
           >
-            {entry.viewAll.label} <span aria-hidden="true" className="ml-1">→</span>
+            {entry.viewAll.label}
           </Link>
         ) : null}
       </div>

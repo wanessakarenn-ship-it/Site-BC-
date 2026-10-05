@@ -76,14 +76,8 @@ const SegmentsSolutions = () => (
                 {item.description}
               </span>
 
-              <span className="mt-5 inline-flex items-center gap-2 t-action-label text-bc-primary">
+              <span className="bc-arrow-action mt-5 w-fit t-action-label">
                 Conhecer solução
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none"
-                >
-                  →
-                </span>
               </span>
             </Link>
           </li>

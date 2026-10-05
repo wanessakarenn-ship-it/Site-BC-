@@ -87,10 +87,9 @@ const RegionalIntro = ({
           {territory.link ? (
             <Link
               href={territory.link.href}
-              className="bc-focus-ring mt-5 inline-flex min-h-[44px] items-center gap-2 t-action-label text-bc-primary underline-offset-4 hover:underline"
+              className={`bc-arrow-action bc-focus-ring mt-5 t-action-label ${tone === 'dark' ? 'bc-arrow-action--dark' : tone === 'brand' ? 'bc-arrow-action--brand' : ''}`}
             >
               {territory.link.label}
-              <span aria-hidden="true">→</span>
             </Link>
           ) : null}
         </div>

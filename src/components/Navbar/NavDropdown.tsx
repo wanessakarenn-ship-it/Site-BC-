@@ -156,10 +156,9 @@ const NavDropdown = ({ entry, active }: NavDropdownProps) => {
           {entry.viewAll ? (
             <Link
               href={entry.viewAll.href}
-              className="mt-2 flex min-h-11 items-center justify-between rounded-md border-t border-border-subtle px-3 pt-3 t-label text-bc-primary transition-colors duration-fast hover:text-bc-primary-hover"
+              className="bc-arrow-action mt-2 t-label"
             >
               {entry.viewAll.label}
-              <span aria-hidden="true">→</span>
             </Link>
           ) : null}
         </div>

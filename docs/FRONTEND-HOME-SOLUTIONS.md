@@ -97,3 +97,35 @@ Ordem: Hero → **Soluções** → **Como ajudamos** → Números → Depoimento
 - `src/pages/home/Sections/Solutions.tsx`
 - `src/pages/home/page.tsx` (ordem: Como ajudamos → Soluções)
 - `docs/FRONTEND-HOME-SOLUTIONS.md` (novo)
+
+## 10. Atualização posterior — fotografia, benefício e ações
+
+- A seção institucional "Energia que transforma consumo em resultado" foi
+  reposicionada para logo após o hero. A fotografia agora é
+  `public/img/home/illustrative-transmission-wind-sunset.jpg` (768×768), imagem
+  ilustrativa de torre de transmissão e aerogeradores ao pôr do sol, sem sugerir
+  que a infraestrutura pertence à BC; a legenda "Imagem ilustrativa" também é
+  exibida sob a foto. O recorte 4:3 com object-position vertical em 30% preserva
+  torre e aerogeradores e reduz parte do campo escuro inferior, sem distorcer a
+  imagem nem aumentar a altura da seção.
+- O benefício continua identificado por "GERAÇÃO DISTRIBUÍDA" e mantém o texto
+  exato "Até 25% de economia", em Barlow Condensed, navy institucional, 24px,
+  sem fundo/borda/sombra/padding de etiqueta. O contraste navy sobre branco é
+  **13,5:1**. O rótulo de geração distribuída e o CTA de adesão permanecem.
+- Os títulos dos quatro pilares receberam peso 700 e 18px para separá-los
+  visualmente das descrições, sem alterar texto ou estrutura.
+- "Fazer adesão gratuita" segue como link para
+  `https://www.appenergia.com.br/Grupo_BC_Energia/`, em nova aba e com
+  `data-cta-name="home_solucoes_adesao"`. O texto explicativo
+  "Na conta de energia com geração distribuída." não foi publicado; aguarda
+  aprovação editorial.
+- O slogan do footer da Home recebe amarelo institucional; logo, conteúdo e
+  composição do footer permanecem preservados.
+- A classe explícita `.bc-arrow-action` aplica variantes de ação com alvo
+  mínimo de 44px, foco visível, hover sutil e suporte a `prefers-reduced-motion`.
+  É usada em CTAs standalone; setas que identificam controles, heróis e links
+  de navegação em listas/cards permanecem como affordance de navegação.
+- Validação localizada da Home: 360, 390, 768, 1024 e 1440px; sem rolagem
+  horizontal ou seção duplicada, foto carregada e proporcional, pilares em
+  uma coluna no mobile e duas no desktop, CTA de 46px com destino/tracking
+  preservados. Capturas desktop e mobile foram geradas nesta rodada.

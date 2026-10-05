@@ -62,10 +62,9 @@ const ProductProof = ({
               target={link.target}
               data-cta-name={link.label}
               data-cta-location="product_proof"
-              className="mt-6 inline-flex min-h-[44px] items-center gap-2 t-action-label text-bc-cyan underline-offset-4 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-bc-dark"
+              className="bc-arrow-action bc-arrow-action--dark mt-6 t-action-label focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-bc-dark"
             >
               {link.label}
-              <span aria-hidden="true">→</span>
             </Link>
           ) : null}
         </div>

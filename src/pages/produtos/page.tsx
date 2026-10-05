@@ -91,11 +91,8 @@ const Page = () => (
                 <p className="mt-2 max-w-[42rem] t-body text-text-secondary">
                   {featured.description}
                 </p>
-                <span className="mt-4 inline-flex min-h-[44px] items-center gap-2 t-action-label text-bc-primary">
+                <span className="bc-arrow-action mt-4 w-fit t-action-label">
                   Conhecer solução
-                  <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
                 </span>
               </Link>
             </article>

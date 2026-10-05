@@ -40,15 +40,9 @@ const About = () => (
             <Link
               href="/sobre/quem-somos"
               data-cta-name="home_institucional_quem_somos"
-              className="group inline-flex min-h-[44px] items-center gap-2 t-action-label text-bc-primary underline-offset-[6px] transition-colors duration-200 ease-bc hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
+              className="bc-arrow-action t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
             >
               Quem somos
-              <span
-                aria-hidden="true"
-                className="transition-transform duration-200 ease-bc group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-              >
-                →
-              </span>
             </Link>
           </div>
         </div>

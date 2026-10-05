@@ -24,10 +24,9 @@ const ContentEmptyState = ({ title, description, links }: Props) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              className="inline-flex min-h-[44px] items-center gap-2 t-body-sm font-semibold text-bc-primary underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2"
+              className="bc-arrow-action t-body-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2"
             >
               {link.label}
-              <span aria-hidden="true">→</span>
             </Link>
           </li>
         ))}

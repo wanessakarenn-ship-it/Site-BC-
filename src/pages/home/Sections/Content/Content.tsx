@@ -93,15 +93,9 @@ const Content = () => {
               <Link
                 href={`/conteudo/bc-cast/${featured.slug}`}
                 data-cta-name={`home_conteudo_destaque_${featured.slug}`}
-                className="group mt-4 inline-flex min-h-[44px] items-center gap-2 t-action-label text-bc-primary transition-colors duration-200 ease-bc hover:text-bc-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted motion-reduce:transition-none"
+                className="bc-arrow-action mt-4 t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted motion-reduce:transition-none"
               >
                 Ver episódio
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-                >
-                  →
-                </span>
               </Link>
               </article>
             </Reveal>
@@ -160,15 +154,9 @@ const Content = () => {
                   <Link
                     href="/conteudo/blog"
                     data-cta-name="home_conteudo_blog"
-                    className="group inline-flex items-center gap-2 t-action-label text-bc-primary transition-colors duration-200 ease-bc hover:text-bc-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted motion-reduce:transition-none"
+                    className="bc-arrow-action t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted motion-reduce:transition-none"
                   >
                     Ver todos
-                    <span
-                      aria-hidden="true"
-                      className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-                    >
-                      →
-                    </span>
                   </Link>
                 </div>
 
@@ -192,15 +180,9 @@ const Content = () => {
               <Link
                 href="/conteudo"
                 data-cta-name="home_conteudo_explorar"
-                className="group inline-flex items-center gap-2 t-action-label text-bc-primary transition-colors duration-200 ease-bc hover:text-bc-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted motion-reduce:transition-none"
+                className="bc-arrow-action t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface-muted motion-reduce:transition-none"
               >
                 Explorar conteúdos
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-                >
-                  →
-                </span>
               </Link>
             </div>
           </Reveal>

@@ -32,15 +32,27 @@
  padding-block:0 var(--be-editorial-space);
 }
 .bc-reference-home .be-content .be-section-heading { align-items:end; margin-bottom:24px; }
-.bc-reference-home .be-content-layout { display:block; }
-.bc-reference-home .be-content-feature {
+.bc-reference-home .be-content-layout {
  display:grid;
- grid-template-columns:minmax(0,65fr) minmax(0,35fr);
+ grid-template-columns:minmax(0,65fr) minmax(280px,35fr);
  gap:var(--be-editorial-gap);
  align-items:start;
 }
-.bc-reference-home .be-content-feature .be-video { border-radius:8px; }
-.bc-reference-home .be-episode-copy { display:grid; gap:12px; align-content:start; }
+.bc-reference-home .be-content-feature {
+ display:contents;
+}
+.bc-reference-home .be-content-feature .be-video {
+ grid-column:1;
+ grid-row:1 / span 2;
+ border-radius:8px;
+}
+.bc-reference-home .be-episode-copy {
+ display:grid;
+ grid-column:2;
+ grid-row:1;
+ gap:12px;
+ align-content:start;
+}
 .bc-reference-home .be-episode-copy .be-content-label { margin:0; }
 .bc-reference-home .be-episode-copy h3 {
  font:700 var(--be-type-feature)/1.2 Onest,sans-serif;
@@ -51,20 +63,22 @@
  display:flex;
  flex-direction:column;
  gap:0;
- margin-top:28px;
+ grid-column:2;
+ grid-row:2;
+ min-width:0;
+ margin:0;
 }
 .bc-reference-home .be-reading-list article {
  display:grid;
- grid-template-columns:88px minmax(0,1.35fr) minmax(0,1fr);
- gap:12px 24px;
+ grid-template-columns:minmax(0,1fr);
+ gap:8px;
  align-items:start;
  padding-block:16px;
  border-top:1px solid color-mix(in srgb,var(--ui-navy) 16%,transparent);
 }
-.bc-reference-home .be-reading-list .be-content-label { margin:0; font:600 .75rem/1.5 Onest,sans-serif; letter-spacing:.06em; text-transform:uppercase; color:var(--be-green-text); }
+.bc-reference-home .be-reading-list .be-content-label { margin:0; font:600 .8125rem/1.5 Onest,sans-serif; letter-spacing:.06em; text-transform:uppercase; color:var(--be-green-text); }
 .bc-reference-home .be-reading-list h3 { font:600 1.125rem/1.4 Onest,sans-serif; }
-.bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { margin:0; font-size:.875rem; line-height:1.6; }
-.bc-reference-home .be-reading-list article>h3:last-child { grid-column:2/-1; }
+.bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { margin:0; font-size:1rem; line-height:1.55; }
 .bc-reference-home .be-faq .be-faq-layout {
  display:grid;
  grid-template-columns:minmax(0,2fr) minmax(0,3fr);
@@ -90,10 +104,17 @@
 .bc-reference-home .be-faq .be-faq-intro>.be-link { gap:6px; }
 @media(max-width:1023px) {
  .bc-reference-home .be-operation-layout { grid-template-columns:minmax(0,1fr); gap:24px; }
+ .bc-reference-home .be-content-layout { display:block; }
+ .bc-reference-home .be-content-feature { display:grid; }
+ .bc-reference-home .be-content-feature .be-video,
+ .bc-reference-home .be-episode-copy,
+ .bc-reference-home .be-reading-list { grid-column:auto; grid-row:auto; }
+ .bc-reference-home .be-reading-list { margin-top:24px; }
  .bc-reference-home .be-content-feature { grid-template-columns:minmax(0,3fr) minmax(0,2fr); gap:24px; }
- .bc-reference-home .be-reading-list article { grid-template-columns:80px minmax(0,1.35fr) minmax(0,1fr); }
- .bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { grid-column:3; }
  .bc-reference-home .be-faq .be-faq-layout { grid-template-columns:minmax(0,2fr) minmax(0,3fr); gap:24px; }
+}
+@media(max-width:899px) {
+ .bc-reference-home .be-content-feature { grid-template-columns:minmax(0,1fr); }
 }
 @media(max-width:767px) {
  .bc-reference-home .be-operation-layout,
@@ -104,8 +125,6 @@
  .bc-reference-home .be-episode-copy { gap:12px; }
  .bc-reference-home .be-reading-list { margin-top:24px; }
  .bc-reference-home .be-reading-list article { grid-template-columns:1fr; gap:8px; padding-block:16px; }
- .bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { grid-column:auto; }
- .bc-reference-home .be-reading-list article>h3:last-child { grid-column:auto; }
  .bc-reference-home .be-operation-metric .be-field-number { font-size:var(--be-type-metric); }
 }
 @media(prefers-reduced-motion:reduce) {
@@ -142,7 +161,7 @@
  gap:16px 24px; margin:20px 0 0;
 }
 .bc-reference-home .be-plant-specs>div { display:grid; gap:6px; align-content:start; }
-.bc-reference-home .be-plant-specs dt { font:600 .8125rem/1.5 Onest,sans-serif; color:var(--ui-turquoise); }
+.bc-reference-home .be-plant-specs dt { font:600 .875rem/1.5 Onest,sans-serif; color:var(--ui-turquoise); }
 .bc-reference-home .be-plant-specs dd { margin:0; font:500 1rem/1.5 Onest,sans-serif; color:var(--ui-white); }
 .bc-reference-home .be-plant-specs .be-plant-count dd,
 .bc-reference-home .be-plant-specs .be-plant-power dd,
@@ -151,7 +170,7 @@
 .bc-reference-home .be-plant-arrows { display:flex; flex:none; gap:8px; }
 .bc-reference-home .be-plant-status {
   display:inline-flex; align-items:center; min-width:0;
-  font:400 .875rem/1.5 Onest,sans-serif;
+  font:400 1rem/1.5 Onest,sans-serif;
   color:rgb(255 255 255 / 0.7);
 }
 .bc-reference-home .be-plant-controls button {

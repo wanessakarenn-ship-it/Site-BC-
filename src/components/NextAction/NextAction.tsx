@@ -8,7 +8,7 @@ export type NextActionProps = {
   /** Âncora sempre descritiva — nunca "saiba mais". */
   label: string
   href: string
-  /** Nível de intenção: define apenas a cor do link, nunca um botão. */
+  /** Mantido por compatibilidade com os call sites; a ação usa o estilo secundário. */
   intent?: 'baixa' | 'media' | 'alta'
   /** Identificador do clique no data layer. */
   tracking: string
@@ -17,24 +17,16 @@ export type NextActionProps = {
   className?: string
 }
 
-const INTENT_CLASS: Record<NonNullable<NextActionProps['intent']>, string> = {
-  baixa: 'text-bc-primary hover:text-bc-dark',
-  media: 'text-bc-primary hover:text-bc-dark',
-  alta: 'text-bc-dark hover:text-bc-primary'
-}
-
 /**
  * Próxima ação natural ao fim de uma seção.
  *
- * Nunca é botão: é link textual com seta discreta (hover: cor + translateX de
- * 3px em 200ms). O botão continua reservado ao CTA principal da página, para
- * a leitura não virar uma sequência de blocos de conversão.
+ * Link secundário com apresentação de botão em contorno; o CTA principal da
+ * página continua reservado ao componente de conversão.
  */
 const NextAction = ({
   prompt,
   label,
   href,
-  intent = 'baixa',
   tracking,
   standalone = false,
   className = ''
@@ -46,15 +38,9 @@ const NextAction = ({
         href={href}
         data-cta-name={tracking}
         onClick={() => trackNextAction({ action_name: tracking, destination: href })}
-        className={`group mt-2 inline-flex min-h-[44px] items-center gap-2 t-action-label transition-colors duration-200 ease-bc focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none ${INTENT_CLASS[intent]}`}
+        className="bc-arrow-action mt-2 t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
       >
-        <span className="underline-offset-4 group-hover:underline">{label}</span>
-        <span
-          aria-hidden="true"
-          className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-        >
-          →
-        </span>
+        {label}
       </Link>
     </div>
   )

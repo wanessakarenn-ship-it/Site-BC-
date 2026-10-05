@@ -64,10 +64,9 @@ const RegionalSolutions = ({
               aria-label={lead.item.label}
               data-cta-name={`regional_${trackingSlug}_${lead.hub?.title ?? lead.item.href}`}
               data-cta-location="regional_solutions"
-              className="bc-focus-ring mt-4 inline-flex min-h-[44px] items-center gap-2 t-action-label text-bc-primary underline-offset-4 hover:underline"
+              className={`bc-arrow-action bc-focus-ring mt-4 t-action-label ${tone === 'dark' ? 'bc-arrow-action--dark' : tone === 'brand' ? 'bc-arrow-action--brand' : ''}`}
             >
               Ver a solução
-              <span aria-hidden="true">→</span>
             </Link>
           </div>
 

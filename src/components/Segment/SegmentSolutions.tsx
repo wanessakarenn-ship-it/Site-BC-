@@ -79,10 +79,9 @@ const SegmentSolutions = ({
               data-cta-name={lead.title}
               data-cta-location="segment_solution"
               data-tracking-label={`segmento_${segmentSlug ?? 'geral'}_${lead.title}`}
-              className="mt-5 inline-flex min-h-[44px] items-center gap-2 t-action-label text-bc-primary underline-offset-4 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2"
+              className={`bc-arrow-action mt-5 t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 ${tone === 'dark' ? 'bc-arrow-action--dark' : tone === 'brand' ? 'bc-arrow-action--brand' : ''}`}
             >
               Ver a solução
-              <span aria-hidden="true">→</span>
             </Link>
           </div>
 
@@ -96,10 +95,9 @@ const SegmentSolutions = ({
                       data-cta-name={item.title}
                       data-cta-location="segment_solution"
                       data-tracking-label={`segmento_${segmentSlug ?? 'geral'}_${item.title}`}
-                      className="inline-flex items-center gap-1.5 underline-offset-4 transition-colors hover:text-bc-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2"
+                      className={`bc-arrow-action t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 ${tone === 'dark' ? 'bc-arrow-action--dark' : tone === 'brand' ? 'bc-arrow-action--brand' : ''}`}
                     >
                       {item.title}
-                      <span aria-hidden="true">→</span>
                     </Link>
                   </h3>
                   {item.description ? (

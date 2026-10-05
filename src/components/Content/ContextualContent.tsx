@@ -76,15 +76,9 @@ const ContextualContent = ({
           <Link
             href={featured.href}
             data-cta-name={`${trackingId}_conteudo_cta_${featured.slug}`}
-            className="group mt-5 inline-flex items-center gap-2 t-action-label text-bc-primary transition-colors duration-200 ease-bc hover:text-bc-primary-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus motion-reduce:transition-none"
+            className="bc-arrow-action mt-5 t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus motion-reduce:transition-none"
           >
             {featured.type === 'blog' ? 'Ler o artigo completo' : 'Assistir ao episódio'}
-            <span
-              aria-hidden="true"
-              className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-            >
-              →
-            </span>
           </Link>
         </article>
 

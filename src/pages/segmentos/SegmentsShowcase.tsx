@@ -116,15 +116,9 @@ const SegmentsShowcase = () => {
               href={active.href}
               data-cta-location="hub_navigation"
               data-cta-name={`hub_segmentos_destaque_${active.title}`}
-              className="group mt-6 inline-flex min-h-[44px] items-center gap-2 t-body-sm font-semibold uppercase tracking-[0.08em] text-bc-primary underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus motion-reduce:transition-none"
+              className="bc-arrow-action mt-6 t-body-sm font-semibold uppercase tracking-[0.08em] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus motion-reduce:transition-none"
             >
               Conhecer soluções para {active.title}
-              <span
-                aria-hidden="true"
-                className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none"
-              >
-                →
-              </span>
             </Link>
           </div>
         </div>

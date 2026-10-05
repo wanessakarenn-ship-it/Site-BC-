@@ -5,6 +5,8 @@ import { SectionHeader } from '@/components/SectionHeader'
 import { logos } from './Customers.data'
 import { CustomersProps } from './Customers.type'
 
+const largerLogoIds = new Set(['1', '5', '7', '9', '12', '13', '15', '17', '18', '19'])
+
 /** Seleção priorizando marcas destacadas, sem remover nada da fonte de dados. */
 const selectLogos = (limit?: number) => {
   if (!limit) return logos
@@ -34,7 +36,7 @@ const Customers = ({
 
       <ul className="mt-6 grid grid-cols-3 items-center gap-x-5 gap-y-5 sm:grid-cols-4 sm:gap-x-6 lg:grid-cols-6 lg:gap-x-8 lg:gap-y-6 xl:grid-cols-7">
         {selectLogos(limit).map((logo) => (
-          <li key={logo.id} className="flex min-h-[56px] items-center justify-center lg:min-h-[64px]">
+          <li key={logo.id} data-optical-size={largerLogoIds.has(logo.id) ? 'raised' : undefined} className="flex min-h-[56px] items-center justify-center lg:min-h-[64px]">
             <Image
               src={`/img/components/customers/${logo.url}`}
               alt={logo.name ?? logo.title}

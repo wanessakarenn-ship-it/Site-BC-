@@ -74,15 +74,9 @@ const Sustainability = () => (
             <Link
             href="/sobre/nossas-usinas"
             data-cta-name="home_sustentabilidade_usinas"
-            className="group mt-auto inline-flex min-h-[44px] items-center gap-2 border-t border-border-subtle pt-5 t-action-label text-bc-primary underline-offset-[6px] transition-colors duration-200 ease-bc hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
+            className="bc-arrow-action mt-auto w-fit t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
           >
             Conhecer nossas usinas
-            <span
-              aria-hidden="true"
-              className="transition-transform duration-200 ease-bc group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-            >
-              →
-            </span>
           </Link>
           </div>
         </Reveal>

@@ -64,15 +64,9 @@ const QuickAnswers = ({
                       destination: item.deepen!.href
                     })
                   }
-                  className="group mt-3 inline-flex min-h-[44px] items-center gap-2 t-action-label text-bc-primary transition-colors duration-200 ease-bc hover:text-bc-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
+                  className="bc-arrow-action mt-3 t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
                 >
-                  <span className="underline-offset-4 group-hover:underline">{item.deepen.label}</span>
-                  <span
-                    aria-hidden="true"
-                    className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-                  >
-                    →
-                  </span>
+                  {item.deepen.label}
                 </Link>
               ) : null}
             </div>

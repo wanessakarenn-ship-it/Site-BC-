@@ -36,7 +36,7 @@ const HomeFaq = () => (
             As respostas diretas para as principais dúvidas de quem quer reduzir
             o custo de energia com fontes renováveis.
           </p>
-          <Link className="be-link" href="/contato" data-cta-name="home_faq_especialista" data-cta-location="faq">Falar com um especialista<span aria-hidden="true"> →</span></Link>
+          <Link className="be-link bc-arrow-action" href="/contato" data-cta-name="home_faq_especialista" data-cta-location="faq">Falar com um especialista</Link>
         </Reveal>
         <div className="be-faq-columns">
           <div className="be-faq-column">

@@ -186,10 +186,9 @@ const Contato = () => (
             rel="noopener noreferrer"
             aria-label="Falar com o Grupo BC Energia pelo WhatsApp (abre em nova aba)"
             data-cta-name="whatsapp_contato"
-            className="mt-auto inline-flex min-h-[44px] w-fit items-center gap-2 self-start rounded-md border-b-2 border-bc-primary/30 pt-4 t-action-label text-bc-primary transition-colors duration-200 hover:border-bc-primary hover:text-bc-primary-hover focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-2"
+            className="bc-arrow-action mt-auto w-fit self-start t-action-label focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-2"
           >
             {HEADER_CLIENT_LINK.label}
-            <span aria-hidden="true">→</span>
           </Link>
         </div>
 

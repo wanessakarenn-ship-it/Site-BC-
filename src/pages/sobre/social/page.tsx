@@ -160,10 +160,9 @@ const Social = () => (
             target="_blank"
             rel="noopener noreferrer"
             data-cta-name="social_conhecer_bloomy"
-            className="inline-flex min-h-[44px] items-center gap-2 t-action-label text-bc-primary underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2"
+            className="bc-arrow-action t-action-label focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2"
           >
             Conheça os projetos da Bloomy
-            <span aria-hidden="true">→</span>
           </Link>
         </div>
 

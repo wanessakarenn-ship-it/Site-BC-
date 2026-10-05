@@ -84,15 +84,9 @@ const HubCard = ({
         </p>
       ) : null}
 
-      <span className="mt-auto flex items-center justify-between gap-3 pt-8">
-        <span className="t-action-label text-bc-primary">
+      <span className="mt-auto flex pt-8">
+        <span className="bc-arrow-action t-action-label">
           {ctaLabel}
-        </span>
-        <span
-          aria-hidden="true"
-          className="shrink-0 text-bc-primary transition-transform duration-200 ease-out group-hover:translate-x-1 group-focus-visible:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none"
-        >
-          →
         </span>
       </span>
     </Link>

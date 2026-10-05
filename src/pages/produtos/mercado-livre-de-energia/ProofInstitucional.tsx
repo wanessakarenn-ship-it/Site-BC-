@@ -60,15 +60,9 @@ const ProofInstitucional = ({
                 target={link.target}
                 data-cta-name={link.label}
                 data-cta-location="product_proof"
-                className="group mt-8 inline-flex min-h-[44px] items-center gap-2 t-action-label text-bc-cyan underline-offset-[6px] transition-all duration-[180ms] ease-out hover:text-text-inverse hover:underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-bc-dark"
+                className="bc-arrow-action bc-arrow-action--dark mt-8 t-action-label focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-bc-dark"
               >
                 {link.label}
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-[180ms] ease-out group-hover:translate-x-1"
-                >
-                  →
-                </span>
               </Link>
             ) : null}
           </div>

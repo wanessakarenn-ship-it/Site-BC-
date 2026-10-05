@@ -83,7 +83,7 @@ const ContentFeature = ({
   const titleTone = isDark ? 'text-text-inverse' : 'text-text-primary'
   const bodyTone = isDark ? 'text-text-inverse/70' : 'text-text-secondary'
   const hoverTone = isDark ? 'group-hover:text-bc-cyan' : 'group-hover:text-bc-primary'
-  const arrowLink = `group inline-flex min-h-[44px] items-center gap-2 t-action-label transition-colors duration-200 ease-bc focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 ${ring} motion-reduce:transition-none`
+  const arrowLink = `bc-arrow-action ${isDark ? 'bc-arrow-action--dark' : ''} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 ${ring} motion-reduce:transition-none`
 
   const hasSidebar = items.length > 0 || Boolean(listCta) || Boolean(children)
 
@@ -152,12 +152,6 @@ const ContentFeature = ({
               className={`${arrowLink} mt-6 ${ isDark ? 'text-text-inverse hover:text-bc-cyan' : 'text-bc-primary hover:text-bc-dark' }`}
             >
               {feature.ctaLabel ?? 'Ver conteúdo'}
-              <span
-                aria-hidden="true"
-                className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-              >
-                →
-              </span>
             </Link>
           </article>
         ) : null}
@@ -217,12 +211,6 @@ const ContentFeature = ({
                 className={`${arrowLink} mt-6 ${ isDark ? 'text-bc-cyan hover:text-text-inverse' : 'text-bc-primary hover:text-bc-dark' }`}
               >
                 {listCta.label}
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-                >
-                  →
-                </span>
               </Link>
             ) : null}
           </div>

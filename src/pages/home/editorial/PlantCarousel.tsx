@@ -46,7 +46,7 @@ export default function PlantCarousel({ plants }: PlantCarouselProps) {
     <div className="be-plant-carousel" role="region" aria-roledescription="carrossel"
       aria-label="Complexos de geração do Grupo BC Energia" tabIndex={0}
       onKeyDown={navigateWithKeyboard}>
-      <Swiper modules={[A11y]} slidesPerView={1} spaceBetween={24}
+      <Swiper modules={[A11y]} slidesPerView="auto" spaceBetween={24}
         loop={plants.length > 1} speed={reducedMotion ? 0 : 400}
         onSwiper={(swiper) => { swiperRef.current = swiper }}
         onAfterInit={syncSlides} onSlideChange={syncSlides}
