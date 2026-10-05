@@ -17,7 +17,7 @@
 .bc-reference-home .be-solutions--portfolio .be-service-entry--primary { gap:20px; }
 .bc-reference-home .be-solutions--portfolio .be-service-copy { gap:12px; }
 .bc-reference-home .be-solutions--portfolio .be-service-entry--primary h3 {
- font:700 clamp(2rem,3vw,2.75rem)/1.15 'Barlow Condensed',sans-serif;
+ font:700 var(--be-type-feature)/1.15 'Barlow Condensed',sans-serif;
 }
 .bc-reference-home .be-solutions--portfolio .be-portfolio-saving {
  font:700 clamp(2rem,3.5vw,3rem)/1.1 'Barlow Condensed',sans-serif; color:var(--ui-green);
@@ -69,3 +69,4 @@
 @media(max-width:767px) {
  .bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(n) { grid-row:auto; grid-column:auto; width:auto; }
 }
+.bc-reference-home .be-other-sectors a { min-width:44px; }

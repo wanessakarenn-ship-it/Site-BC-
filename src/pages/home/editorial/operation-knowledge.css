@@ -22,7 +22,7 @@
 .bc-reference-home .be-operation-copy>.be-editorial-eyebrow { margin-top:0; }
 .bc-reference-home .be-operation-metric { margin-top:24px; gap:20px; }
 .bc-reference-home .be-operation-metric .be-field-number {
- font:700 clamp(4.5rem,7vw,6rem)/1 'Barlow Condensed',sans-serif;
+ font:700 var(--be-type-metric)/1 'Barlow Condensed',sans-serif;
  color:var(--ui-green);
 }
 .bc-reference-home .be-operation-metric h3 { font-size:1.25rem; }
@@ -42,7 +42,7 @@
 .bc-reference-home .be-episode-copy { display:grid; gap:12px; align-content:start; }
 .bc-reference-home .be-episode-copy .be-content-label { margin:0; }
 .bc-reference-home .be-episode-copy h3 {
- font:700 clamp(1.625rem,2.2vw,2rem)/1.2 'Barlow Condensed',sans-serif;
+ font:700 var(--be-type-feature)/1.2 'Barlow Condensed',sans-serif;
 }
 .bc-reference-home .be-episode-copy .be-episode-guest { font-size:1rem; color:var(--ui-navy); }
 .bc-reference-home .be-episode-copy .be-link { gap:6px; justify-self:start; min-height:44px; margin-top:4px; font-size:1rem; font-weight:600; text-decoration:underline; text-underline-offset:4px; }
@@ -74,7 +74,7 @@
 .bc-reference-home .be-faq .be-faq-intro .t-eyebrow { margin:0; }
 .bc-reference-home .be-faq .be-faq-intro .t-h2-mid {
  font-family:'Barlow Condensed',sans-serif!important;
- font-size:clamp(2rem,3vw,2.75rem)!important;
+ font-size:var(--be-type-section)!important;
  line-height:1.12!important;
 }
 .bc-reference-home .be-faq .be-faq-columns { grid-template-columns:1fr; gap:0; }
@@ -82,6 +82,7 @@
  min-height:48px;
  padding-block:18px;
  font-family:Onest,sans-serif;
+ font-size:var(--be-type-supporting);
 }
 .bc-reference-home .be-faq .be-faq-column button:is(:hover,[aria-expanded=true]) { color:var(--be-green-text); }
 .bc-reference-home .be-faq .be-faq-column button>span[aria-hidden] { font-size:1.5rem; }
@@ -104,7 +105,7 @@
  .bc-reference-home .be-reading-list article { grid-template-columns:1fr; gap:8px; padding-block:16px; }
  .bc-reference-home .be-reading-list article>p:last-child:not(.be-content-label) { grid-column:auto; }
  .bc-reference-home .be-reading-list article>h3:last-child { grid-column:auto; }
- .bc-reference-home .be-operation-metric .be-field-number { font-size:4.5rem; }
+ .bc-reference-home .be-operation-metric .be-field-number { font-size:var(--be-type-metric); }
 }
 @media(prefers-reduced-motion:reduce) {
  .bc-reference-home .be-faq :is(button,[role=region],button>span) { transition:none; }
@@ -122,6 +123,11 @@
 
 /* Generation portfolio: solid section, dominant photo, supported navy label. */
 .bc-reference-home .be-plant-carousel { position:relative; min-width:0; width:100%; padding-bottom:4px; }
+@media(min-width:1200px) {
+ .bc-reference-home .be-operation-layout { --be-photo-overlap:clamp(40px,4vw,64px); }
+ .bc-reference-home .be-operation-layout .be-plant-carousel { width:calc(100% + var(--be-editorial-gap) + var(--be-photo-overlap)); }
+ .bc-reference-home .be-operation-layout .be-operation-copy { padding-left:calc(var(--be-photo-overlap) + 24px); }
+}
 .bc-reference-home .be-plant-carousel .swiper-slide { height:auto; }
 .bc-reference-home .be-plant-carousel .be-plant-photo { position:relative; margin:0; aspect-ratio:4/3; overflow:hidden; }
 .bc-reference-home .be-plant-carousel .be-plant-photo img {
@@ -173,4 +179,20 @@
 }
 @media(prefers-reduced-motion:reduce) {
  .bc-reference-home .be-plant-carousel :is(.swiper-wrapper,button,button>span) { transition-duration:0s; }
+}
+
+/* The section owns the timeline so Swiper's clipped photo is not the scroll source. */
+@supports (animation-timeline:view()) and (view-timeline-name:--bc-editorial-plant-passage) {
+ @media(prefers-reduced-motion:no-preference) {
+  .bc-reference-home .be-field { view-timeline-name:--bc-editorial-plant-passage; view-timeline-axis:block; }
+  .bc-reference-home .be-plant-label {
+   animation:bc-editorial-plant-passage linear both;
+   animation-timeline:--bc-editorial-plant-passage;
+   animation-range:entry 0% exit 100%;
+  }
+ }
+}
+@keyframes bc-editorial-plant-passage {
+ from { transform:translateX(0); }
+ to { transform:translateX(8px); }
 }

@@ -1,7 +1,7 @@
 /* Confiança que conduz à ação. Closing sequence, scoped to Home. */
 .bc-reference-home .be-client-band { padding-block:16px 32px; }
 .bc-reference-home .be-client-band h2 {
- font:700 clamp(2rem,2.8vw,2.5rem)/1.15 'Barlow Condensed',sans-serif;
+ font:700 var(--be-type-section)/1.15 'Barlow Condensed',sans-serif;
  color:var(--ui-navy);
 }
 .bc-reference-home .be-client-band ul {

@@ -44,6 +44,15 @@ const Carousel = ({
 
   if (arrows) modules.push(Navigation)
 
+  // Updating Swiper's autoplay prop does not stop an already running timer.
+  // Keep the live instance in sync with the existing motion preference.
+  useEffect(() => {
+    const autoplayInstance = swiperRef.current?.autoplay
+    if (!autoplayInstance) return
+    if (!autoplayEnabled) autoplayInstance.stop()
+    else if (!autoplayInstance.running) autoplayInstance.start()
+  }, [autoplayEnabled])
+
   /**
    * Acessibilidade: slides fora de tela não devem ser alcançáveis por Tab.
    * `inert` desativa interação/foco sem alterar nada visualmente.
