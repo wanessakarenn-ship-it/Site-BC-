@@ -24,14 +24,14 @@
  display:grid; grid-template-rows:1fr auto; gap:10px; align-content:stretch;
 }
 .bc-reference-home .be-solution-media span {
- position:absolute; left:12px; bottom:12px; display:inline-flex; max-width:calc(100% - 24px);
+ position:absolute; left:0; bottom:0; display:inline-flex; max-width:100%;
  background:var(--ui-navy); color:var(--ui-white); padding:8px 12px; font:600 1rem/1.3 Onest,sans-serif;
 }
 .bc-reference-home .be-solution-mini-copy p {
  margin:0; color:var(--ui-navy); font-size:1rem; line-height:1.5;
 }
 .bc-reference-home .be-solution-link {
- display:inline-flex; align-items:center; gap:6px; color:var(--be-green-text);
+ display:inline-flex; align-items:center; gap:6px; min-height:44px; color:var(--be-green-text);
  font:600 .9375rem/1.5 Onest,sans-serif; text-decoration:underline; text-underline-offset:4px;
 }
 @media(min-width:1024px) {
@@ -46,7 +46,7 @@
 }
 .bc-reference-home .be-solutions--portfolio .be-service-row .be-service-copy { display:grid; gap:8px; }
 .bc-reference-home .be-solutions--portfolio .be-service-row h3 {
- font:700 1.5rem/1.2 'Barlow Condensed',sans-serif; margin:0;
+ font:600 1.5rem/1.3 Onest,sans-serif; margin:0;
 }
 .bc-reference-home .be-solutions--portfolio .be-service-row p {
  margin:0; color:var(--ui-navy); font-size:1rem; line-height:1.5;
@@ -66,9 +66,9 @@
 }
 
 /* Editorial index: shared columns, progressive scale and list separators. */
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(1) h3 { font-size:2.25rem; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(2) h3 { font-size:1.75rem; }
-.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(3) h3 { font-size:1.5rem; }
+.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(1) h3 { font-size:1.5rem; }
+.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(2) h3 { font-size:1.375rem; }
+.bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(3) h3 { font-size:1.25rem; }
 .bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(4) h3 { font:600 1.125rem/1.4 Onest,sans-serif; }
 @media(max-width:767px) {
  .bc-reference-home .be-solutions--portfolio .be-service-complementary .be-service-entry:nth-child(n) { grid-row:auto; grid-column:auto; width:auto; }

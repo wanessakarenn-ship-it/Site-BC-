@@ -11,8 +11,9 @@
 .bc-reference-home .be-operation-layout {
  grid-template-columns:minmax(0,3fr) minmax(0,2fr);
  gap:var(--be-editorial-gap);
- align-items:end;
+ align-items:start;
 }
+.bc-reference-home .be-operation-copy { align-content:start; }
 .bc-reference-home .be-operation-layout figure img {
  aspect-ratio:4/3;
  object-position:center;
@@ -42,7 +43,7 @@
 .bc-reference-home .be-episode-copy { display:grid; gap:12px; align-content:start; }
 .bc-reference-home .be-episode-copy .be-content-label { margin:0; }
 .bc-reference-home .be-episode-copy h3 {
- font:700 var(--be-type-feature)/1.2 'Barlow Condensed',sans-serif;
+ font:700 var(--be-type-feature)/1.2 Onest,sans-serif;
 }
 .bc-reference-home .be-episode-copy .be-episode-guest { font-size:1rem; color:var(--ui-navy); }
 .bc-reference-home .be-episode-copy .be-link { gap:6px; justify-self:start; min-height:44px; margin-top:4px; font-size:1rem; font-weight:600; text-decoration:underline; text-underline-offset:4px; }
@@ -73,7 +74,7 @@
 .bc-reference-home .be-faq .be-faq-intro { gap:16px; max-width:none; }
 .bc-reference-home .be-faq .be-faq-intro .t-eyebrow { margin:0; }
 .bc-reference-home .be-faq .be-faq-intro .t-h2-mid {
- font-family:'Barlow Condensed',sans-serif!important;
+ font-family:Onest,sans-serif!important;
  font-size:var(--be-type-section)!important;
  line-height:1.12!important;
 }
@@ -123,13 +124,8 @@
 
 /* Generation portfolio: solid section, dominant photo, supported navy label. */
 .bc-reference-home .be-plant-carousel { position:relative; min-width:0; width:100%; padding-bottom:4px; }
-@media(min-width:1200px) {
- .bc-reference-home .be-operation-layout { --be-photo-overlap:clamp(40px,4vw,64px); }
- .bc-reference-home .be-operation-layout .be-plant-carousel { width:calc(100% + var(--be-editorial-gap) + var(--be-photo-overlap)); }
- .bc-reference-home .be-operation-layout .be-operation-copy { padding-left:calc(var(--be-photo-overlap) + 24px); }
-}
 .bc-reference-home .be-plant-carousel .swiper-slide { height:auto; }
-.bc-reference-home .be-plant-carousel .be-plant-photo { position:relative; margin:0; aspect-ratio:4/3; overflow:hidden; }
+.bc-reference-home .be-plant-carousel .be-plant-photo { position:relative; margin:0; aspect-ratio:5/3; overflow:hidden; }
 .bc-reference-home .be-plant-carousel .be-plant-photo img {
  display:block; width:100%; height:100%; aspect-ratio:auto; object-fit:cover;
  object-position:center; border-radius:0;
@@ -170,7 +166,6 @@
  .bc-reference-home .be-plant-controls { display:flex; justify-content:flex-start; align-items:center; gap:16px; }
 }
 @media(max-width:767px) {
- .bc-reference-home .be-plant-carousel .be-plant-photo { aspect-ratio:3/2; }
  .bc-reference-home .be-plant-carousel .be-plant-name { font-size:1rem; }
 }
 @media(prefers-reduced-motion:reduce) {
