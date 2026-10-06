@@ -36,7 +36,7 @@ const solutions: Array<{
  * canto direito, sem atravessar a lista.
  */
 const SegmentsSolutions = () => (
-  <section className="relative isolate overflow-hidden bg-surface-muted text-text-primary bc-level-mid">
+  <section className="bc-segment-solutions-approved relative isolate overflow-hidden bg-surface-muted text-text-primary bc-level-mid">
     <BrandGraphic
       variant="radial"
       tone="teal"
@@ -44,7 +44,7 @@ const SegmentsSolutions = () => (
     />
 
     <div className="mx-auto w-full max-w-[1280px] px-6 lg:px-10">
-      <div className="max-w-[34ch]">
+      <div className="max-w-[58rem]">
         <p className="t-eyebrow">Portfólio</p>
         <h2 className="t-h2-mid mt-2 text-text-primary">
           Soluções disponíveis para qualquer segmento

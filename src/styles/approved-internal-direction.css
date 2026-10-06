@@ -1,0 +1,47 @@
+/* Exceções explícitas da revisão aprovada: não muda os índices de outras rotas. */
+.bc-inner-editorial :is(.bc-products-approved,.bc-content-approved,.bc-blog-approved,.bc-management-related,.bc-management-contact) .bc-arrow-action--row {
+ border:0; border-radius:0; background:transparent; box-shadow:none; padding:18px 0; align-items:start; justify-content:flex-start; height:auto; min-height:44px;
+}
+.bc-inner-editorial :is(.bc-products-approved,.bc-content-approved,.bc-blog-approved,.bc-management-related,.bc-management-contact) .bc-arrow-action--row:hover {
+ background:transparent; color:var(--be-green-text); text-decoration:underline; text-underline-offset:4px; transform:none;
+}
+.bc-inner-editorial .bc-products-approved #solucoes article h3 { margin-top:18px; }
+.bc-inner-editorial .bc-products-approved #solucoes li { padding-block:0; }
+.bc-inner-editorial :is(.bc-leasing-approved,.bc-irec-approved) .bc-media-composition--lead:has(img) { grid-template-columns:minmax(0,.45fr) minmax(0,.55fr); align-items:start; gap:28px 36px; }
+.bc-inner-editorial :is(.bc-leasing-approved,.bc-irec-approved) .bc-media-composition--lead>div:first-child { grid-column:auto; order:2; }
+.bc-inner-editorial :is(.bc-leasing-approved,.bc-irec-approved) .bc-media-composition--lead>div:nth-child(2) { grid-column:auto; order:1; margin-top:0; }
+.bc-inner-editorial :is(.bc-leasing-approved,.bc-irec-approved) .bc-media-composition--lead img { height:auto; aspect-ratio:auto; object-fit:contain; }
+.bc-inner-editorial :is(.bc-leasing-approved,.bc-irec-approved) .bc-media-composition--lead>.bc-lead-facts-below { grid-column:1/-1; order:3; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; margin-top:0; padding-top:20px; }
+.bc-inner-editorial .bc-lead-facts-below>div { display:block; border-bottom:0; padding:0; }
+.bc-inner-editorial .bc-lead-facts-below dd { margin-top:8px; }
+.bc-inner-editorial .bc-consortium-benefits .bg-surface-soft { background:transparent; padding:20px 0; border-radius:0; }
+.bc-inner-editorial .bc-consortium-benefits ul { margin-top:24px; gap:28px 36px; }
+.bc-inner-editorial .bc-consortium-benefits>div>div:first-child { max-width:52rem; }
+.bc-inner-editorial .bc-segment-solutions-approved ul { align-items:stretch; }
+.bc-inner-editorial .bc-segment-solutions-approved .bc-card { border:0; border-radius:0; box-shadow:none; padding:20px 0; background:transparent; }
+.bc-inner-editorial .bc-segment-solutions-approved .bc-card>span:last-child { margin-top:auto; align-self:flex-start; }
+.bc-inner-editorial .bc-segment-solutions-approved .bc-card>span:nth-last-child(2) { margin-bottom:20px; }
+.bc-inner-editorial .bc-content-approved ul:has([data-cta-name="conteudo_area_blog"]) { flex-direction:row; flex-wrap:wrap; gap:24px 40px; }
+.bc-inner-editorial .bc-content-approved ul:has([data-cta-name="conteudo_area_blog"]) li { flex:1 1 240px; }
+.bc-inner-editorial .bc-blog-approved article { align-items:start; }
+.bc-inner-editorial .bc-blog-approved article>div:last-child { min-height:0; aspect-ratio:4/3; }
+.bc-inner-editorial .bc-blog-approved article img { height:100%; object-fit:cover; }
+.bc-inner-editorial .bc-blog-approved article h3 { max-width:28ch; }
+.bc-inner-editorial .bc-blog-approved article .bc-ovl { display:none; }
+.bc-inner-editorial .bc-blog-approved article+div { margin-top:32px; }
+.bc-inner-editorial .bc-blog-approved ul.divide-y { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 36px; border-top:0; }
+.bc-inner-editorial .bc-blog-approved ul.divide-y>li { border-top:1px solid var(--ui-gray); border-bottom:0; }
+@media(max-width:1023px) {
+ .bc-inner-editorial :is(.bc-leasing-approved,.bc-irec-approved) .bc-media-composition--lead:has(img) { grid-template-columns:1fr; }
+}
+@media(max-width:767px) {
+ .bc-inner-editorial :is(.bc-leasing-approved,.bc-irec-approved) .bc-media-composition--lead>.bc-lead-facts-below { grid-template-columns:1fr; gap:20px; }
+ .bc-inner-editorial .bc-blog-approved ul.divide-y { grid-template-columns:1fr; }
+}
+
+.bc-inner-editorial .bc-management-approved #contato .bc-management-contact { padding-block:20px 0; }
+.bc-inner-editorial .bc-management-approved #contato .bc-management-contact>div { width:100%; max-width:42rem; padding:0; margin-inline:auto; }
+.bc-inner-editorial .bc-management-approved #contato .bc-management-contact ul { margin-top:8px; }
+.bc-inner-editorial :is(.bc-management-approved,.bc-leasing-approved,.bc-consortium-approved,.bc-irec-approved) .bc-proof-composition .t-metric-md { color:var(--ui-yellow); }
+
+.bc-inner-editorial :is(.bc-products-approved,.bc-content-approved,.bc-blog-approved,.bc-management-related,.bc-management-contact) .bc-arrow-action--row .text-text-secondary { font-weight:400; }

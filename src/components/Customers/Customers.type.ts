@@ -19,9 +19,9 @@ export type CustomersProps = {
   description?: string
   /**
    * Mantido por compatibilidade de chamadas existentes.
-   * A apresentação é sempre em grade estática (sem carrossel/JS).
+   * A grade permanece padrão; o carrossel é uma opção explícita.
    */
-  variant?: 'grid'
+  variant?: 'grid' | 'carousel'
   /** Limita a quantidade de logos exibidos (fonte de dados permanece intacta). */
   limit?: number
   className?: string

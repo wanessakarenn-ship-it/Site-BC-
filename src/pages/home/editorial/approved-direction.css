@@ -1,0 +1,55 @@
+/* Direção aprovada: composição e escala, com assets e conteúdo oficiais. */
+.bc-reference-home .be-movement--editorial { align-items:start; padding-block:32px; }
+.bc-reference-home .be-movement--editorial .be-movement-copy { gap:16px; }
+.bc-reference-home .be-movement--editorial .be-pillar-narrative { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 24px; }
+.bc-reference-home .be-movement--editorial .be-pillar-narrative>div { align-content:start; }
+.bc-reference-home .be-movement--editorial .be-pillar-narrative dt { font-size:1.0625rem; }
+.bc-reference-home .be-movement--editorial .be-pillar-narrative dd { font-size:.9375rem; line-height:1.55; }
+.bc-reference-home .be-solutions--portfolio .be-solution-minigallery { align-items:stretch; gap:24px; }
+.bc-reference-home .be-solutions--portfolio .be-solution-mini { display:flex; flex-direction:column; }
+.bc-reference-home .be-solutions--portfolio .be-solution-mini-copy { display:flex; flex:1; flex-direction:column; gap:10px; }
+.bc-reference-home .be-solutions--portfolio .be-solution-mini-copy p { margin:0; line-height:1.55; }
+.bc-reference-home .be-solutions--portfolio .be-solution-link { margin-top:auto; align-self:flex-start; }
+.bc-reference-home .be-solutions--portfolio .be-service-complementary { background:var(--ui-navy); padding:24px; gap:24px 40px; }
+.bc-reference-home .be-segments .be-other-sectors a { min-height:44px; }
+.bc-reference-home .be-segments .be-sector-mosaic { grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); grid-template-rows:repeat(2,minmax(170px,1fr)); gap:12px; }
+.bc-reference-home .be-segments .be-sector img { object-fit:cover; }
+.bc-reference-home .bc-scale--interactive .bc-results .bc-metric .bc-metric-value { color:var(--ui-yellow); }
+.bc-reference-home .be-field .be-plant-photo img { aspect-ratio:auto; height:auto; object-fit:contain; }
+.bc-reference-home .be-field .be-plant-carousel .be-plant-label { position:static; inset:auto; grid-template-columns:1fr; align-items:start; gap:16px; background:var(--ui-navy); padding:16px 20px; }
+.bc-reference-home .be-plant-carousel .be-plant-specs { grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+.bc-reference-home .be-plant-carousel .be-plant-specs dt { color:var(--ui-white); }
+.bc-reference-home .be-plant-carousel .be-plant-count dd,
+.bc-reference-home .be-plant-carousel .be-plant-power dd,
+.bc-reference-home .be-plant-carousel .be-plant-specs>div:last-child dd { color:var(--ui-yellow); }
+.bc-reference-home .be-about-layout { align-items:center; gap:32px; }
+.bc-reference-home .be-about-photo img { height:auto; object-fit:contain; aspect-ratio:auto; }
+.bc-reference-home .be-content-layout { grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); align-items:start; }
+.bc-reference-home .be-content-feature { display:grid; grid-template-columns:1fr; gap:20px; }
+.bc-reference-home .be-content-feature .be-video,
+.bc-reference-home .be-content-feature iframe { grid-column:auto; grid-row:auto; aspect-ratio:16/9; }
+.bc-reference-home .be-content-feature .be-episode-copy { grid-column:auto; grid-row:auto; padding:0; }
+.bc-reference-home .be-content-layout .be-reading-list { grid-column:auto; grid-row:auto; gap:0; }
+.bc-reference-home .be-reading-list article { padding-block:16px; border-bottom:1px solid var(--ui-gray); }
+.bc-reference-home .be-faq .be-faq-layout { grid-template-columns:minmax(0,.45fr) minmax(0,.55fr); }
+.bc-reference-home .be-faq .be-faq-intro h2 { max-width:26ch; }
+.bc-reference-home .be-conversion-copy h2 { max-width:27ch; }
+@media(min-width:1024px) {
+ .bc-editorial .bc-hero-slide--refined .bc-hero-grid { min-height:560px; padding-block:92px 64px; }
+ .bc-editorial .bc-hero-slide--refined .bc-hero-copy :is(h1,h2) { max-width:21ch; font-size:clamp(2.75rem,3.6vw,3.25rem); }
+ .bc-editorial .bc-hero-slide--refined .bc-hero-copy>p { max-width:43ch; }
+}
+@media(max-width:1279px) {
+ .bc-reference-home .be-plant-carousel .be-plant-specs { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:1023px) {
+ .bc-reference-home .be-content-layout { display:grid; grid-template-columns:1fr; gap:24px; }
+ .bc-reference-home .be-movement--editorial { gap:24px; }
+}
+@media(max-width:767px) {
+ .bc-reference-home .be-faq .be-faq-layout { grid-template-columns:1fr; }
+ .bc-reference-home .be-movement--editorial .be-pillar-narrative { grid-template-columns:1fr; gap:18px; }
+ .bc-reference-home .be-segments .be-sector-mosaic { grid-template-columns:1fr; grid-template-rows:auto; }
+ .bc-reference-home .be-field .be-plant-carousel .be-plant-label { padding:16px; }
+ .bc-reference-home .be-solutions--portfolio .be-service-complementary { padding:20px; }
+}

@@ -16,6 +16,14 @@ type BlogEditorialHubProps = {
   clusters: Array<Cluster>
 }
 
+/** Texto público exclusivo do hub; taxonomia e metadados permanecem intactos. */
+const publicDescriptions: Partial<Record<Cluster['id'], string>> = {
+  'geracao-distribuida': 'Geração compartilhada, consórcio, créditos de energia e adesão sem instalação de placas no imóvel. Entenda as diferenças entre esses modelos de contratação.',
+  'sustentabilidade-irec': 'Origem renovável da energia, certificação I-REC e uso da energia na agenda ambiental da empresa. Saiba o que a certificação comprova e quais são seus limites.',
+  'economia-conta-de-energia': 'Leitura da fatura, componentes do custo e caminhos de redução conforme o perfil de consumo. Uma análise da conta ajuda a identificar as alternativas adequadas.',
+  'usinas-arrendamento': 'Operação das usinas do grupo e arrendamento de áreas/usinas. Conheça a operação e as condições do serviço de arrendamento.'
+}
+
 const formatDate = (value?: string) =>
   value
     ? new Date(value).toLocaleDateString('pt-BR', {
@@ -43,7 +51,7 @@ const BlogEditorialHub = ({
   const meta = formatDate(featured.publishedAt)
 
   return (
-    <section className="bc-blog-composition relative isolate overflow-hidden bg-surface-soft">
+    <section className="bc-blog-composition bc-blog-approved relative isolate overflow-hidden bg-surface-soft">
       {/* Uma unica composicao grafica por secao: o `radial` (sol) no canto
           inferior esquerdo saiu — a secao tambem carrega a foto do destaque. */}
       <BrandGraphic
@@ -141,10 +149,10 @@ const BlogEditorialHub = ({
           {/* Temas editoriais */}
           <div className="mt-14 pt-2 lg:mt-20">
             <h2 className="t-h3 text-text-primary">
-              Temas que organizam o conteúdo
+              Explore por tema
             </h2>
             <p className="mt-2.5 max-w-[560px] t-body-sm text-text-secondary">
-              Cada tema editorial apoia uma solução que já existe no site.
+              Explore os temas e as soluções de energia relacionados a cada assunto.
             </p>
 
             {/* Editorias como links textuais — sem caixas. */}
@@ -161,7 +169,7 @@ const BlogEditorialHub = ({
                         {cluster.cta.label}
                       </span>
                       <span className="mt-1.5 block max-w-[56ch] t-body-sm leading-[1.55] text-text-secondary">
-                        {cluster.description}
+                        {publicDescriptions[cluster.id] ?? cluster.description}
                       </span>
                     </span>
                   </Link>

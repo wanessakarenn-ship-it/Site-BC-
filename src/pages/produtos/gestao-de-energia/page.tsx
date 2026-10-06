@@ -51,7 +51,7 @@ const benefits = [
 ]
 
 const PowerManagement = () => (
-  <div>
+  <div className="bc-management-approved">
     <PageHeader
       align="left"
       flush
@@ -141,8 +141,9 @@ const PowerManagement = () => (
         passou para "Proximos passos" (PRODUCT_RELATED) e o aprofundamento real
         fica no ContextualContent abaixo. */}
     <RelatedLinks
-      title="Próximos passos"
-      items={PRODUCT_RELATED['gestao-de-energia']}
+      title="Soluções e conteúdos relacionados"
+      className="bc-management-related"
+      items={PRODUCT_RELATED['gestao-de-energia'].filter(item => item.href !== '/contato')}
     />
     <ContextualContent
       title="Antes de decidir, aprofunde este tema"
@@ -153,6 +154,8 @@ const PowerManagement = () => (
 
 
     <ProductFormSection
+      eyebrow="Atendimento"
+      support={<RelatedLinks headingLevel="h3" title="Contato" className="bc-management-contact" items={PRODUCT_RELATED['gestao-de-energia'].filter(item => item.href === '/contato')} />}
       title="Fale com um especialista"
       description="Nossa consultoria em gestão de energia analisa o seu perfil de consumo e indica os caminhos de economia."
     >

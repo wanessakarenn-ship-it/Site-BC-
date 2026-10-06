@@ -26,6 +26,8 @@ export type ProductLeadProps = {
   imagePosition?: 'right' | 'left'
   /** Dados objetivos do produto — composição tipográfica, sem card. */
   facts?: Array<ProductLeadFact>
+  /** Apoios abaixo do conjunto, sem alongar a fotografia. */
+  factsPosition?: 'inline' | 'below'
   tone?: ProductSectionTone
   id?: string
 }
@@ -45,6 +47,7 @@ const ProductLead = ({
   image,
   imagePosition = 'right',
   facts,
+  factsPosition = 'inline',
   tone = 'surface',
   id
 }: ProductLeadProps) => (
@@ -64,7 +67,7 @@ const ProductLead = ({
           ))}
         </div>
 
-        {facts?.length ? (
+        {factsPosition === 'inline' && facts?.length ? (
           <dl className="mt-7 border-t border-border-subtle">
             {facts.map((fact) => (
               <div
@@ -94,6 +97,19 @@ const ProductLead = ({
           className={`w-full rounded-[8px] object-cover ${image.imageClassName ?? 'h-auto'}`}
         />
       </div>
+        {factsPosition === 'below' && facts?.length ? (
+          <dl className="bc-lead-facts-below mt-7 border-t border-border-subtle">
+            {facts.map((fact) => (
+              <div
+                key={fact.label}
+                className="grid grid-cols-1 gap-1 border-b border-border-subtle py-4 sm:grid-cols-[10rem_1fr] sm:gap-6"
+              >
+                <dt className="t-eyebrow text-bc-primary">{fact.label}</dt>
+                <dd className="t-body-sm text-text-primary">{fact.value}</dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
     </div>
   </ProductSection>
 )

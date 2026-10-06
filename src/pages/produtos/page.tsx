@@ -40,7 +40,7 @@ const featured =
 const others = PRODUCT_HUB_ITEMS.filter((item) => item !== featured)
 
 const Page = () => (
-  <div>
+  <div className="bc-products-approved">
     <PageHeader
       align="left"
       variant="banner"

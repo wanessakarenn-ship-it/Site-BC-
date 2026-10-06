@@ -27,7 +27,7 @@ import { NextAction } from '@/components/NextAction'
 const GRAPHICS = productGraphics('arrendamento-de-usinas')
 
 const PlantLeasing = () => (
-  <div>
+  <div className="bc-leasing-approved">
     <PageHeader
       align="left"
       flush
@@ -55,6 +55,7 @@ const PlantLeasing = () => (
         sizes: '(max-width: 1024px) 100vw, 58vw',
         alt: 'Usina solar arrendada pelo Grupo BC Energia'
       }}
+      factsPosition="below"
       facts={[
         { label: 'Parcerias', value: 'Mais de 70 parceiros em projetos de usinas arrendadas' },
         { label: 'Gestão comercial', value: 'Prospecção e contratos por conta da BC Energia' }

@@ -45,7 +45,7 @@ const benefits = [
 ]
 
 const IRECRenewableCertification = () => (
-  <div>
+  <div className="bc-irec-approved">
     <PageHeader
       align="left"
       flush
@@ -72,6 +72,7 @@ const IRECRenewableCertification = () => (
         sizes: '(max-width: 1024px) 100vw, 58vw',
         alt: 'Certificação renovável I-REC do Grupo BC Energia'
       }}
+      factsPosition="below"
       facts={[
         { label: 'Equivalência', value: '1 I-REC = 1 MWh renovável' },
         { label: 'Alcance', value: 'Disponível inclusive para o mercado cativo' }

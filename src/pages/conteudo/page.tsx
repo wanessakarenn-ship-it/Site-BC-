@@ -128,7 +128,7 @@ const Page = () => {
     'bc-arrow-action bc-arrow-action--row group flex min-h-[44px] items-center justify-between gap-6 border-b border-border-subtle py-4 text-text-primary transition-colors duration-200 ease-bc hover:text-bc-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none'
 
   return (
-    <div>
+    <div className="bc-content-approved">
       <PageHeader
         align="left"
         title="Conteúdo"

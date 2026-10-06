@@ -96,7 +96,7 @@ const requirements = [
 ]
 
 const SubscriptionEnergy = () => (
-  <div>
+  <div className="bc-consortium-approved">
     <PageHeader
       align="left"
       flush

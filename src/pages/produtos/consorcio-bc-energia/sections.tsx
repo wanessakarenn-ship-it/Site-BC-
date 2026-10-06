@@ -67,6 +67,7 @@ export const BenefitsEditorial = ({
   return (
     <ProductSection
       tone={tone}
+      className="bc-consortium-benefits"
       id={id}
       graphic={{
         variant: 'diagonal',
