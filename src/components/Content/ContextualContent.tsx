@@ -89,7 +89,7 @@ const ContextualContent = ({
                 <Link
                   href={item.href}
                   data-cta-name={`${trackingId}_conteudo_${item.slug}`}
-                  className="group block py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus"
+                  className="bc-arrow-action bc-action-panel group block py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus"
                 >
                   <span className="flex items-start justify-between gap-6">
                     <span className="min-w-0">
@@ -104,12 +104,6 @@ const ContextualContent = ({
                           {item.description}
                         </span>
                       ) : null}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="shrink-0 pt-1 transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none motion-reduce:transition-none"
-                    >
-                      →
                     </span>
                   </span>
                 </Link>

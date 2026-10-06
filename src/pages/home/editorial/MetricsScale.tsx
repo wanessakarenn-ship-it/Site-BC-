@@ -18,7 +18,7 @@ export default function MetricsScale() {
             {metric.description && <dd className="bc-metric-description">{metric.description}</dd>}
           </div>)}
         </dl>
-        <Link className="bc-text-link" href="/sobre/quem-somos" data-cta-name="home_numeros_quem_somos" data-cta-location="metrics">Conheça nossa história</Link>
+        <Link className="bc-text-link bc-arrow-action bc-arrow-action--dark" href="/sobre/quem-somos" data-cta-name="home_numeros_quem_somos" data-cta-location="metrics">Conheça nossa história</Link>
       </div>
     </div>
   </section>

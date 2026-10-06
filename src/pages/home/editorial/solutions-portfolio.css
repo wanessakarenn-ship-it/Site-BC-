@@ -35,7 +35,7 @@
  font:600 .9375rem/1.5 Onest,sans-serif; text-decoration:underline; text-underline-offset:4px;
 }
 @media(min-width:1024px) {
- .bc-reference-home .be-solution-mini--lead .be-solution-media { aspect-ratio:29/15; }
+ .bc-reference-home .be-solution-mini--lead .be-solution-media { aspect-ratio:4/3; }
 }
 .bc-reference-home .be-solutions--portfolio .be-service-complementary {
  display:grid; grid-template-columns:minmax(0,1fr); gap:0; margin-top:32px; max-width:none; align-items:start;

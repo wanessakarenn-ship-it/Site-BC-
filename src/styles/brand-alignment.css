@@ -61,6 +61,7 @@
 }
 .bc-arrow-action {
   display: inline-flex;
+  min-width: 44px;
   min-height: 44px;
   align-items: center;
   justify-content: center;
@@ -76,6 +77,8 @@
   line-height: 1.5;
   text-align: center;
   text-decoration: none;
+  max-width: 100%;
+  white-space: normal;
   transition: background-color .16s ease, border-color .16s ease, color .16s ease;
 }
 .bc-arrow-action:hover {
@@ -117,6 +120,18 @@
 }
 .bc-arrow-action--primary:focus-visible {
   outline-color: var(--ui-navy);
+}
+/* Composite editorial links retain their content and layout as outlined actions. */
+.bc-arrow-action.bc-action-panel {
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-block: 8px;
+  padding: 14px;
+  font-weight: 400;
+  text-align: left;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
 }
 @media (prefers-reduced-motion: reduce) {
   .bc-arrow-action { transition: none; }

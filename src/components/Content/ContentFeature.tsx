@@ -169,7 +169,7 @@ const ContentFeature = ({
                     <Link
                       href={item.href}
                       data-cta-name={item.tracking}
-                      className={`group block py-5 transition-colors duration-200 ease-bc focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 ${ring} motion-reduce:transition-none`}
+                      className={`bc-arrow-action bc-action-panel ${isDark ? 'bc-arrow-action--dark' : ''} group block py-5 transition-colors duration-200 ease-bc focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 ${ring} motion-reduce:transition-none`}
                     >
                       <span className="flex items-start justify-between gap-6">
                         <span className="min-w-0">
@@ -188,12 +188,6 @@ const ContentFeature = ({
                               {item.description}
                             </span>
                           ) : null}
-                        </span>
-                        <span
-                          aria-hidden="true"
-                          className={`shrink-0 pt-1 transition-transform duration-200 ease-out group-hover:translate-x-[3px] ${bodyTone} motion-reduce:transform-none motion-reduce:transition-none`}
-                        >
-                          →
                         </span>
                       </span>
                     </Link>

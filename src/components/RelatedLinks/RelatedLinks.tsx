@@ -95,17 +95,11 @@ const RelatedLinks = ({
                   target={item.target}
                   aria-label={item.shortLabel ? item.label : undefined}
                   data-cta-name={`related_${item.href}`}
-                  className="bc-focus-ring group flex h-full min-h-[118px] flex-col justify-between rounded-[10px] border border-border-subtle bg-surface-card p-[22px] shadow-sm transition-[transform,colors,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:border-bc-primary/25 hover:shadow-md motion-reduce:transform-none motion-reduce:transition-none"
+                  className="bc-arrow-action bc-action-panel bc-focus-ring group flex h-full min-h-[118px] flex-col justify-between rounded-[10px] border border-border-subtle bg-surface-card p-[22px] shadow-sm transition-[transform,colors,box-shadow] duration-200 ease-out hover:-translate-y-0.5 hover:border-bc-primary/25 hover:shadow-md motion-reduce:transform-none motion-reduce:transition-none"
                 >
                   <span className="flex items-start justify-between gap-4">
                     <span className="t-body-sm font-semibold uppercase tracking-[0.01em] text-bc-dark transition-colors duration-200 group-hover:text-bc-primary">
                       {item.shortLabel ?? item.label}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="mt-0.5 shrink-0 text-bc-primary transition-transform duration-200 group-hover:translate-x-[3px] motion-reduce:transform-none"
-                    >
-                      →
                     </span>
                   </span>
                   {item.description ? (
@@ -146,7 +140,7 @@ const RelatedLinks = ({
                   target={item.target}
                   aria-label={item.shortLabel ? item.label : undefined}
                   data-cta-name={`related_${item.href}`}
-                  className="bc-focus-ring group flex min-h-[44px] items-start justify-between gap-6 py-5 text-text-primary transition-colors duration-200 hover:text-bc-primary motion-reduce:transition-none"
+                  className="bc-arrow-action bc-action-panel bc-focus-ring group flex min-h-[44px] items-start justify-between gap-6 py-5 text-text-primary transition-colors duration-200 hover:text-bc-primary motion-reduce:transition-none"
                 >
                   <span>
                     <span className="block t-h4-display">
@@ -157,12 +151,6 @@ const RelatedLinks = ({
                         {item.description}
                       </span>
                     ) : null}
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="mt-0.5 shrink-0 transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none"
-                  >
-                    →
                   </span>
                 </Link>
               </li>
@@ -204,7 +192,7 @@ const RelatedLinks = ({
                 <Link
                   href={item.href}
                   target={item.target}
-                  className="bc-focus-ring group flex min-h-[64px] items-start justify-between gap-6 py-5 text-text-primary transition-colors duration-200 hover:text-bc-primary motion-reduce:transition-none"
+                  className="bc-arrow-action bc-action-panel bc-focus-ring group flex min-h-[64px] items-start justify-between gap-6 py-5 text-text-primary transition-colors duration-200 hover:text-bc-primary motion-reduce:transition-none"
                 >
                   <span className="min-w-0">
                     <span className="block t-h4-display">{item.label}</span>
@@ -214,12 +202,6 @@ const RelatedLinks = ({
                         {item.description}
                       </span>
                     ) : null}
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="mt-1 shrink-0 text-bc-primary transition-transform duration-200 group-hover:translate-x-[3px] motion-reduce:transform-none"
-                  >
-                    →
                   </span>
                 </Link>
               </li>
@@ -257,7 +239,7 @@ const RelatedLinks = ({
             <Link
               href={item.href}
               target={item.target}
-              className="bc-focus-ring group flex min-h-[60px] items-start justify-between gap-6 py-4 text-text-primary transition-colors duration-200 hover:text-bc-primary motion-reduce:transition-none"
+              className="bc-arrow-action bc-action-panel bc-focus-ring group flex min-h-[60px] items-start justify-between gap-6 py-4 text-text-primary transition-colors duration-200 hover:text-bc-primary motion-reduce:transition-none"
             >
               <span className="min-w-0">
                 <span className="block t-h4-display">{item.label}</span>
@@ -266,12 +248,6 @@ const RelatedLinks = ({
                     {item.description}
                   </span>
                 )}
-              </span>
-              <span
-                aria-hidden="true"
-                className="mt-1 shrink-0 text-bc-primary opacity-0 transition-opacity duration-200 group-hover:opacity-100 motion-reduce:transition-none"
-              >
-                →
               </span>
             </Link>
           </li>

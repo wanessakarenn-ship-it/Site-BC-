@@ -607,11 +607,14 @@
 }
 .bc-reference-home .bc-scale--interactive .bc-text-link {
  color:var(--ui-turquoise);
- text-decoration:underline;
+ text-decoration:none;
  text-underline-offset:4px;
 }
 .bc-reference-home .bc-scale--interactive .bc-text-link:hover {
  color:var(--ui-white);
+}
+.bc-reference-home .bc-scale--interactive .bc-text-link:focus-visible {
+ outline-color:var(--ui-yellow);
 }
 @media(max-width:1023px) {
  .bc-reference-home .bc-scale--interactive .bc-scale-grid { grid-template-columns:1fr; }

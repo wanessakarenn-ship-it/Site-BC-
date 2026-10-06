@@ -40,7 +40,7 @@ const EditorialItem = ({
       <Link
         href={href}
         data-cta-name={tracking}
-        className="flex items-start gap-5 py-6 outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2"
+        className={`bc-arrow-action bc-action-panel ${isDark ? 'bc-arrow-action--dark' : ''} flex items-start gap-5 py-6 outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2`}
       >
         {image ? (
           <span className="hidden w-[140px] shrink-0 overflow-hidden rounded-[10px] bg-surface-muted sm:block lg:w-[180px]">
@@ -85,15 +85,6 @@ const EditorialItem = ({
               {excerpt}
             </span>
           ) : null}
-        </span>
-
-        <span
-          aria-hidden="true"
-          className={`shrink-0 pt-1 transition-transform duration-200 ease-out group-hover:translate-x-[3px] ${
-            isDark ? 'text-bc-cyan' : 'text-bc-primary'
-          } motion-reduce:transform-none motion-reduce:transition-none`}
-        >
-          →
         </span>
       </Link>
     </article>
