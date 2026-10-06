@@ -68,17 +68,19 @@ export default function PlantCarousel({ plants, children }: PlantCarouselProps) 
                   <img src={plant.image} width={1000} height={700} loading="lazy" decoding="async"
                     alt={`Vista da usina ${plant.title}, ${plant.location}`} />
                   <figcaption className="be-plant-label">
-                    <span className="be-plant-name">{plant.title}</span>
-                    <span className="be-plant-location">{plant.location}</span>
+                    <div className="be-plant-identity">
+                      <span className="be-plant-name">{plant.title}</span>
+                      <span className="be-plant-location">{plant.location}</span>
+                    </div>
+                    <dl className="be-plant-specs">
+                      {count && <div className="be-plant-count"><dt>{count.label}</dt><dd>{count.value}</dd></div>}
+                      {power && <div className="be-plant-power"><dt>{power.label}</dt><dd>{power.value}</dd></div>}
+                      {structure && <div><dt>{structure.label}</dt><dd>{structure.value}</dd></div>}
+                      {generation && <div><dt>{generation.label}</dt><dd>{generation.value}</dd></div>}
+                    </dl>
                   </figcaption>
                 </figure>
                 {index === current && children}
-                <dl className="be-plant-specs">
-                  {count && <div className="be-plant-count"><dt>{count.label}</dt><dd>{count.value}</dd></div>}
-                  {power && <div className="be-plant-power"><dt>{power.label}</dt><dd>{power.value}</dd></div>}
-                  {structure && <div><dt>{structure.label}</dt><dd>{structure.value}</dd></div>}
-                  {generation && <div><dt>{generation.label}</dt><dd>{generation.value}</dd></div>}
-                </dl>
               </div>
             </SwiperSlide>
           )

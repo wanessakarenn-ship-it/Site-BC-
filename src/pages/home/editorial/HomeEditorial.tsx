@@ -57,12 +57,13 @@ const HomeEditorial = () => {
   <Hero/>
   <section className="be-movement be-movement--editorial be-wrap" aria-labelledby="be-movement-title">
    <figure className="be-movement-photo"><img src="/img/home/illustrative-transmission-wind-sunset.jpg" alt="Torre de transmissão e aerogeradores ao pôr do sol" width={768} height={768} loading="lazy" decoding="async"/><figcaption className="be-movement-caption">Imagem ilustrativa</figcaption></figure>
-   <div className="be-movement-copy"><h2 id="be-movement-title">Energia que transforma consumo em resultado.</h2><p className="be-lead">Integramos tecnologia, pessoas e conhecimento para entregar soluções personalizadas, sustentáveis e alinhadas às necessidades de cada cliente.</p></div>
+   <div className="be-movement-copy"><h2 id="be-movement-title">Energia que transforma consumo em resultado.</h2><p className="be-lead">Integramos tecnologia, pessoas e conhecimento para entregar soluções personalizadas, sustentáveis e alinhadas às necessidades de cada cliente.</p>
    <dl className="be-pillar-narrative">{PILLARS.map(pillar=><div key={pillar.title}><dt>{pillar.title}</dt><dd>{pillar.text}</dd></div>)}</dl>
    <div className="be-movement-offer">
     <p className="be-movement-offer-label">Geração distribuída</p>
     <p className="be-movement-offer-claim">Até 25% de economia</p>
     <Link className="be-movement-adhesion bc-arrow-action bc-arrow-action--primary" href="https://www.appenergia.com.br/Grupo_BC_Energia/" target="_blank" rel="noopener noreferrer" data-cta-name="home_solucoes_adesao">Fazer adesão gratuita</Link>
+   </div>
    </div>
   </section>
   <section className="be-solutions be-solutions--editorial be-solutions--portfolio be-wrap" aria-labelledby="be-solutions-title">
