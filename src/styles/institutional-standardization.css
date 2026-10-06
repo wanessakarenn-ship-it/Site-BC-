@@ -156,7 +156,7 @@
  color:var(--inner-link-color);
  border-color:var(--inner-link-color);
 }
-.bc-inner-editorial .bc-arrow-action--dark:not(.flow-final-cta *) { --inner-link-color:var(--ui-turquoise); }
+.bc-inner-editorial .bc-arrow-action--dark { --inner-link-color:var(--ui-turquoise); }
 .bc-inner-editorial .bc-arrow-action--brand { --inner-link-color:var(--ui-white); }
 .bc-inner-editorial .bc-arrow-action:not(.bc-arrow-action--primary):hover {
  background:color-mix(in srgb,var(--inner-link-color) 8%,transparent);

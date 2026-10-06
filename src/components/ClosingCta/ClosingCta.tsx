@@ -56,10 +56,25 @@ const ClosingCta = ({
                     ? { target: '_blank', rel: 'noopener noreferrer' }
                     : { target: link.target })}
                   data-cta-name={link.label}
-                  className="bc-arrow-action bc-action-panel group flex w-full items-center gap-3 py-3.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:px-6 lg:py-4"
+                  className="group flex w-full items-center gap-3 py-3.5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:px-6 lg:py-4"
                 >
-                  <span className="flex-1 t-body-sm font-semibold text-current transition-colors duration-200 group-hover:text-current">
+                  <span className="flex-1 t-body-sm font-semibold text-text-inverse/95 transition-colors duration-200 group-hover:text-bc-cyan">
                     {link.label}
+                  </span>
+
+                  <span
+                    aria-hidden="true"
+                    className="ml-3 shrink-0 text-text-inverse/50 transition-transform duration-200 group-hover:translate-x-[3px] motion-reduce:transform-none"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path
+                        d="M2.5 8h11m0 0L9.5 4m4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="1.25"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </span>
                 </Link>
               </li>

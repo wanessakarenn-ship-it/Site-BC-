@@ -89,7 +89,7 @@ const ContextualContent = ({
                 <Link
                   href={item.href}
                   data-cta-name={`${trackingId}_conteudo_${item.slug}`}
-                  className="bc-arrow-action bc-action-panel group block py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus"
+                  className="bc-arrow-action bc-arrow-action--row group block py-5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus"
                 >
                   <span className="flex items-start justify-between gap-6">
                     <span className="min-w-0">

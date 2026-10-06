@@ -29,7 +29,7 @@ Etapa de padronização editorial das rotas `/conteudo`, `/conteudo/blog`,
 
 Criados em `src/components/Content/`:
 
-- `ContentSection` — invólucro de seção (reusa `ProductSection`: container 1200px, 3 superfícies)
+- `ContentSection` — invólucro de seção (reusa `ProductSection`: container 1320px, 3 superfícies)
 - `ArticleCard` — card textual de artigo (imagem/tema/data opcionais)
 - `EpisodeCard` — card de vídeo (thumbnail 16:9, badge BC Cast, convidado)
 - `EditorialLayout` — coluna de leitura única (~72ch), fim dos `max-w` ad hoc

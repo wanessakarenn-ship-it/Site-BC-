@@ -94,7 +94,7 @@ consolidada nas fases de SEO.
   (Tailwind padrão + `18`, `22`, `30`).
 - Seções: `bc-section-sm` (40/48), `bc-section-md` (56/64),
   `bc-section-lg` (64/80/96), `bc-section-xl` (80/112/128).
-- Container: `.bc-container` / `<Container>` — `max-width: 1200px`,
+- Container: `.bc-container` / `<Container>` — `max-width: 1320px`,
   padding 24px mobile e 32px a partir de `md`.
 - Grid: 12 colunas no desktop quando necessário, 2 no tablet, 1 no mobile.
   Não converter layouts existentes sem necessidade.

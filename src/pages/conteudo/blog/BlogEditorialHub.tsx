@@ -121,7 +121,7 @@ const BlogEditorialHub = ({
                     <Link
                       href={`/conteudo/blog/${article.slug}`}
                       data-cta-name={`blog_lista_${article.slug}`}
-                      className="group flex items-start justify-between gap-6 py-5 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface-soft"
+                      className="bc-arrow-action bc-arrow-action--row group flex items-start justify-between gap-6 py-5 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-surface-soft"
                     >
                       <span className="min-w-0">
                         <span className="block t-h4-display text-text-primary transition-colors duration-200 group-hover:text-bc-primary">
@@ -130,12 +130,6 @@ const BlogEditorialHub = ({
                         <span className="mt-2 block line-clamp-2 t-body-sm leading-[1.55] text-text-secondary">
                           {article.excerpt}
                         </span>
-                      </span>
-                      <span
-                        aria-hidden="true"
-                        className="shrink-0 pt-1 text-bc-primary transition-transform duration-200 group-hover:translate-x-1 motion-reduce:transform-none"
-                      >
-                        →
                       </span>
                     </Link>
                   </li>
@@ -160,7 +154,7 @@ const BlogEditorialHub = ({
                   <Link
                     href={cluster.cta.href}
                     data-cta-name={`related_${cluster.cta.href}`}
-                    className="group flex min-h-[44px] items-start justify-between gap-6 py-5 transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
+                    className="bc-arrow-action bc-arrow-action--row group flex min-h-[44px] items-start justify-between gap-6 py-5 transition-colors duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
                   >
                     <span className="min-w-0">
                       <span className="t-h4-display text-text-primary transition-colors duration-200 group-hover:text-bc-primary">
@@ -169,12 +163,6 @@ const BlogEditorialHub = ({
                       <span className="mt-1.5 block max-w-[56ch] t-body-sm leading-[1.55] text-text-secondary">
                         {cluster.description}
                       </span>
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="shrink-0 pt-1 text-bc-primary transition-transform duration-200 group-hover:translate-x-[3px] motion-reduce:transform-none"
-                    >
-                      →
                     </span>
                   </Link>
                 </li>

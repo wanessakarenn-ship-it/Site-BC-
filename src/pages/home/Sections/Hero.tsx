@@ -13,7 +13,7 @@ import { Sliders } from '../Sliders'
  */
 const Hero = () => (
   <section id="home_slider" className="relative">
-    <Carousel arrows dots slides={Sliders} loop={false} rewind autoplayDelay={6000} speed={700} />
+    <Carousel arrows dots slides={Sliders} initialSlide={1} loop={false} rewind autoplayDelay={6000} speed={700} />
   </section>
 )
 

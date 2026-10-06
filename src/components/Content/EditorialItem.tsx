@@ -40,7 +40,7 @@ const EditorialItem = ({
       <Link
         href={href}
         data-cta-name={tracking}
-        className={`bc-arrow-action bc-action-panel ${isDark ? 'bc-arrow-action--dark' : ''} flex items-start gap-5 py-6 outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2`}
+        className={`bc-arrow-action bc-arrow-action--row ${isDark ? 'bc-arrow-action--dark' : ''} flex items-start gap-5 py-6 outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2`}
       >
         {image ? (
           <span className="hidden w-[140px] shrink-0 overflow-hidden rounded-[10px] bg-surface-muted sm:block lg:w-[180px]">
@@ -86,6 +86,7 @@ const EditorialItem = ({
             </span>
           ) : null}
         </span>
+
       </Link>
     </article>
   )

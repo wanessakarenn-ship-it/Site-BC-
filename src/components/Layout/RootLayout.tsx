@@ -36,8 +36,8 @@ const RootLayout = () => {
 
 
   const isHome = pathname === '/'
-  const isSimulator = pathname === '/simulador-de-economia'
-  const editorialClass = !isHome && !isSimulator ? 'bc-inner-editorial' : ''
+  const isDesignSystem = pathname === '/design-system'
+  const editorialClass = !isHome && !isDesignSystem ? 'bc-inner-editorial' : ''
   const jsonLd: Array<JsonLd | null> = []
 
   // ETAPA SEO 07: nenhuma página noindex (sistema, conteúdo provisório, 404 ou
@@ -84,14 +84,14 @@ const RootLayout = () => {
 
       <a
         href="#conteudo"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-teal-900"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-bc-dark"
       >
         Ir para o conteúdo principal
       </a>
 
-      <div className="flex min-h-dvh flex-col">
+      <div className="bc-site-shell flex min-h-dvh flex-col">
         <Header />
-        <main id="conteudo" tabIndex={-1} className={`focus:outline-none ${editorialClass}`}>
+        <main id="conteudo" tabIndex={-1} className={`bc-site-page focus:outline-none ${editorialClass}`}>
           {/* A Suspense fica DENTRO do layout: header, footer e <main> não
               desmontam durante o carregamento do chunk da rota, o que preserva
               o foco de teclado e evita piscar a navegação. */}

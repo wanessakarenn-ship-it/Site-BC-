@@ -46,7 +46,7 @@ const SegmentsIndex = () => (
                   target={item.external ? '_blank' : undefined}
                   rel={item.external ? 'noopener noreferrer' : undefined}
                   data-cta-name={`hub_segmentos_${item.title}`}
-                  className="group flex min-h-[64px] items-baseline gap-4 py-4 text-text-primary transition-colors duration-200 ease-bc hover:text-bc-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
+                  className="bc-arrow-action bc-arrow-action--row group flex min-h-[64px] items-baseline gap-4 py-4 text-text-primary transition-colors duration-200 ease-bc hover:text-bc-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 motion-reduce:transition-none"
                 >
                   <span
                     aria-hidden="true"
@@ -55,12 +55,6 @@ const SegmentsIndex = () => (
                     {String(index + 1).padStart(2, '0')}
                   </span>
                   <span className="min-w-0 flex-1 t-h4-display">{item.title}</span>
-                  <span
-                    aria-hidden="true"
-                    className="shrink-0 text-bc-primary opacity-0 transition-opacity duration-200 ease-bc group-hover:opacity-100 motion-reduce:transition-none"
-                  >
-                    →
-                  </span>
                 </Link>
               </li>
             ))}

@@ -43,7 +43,7 @@ const levels: Record<'lead' | 'mid' | 'support', string> = {
 /**
  * Invólucro único das seções das páginas de produto (FRONT-END 11).
  *
- * Garante o mesmo ritmo vertical, o mesmo container (1200px) e apenas três
+ * Garante o mesmo ritmo vertical, o mesmo container (1320px) e apenas três
  * superfícies possíveis — evitando o "catálogo multicolorido" de seções.
  * Também centraliza o posicionamento dos elementos oficiais de apoio.
  */

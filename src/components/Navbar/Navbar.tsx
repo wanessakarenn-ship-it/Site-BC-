@@ -48,7 +48,7 @@ const Navbar = () => {
         <Link
           href="/"
           aria-label="Página inicial do Grupo BC Energia"
-          className={`bc-logo-clearspace flex shrink-0 items-center transition-all duration-normal ease-bc ${ scrolled ? 'h-16' : 'h-16 lg:h-20' }`}
+          className="bc-logo-clearspace flex h-16 shrink-0 items-center transition-all duration-normal ease-bc"
         >
           <img
             src="/logo-bc-energia.svg"

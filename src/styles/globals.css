@@ -153,7 +153,7 @@
   --motion-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Container */
-  --container-max: 1200px;
+  --container-max: 1320px;
   --section-gap: clamp(4.5rem, 8vw, 8rem);
 }
 
@@ -173,6 +173,15 @@ body {
   -webkit-font-smoothing: antialiased;
   /* Superfície institucional lisa: a profundidade vem da composição e da
      alternância claro/escuro entre seções, não de uma lavagem de cor. */
+}
+
+.bc-site-shell,
+.bc-site-page {
+  min-width: 0;
+}
+
+.bc-site-page :where(img, video, iframe) {
+  max-width: 100%;
 }
 
 /* Escala tipográfica: Barlow Condensed é uso estratégico (títulos de maior

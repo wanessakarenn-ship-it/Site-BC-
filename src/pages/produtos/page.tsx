@@ -105,7 +105,7 @@ const Page = () => (
                   href={item.href}
                   target={item.external ? '_blank' : undefined}
                   data-cta-name={`hub_produtos_${item.title}`}
-                  className="group flex min-h-[64px] items-start justify-between gap-6 py-5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-bc-primary/40"
+                  className="bc-arrow-action bc-arrow-action--row group flex min-h-[64px] items-start justify-between gap-6 py-5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-bc-primary/40"
                 >
                   <span>
                     <span className="t-h4 block text-text-primary group-hover:text-bc-primary">
@@ -114,12 +114,6 @@ const Page = () => (
                     <span className="mt-1 block t-body-sm text-text-secondary">
                       {item.description}
                     </span>
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="mt-1 shrink-0 text-bc-primary transition-transform group-hover:translate-x-1"
-                  >
-                    →
                   </span>
                 </Link>
               </li>

@@ -8,7 +8,7 @@ export type ContainerProps = {
   className?: string
   /** Remove o max-width padrão (usos full-bleed controlados). */
   fluid?: boolean
-  /** Largura proporcional ao conteúdo: 1200 / 1120 / 900. */
+  /** Largura proporcional ao conteúdo: 1320 / 1120 / 900. */
   width?: ContainerWidth
   id?: string
 }
@@ -20,7 +20,7 @@ const WIDTHS: Record<ContainerWidth, string> = {
 }
 
 /**
- * Container único do site — três larguras (wide 1200 / editorial 1120 /
+ * Container único do site — três larguras (wide 1320 / editorial 1120 /
  * narrow 900) e padding responsivo. Substitui containers ad-hoc.
  */
 const Container = ({

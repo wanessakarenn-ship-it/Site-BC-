@@ -39,7 +39,6 @@ export const slidersData: Array<WrapperProps> = [
     bgPosition: 'md:object-[62%_center]',
     bgPositionMobile: 'object-[68%_top]',
     eyebrow: 'Grupo BC Energia',
-    primary: true,
     title: <TitleSlider1 />,
     description:
       'Comercialização, gestão e geração distribuída de energia para empresas com contas acima de R$ 10 mil.',
@@ -55,6 +54,7 @@ export const slidersData: Array<WrapperProps> = [
     bgPosition: 'md:object-[54%_top]',
     bgPositionMobile: 'object-[52%_top]',
     eyebrow: 'Consórcio BC Energia',
+    primary: true,
     title: <TitleSlider2 />,
     description:
       'Consumidores com contas a partir de R$ 700 economizam por meio do consórcio, sem investir em placas solares.',

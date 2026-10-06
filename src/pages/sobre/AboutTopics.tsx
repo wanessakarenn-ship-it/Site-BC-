@@ -24,7 +24,7 @@ type AboutTopicsProps = {
 
 /**
  * Card editorial do índice institucional: ícone em container suave,
- * título, descrição e seta à direita. Card inteiro clicável.
+ * título e descrição em cartão de navegação integralmente clicável.
  */
 const TopicItem = ({ item, ctaName }: { item: HubCardItem; ctaName: string }) => (
   <Link
@@ -32,7 +32,7 @@ const TopicItem = ({ item, ctaName }: { item: HubCardItem; ctaName: string }) =>
     {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
     data-cta-name={ctaName}
     className={[
-      'group flex min-h-[92px] items-start gap-4 rounded-[10px] border border-border-subtle bg-surface-card px-5 py-5 shadow-sm',
+      'bc-arrow-action bc-arrow-action--row group flex min-h-[92px] items-start gap-4 rounded-[10px] border border-border-subtle bg-surface-card px-5 py-5 shadow-sm',
       'transition-[transform,colors,box-shadow] duration-200 ease-out',
       'hover:-translate-y-0.5 hover:border-bc-primary/25 hover:shadow-md',
       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2',
@@ -56,12 +56,6 @@ const TopicItem = ({ item, ctaName }: { item: HubCardItem; ctaName: string }) =>
       <span className="flex items-start justify-between gap-3">
         <span className="t-body-sm font-semibold text-text-primary transition-colors duration-200 group-hover:text-bc-primary">
           {item.title}
-        </span>
-        <span
-          aria-hidden="true"
-          className="shrink-0 text-bc-primary transition-transform duration-200 ease-out group-hover:translate-x-1 motion-reduce:transform-none"
-        >
-          →
         </span>
       </span>
       {item.description ? (
