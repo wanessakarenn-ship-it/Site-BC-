@@ -23,7 +23,8 @@ Fonte: `src/styles/globals.css` (`:root`, HSL sem `hsl()`) + `tailwind.config.ts
 | Token | Valor | Uso |
 | --- | --- | --- |
 | `bc-primary` | `#18857D` | Cor principal da marca, ações de apoio, ícones |
-| `bc-primary-hover` / `bc-primary-dark` | `#146E68` | Hover/pressed da primária |
+| `bc-primary-hover` / `bc-primary-dark` | `#242F40` (alias de `bc-dark`) | Tokens usados no hover das variantes `green` / `link` de `Button`; ações editoriais têm regras próprias |
+| `--be-green-text` | `#146E68` | Texto pequeno e ações secundárias sobre superfície clara; não usar sobre amarelo ou navy |
 | `bc-dark` | `#242F40` | Superfícies escuras, texto principal, CTA dark |
 | `bc-yellow` / `bc-accent` | `#F1C035` | CTA principal e anel de foco |
 | `bc-cyan` | `#24D2C8` | Destaque **somente sobre fundo escuro** |
@@ -55,7 +56,8 @@ semânticos**, não as rampas.
 | Par | Situação |
 | --- | --- |
 | `text-primary` sobre branco | AAA |
-| branco sobre `bc-primary` | AA (texto normal) |
+| branco sobre `bc-primary` | 4,4776:1 — abaixo de AA para texto normal; atende o mínimo de 3:1 para texto grande |
+| `--be-green-text` sobre branco | 6,0693:1 — AA para texto normal |
 | branco sobre `bc-dark` | AAA |
 | `bc-dark` sobre `bc-yellow` | AA — o CTA primário usa texto navy, nunca branco |
 | `bc-yellow` / `bc-cyan` sobre `bc-dark` | AA — uso apenas em fundo escuro |
@@ -66,8 +68,16 @@ Regra: `bc-yellow` e `bc-cyan` **nunca** são cor de texto sobre fundo branco.
 
 Famílias mantidas (self-hosted, WOFF2, `font-display: swap`):
 
-- **Barlow Condensed 700** — H1, H2, H3, display, números institucionais.
-- **Onest 400/500/600/700** — body, menu, botões, formulários, labels, cards.
+- **Barlow Condensed 700** — utilitários de display, títulos de hero e
+  números/métricas. Os utilitários genéricos H1–H3 usam essa família, mas
+  não determinam todos os títulos das páginas editoriais.
+- **Onest 400/500/600/700** — leitura, menu, botões, formulários, labels e
+  títulos de seção do corpo editorial (Home e páginas internas).
+
+`bc-reference-banner` preserva os títulos de impacto em Barlow; os
+overrides de `bc-inner-editorial` aplicam Onest aos títulos de seção e
+Barlow às métricas. A tabela abaixo descreve os utilitários de base,
+não a regra vencedora de toda a cascata editorial.
 
 Escala (utilitários em `globals.css`):
 
@@ -94,10 +104,33 @@ consolidada nas fases de SEO.
   (Tailwind padrão + `18`, `22`, `30`).
 - Seções: `bc-section-sm` (40/48), `bc-section-md` (56/64),
   `bc-section-lg` (64/80/96), `bc-section-xl` (80/112/128).
-- Container: `.bc-container` / `<Container>` — `max-width: 1320px`,
+- Containers de base: `.bc-container` / `<Container>` wide usa
+  `--container-max: 1320px`; editorial usa 1120px e narrow, 900px;
   padding 24px mobile e 32px a partir de `md`.
+  No corpo `.bc-inner-editorial`, wide e editorial são sobrescritos para
+  `width: min(90%, 1320px)`, sem padding lateral; narrow mantém o limite
+  de 900px com largura de 90%. A Home usa `.be-wrap` de 90% até 1320px.
 - Grid: 12 colunas no desktop quando necessário, 2 no tablet, 1 no mobile.
   Não converter layouts existentes sem necessidade.
+
+### Estado responsivo observado e decisões pendentes
+
+Descrição técnica da branch `copilot/global-brand-visual-system` revisada
+em `d20e730`, mantida nesta rodada; não constitui nova aprovação visual:
+
+- Movimento: foto/narrativa 45/55 desde 1024px; empilhamento abaixo disso.
+  Os pilares renderizam em quatro colunas desde 1280px e duas abaixo,
+  inclusive no mobile. Isso diverge da diretriz anterior de duas colunas
+  quando confortável e uma no mobile; a decisão continua pendente.
+- Usinas: `object-fit: cover`, proporção 2,5 desde 1024px e 2,1 abaixo;
+  faixa de dados sobreposta desde 768px, abaixo da foto em larguras menores.
+  Em 1024px, a faixa do Complexo Araçu ocupa aproximadamente 60% da altura
+  da foto. A avaliação de colocar a faixa abaixo quando ocultar equipamentos
+  relevantes permanece pendente; não houve mudança de recorte nesta rodada.
+- Links de segmentos da Home têm 32px de altura desde 768px e 40px abaixo;
+  a ação geral mede 36px. São exceções atuais à meta de toque de 44px,
+  não uma redução aprovada desse padrão. A melhoria dos alvos permanece
+  separada das correções de contraste e elegibilidade.
 
 ## 5. Raio e sombras
 

@@ -18,7 +18,15 @@
 economiaMes = Math.round(valorConta * descontoEstado)
 ```
 
-Faixa da conta: mínimo R$ 800, máximo R$ 5.000, step R$ 100, default R$ 1.200.
+Faixa da conta: mínimo R$ 700 (condição comercial aprovada), máximo R$ 5.000,
+step R$ 100, default R$ 1.200. A nota de condições usa o mesmo limite.
+Os R$ 800 da tabela e dos exemplos abaixo são valores de referência,
+não um limite de elegibilidade; esses exemplos permanecem inalterados.
+
+O parâmetro `?conta=` é arredondado para o passo e limitado à faixa do
+seletor: 699 e 700 inicializam R$ 700; 800 inicializa R$ 800. Essa
+normalização da interface não valida uma fatura nem comprova elegibilidade
+comercial de uma conta inferior a R$ 700.
 
 ## Estados e percentuais
 
@@ -81,7 +89,11 @@ Eventos emitidos pelo helper existente (`src/lib/analytics`), sem alteração de
 | `simulator_cta_click` | CTA do simulador | `cta_location: simulator`, `source: simulador`, `destination: lead-form` |
 
 Nenhum evento carrega PII. O valor da conta é enviado apenas como faixa
-(`800-1199`, `1200-1999`, `2000-3499`, `3500-5000`).
+(`800-1199`, `1200-1999`, `2000-3499`, `3500-5000`). Os identificadores de
+tracking existentes foram preservados: `toValueRange` também classifica
+R$ 700 na primeira faixa, cujo nome histórico é `800-1199`. A adequação
+desse nome depende de uma tarefa de tracking separada; não é um limite
+comercial aplicado pelo seletor.
 
 ## Acessibilidade
 

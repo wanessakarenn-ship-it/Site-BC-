@@ -6,7 +6,7 @@
  * Todos os percentuais são apresentados como estimativa ("até X%").
  */
 
-export const VALOR_MINIMO = 800
+export const VALOR_MINIMO = 700
 export const VALOR_MAXIMO = 5000
 export const VALOR_DEFAULT = 1200
 export const VALOR_STEP = 100
@@ -30,7 +30,7 @@ export const TABELA_CONTAS = [800, 1200, 2000, 5000]
 
 /** Nota comercial de transparência (não alterar o significado). */
 export const NOTA_TRANSPARENCIA =
-  'Condições válidas para contas a partir de R$ 800. A economia pode variar conforme análise da fatura, estado, distribuidora, bandeira tarifária, disponibilidade de créditos e condições comerciais.'
+  'Condições válidas para contas a partir de R$ 700. A economia pode variar conforme análise da fatura, estado, distribuidora, bandeira tarifária, disponibilidade de créditos e condições comerciais.'
 
 /** Formatação BRL sem casas decimais (padrão do simulador). */
 export const formatBRL = (value: number): string =>
