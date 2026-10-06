@@ -82,7 +82,7 @@ export const QUICK_ANSWERS: Record<string, QuickAnswerSet> = {
       {
         question: 'Quem pode contratar?',
         answer:
-          'Consumidores residenciais e comerciais de baixa tensão com conta de energia a partir de R$ 250,00, dentro das regiões atendidas pelas usinas do grupo. A confirmação depende da distribuidora e do endereço de consumo.'
+          'Consumidores residenciais e comerciais de baixa tensão com conta de energia a partir de R$ 700,00, dentro das regiões atendidas pelas usinas do grupo. A confirmação depende da distribuidora e do endereço de consumo.'
       },
       {
         question: 'Quanto posso economizar?',

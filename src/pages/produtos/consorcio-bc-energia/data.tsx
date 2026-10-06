@@ -6,7 +6,7 @@ export const content: AboutContent = [
   {
     title: 'Consórcio BC Energia: Economia na conta de luz sem investimento em placa solar\n',
     description:
-      'O Consórcio BC Energia é a solução ideal para consumidores de baixa tensão que buscam reduzir a conta de luz sem a necessidade de investir em placas solares. Com o Consórcio BC Energia, você tem até 25% de economia na conta de energia, utilizando energia limpa gerada pelas mais de 100 usinas do Grupo BC Energia, sem alterar a estrutura física do seu imóvel. \n \n  Aqui, você não paga taxas de adesão, não tem fidelidade e não precisa se preocupar com mudanças na instalação elétrica. Todo o processo é simples e eficiente: a energia gerada pelas usinas é injetada na rede de distribuição e os créditos são convertidos em descontos na sua conta de luz.\n \n  Se você é consumidor residencial ou comercial com conta de energia a partir de R$250,00, pode aderir ao consórcio sem complicações. Reduza seus custos com energia agora e aproveite os benefícios da energia sustentável! \n \n'
+      'O Consórcio BC Energia é a solução ideal para consumidores de baixa tensão que buscam reduzir a conta de luz sem a necessidade de investir em placas solares. Com o Consórcio BC Energia, você tem até 25% de economia na conta de energia, utilizando energia limpa gerada pelas mais de 100 usinas do Grupo BC Energia, sem alterar a estrutura física do seu imóvel. \n \n  Aqui, você não paga taxas de adesão, não tem fidelidade e não precisa se preocupar com mudanças na instalação elétrica. Todo o processo é simples e eficiente: a energia gerada pelas usinas é injetada na rede de distribuição e os créditos são convertidos em descontos na sua conta de luz.\n \n  Se você é consumidor residencial ou comercial com conta de energia a partir de R$700,00, pode aderir ao consórcio sem complicações. Reduza seus custos com energia agora e aproveite os benefícios da energia sustentável! \n \n'
   }
 ]
 
@@ -92,7 +92,7 @@ export const faq: Array<AccordionType> = [
   {
     title: 'Quem pode aderir ao Consórcio BC Energia?',
     content:
-      'Qualquer consumidor de baixa tensão que possua uma conta de energia a partir de R$250,00 e esteja localizado na mesma região da distribuidora onde a usina do Grupo BC Energia está conectada pode aderir ao consórcio. É importante verificar se sua localização atende aos requisitos de região para a adesão.'
+      'Qualquer consumidor de baixa tensão que possua uma conta de energia a partir de R$700,00 e esteja localizado na mesma região da distribuidora onde a usina do Grupo BC Energia está conectada pode aderir ao consórcio. É importante verificar se sua localização atende aos requisitos de região para a adesão.'
   },
   {
     title: 'Como funciona o Consórcio BC Energia?',

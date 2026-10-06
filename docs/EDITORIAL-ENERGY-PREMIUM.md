@@ -53,7 +53,7 @@ Fontes de verdade: Manual de Marca Rev. 01, relatório visual/técnico (46 rotas
 
 | # | Conflito | Onde | Status |
 |---|---|---|---|
-| C1 | Limiar do Consórcio: R$ 250 (site) vs R$ 300 (campanhas) | `consorcio-bc-energia/data.tsx`, `quickAnswers.ts` | Omitido na vitrine até decisão |
+| C1 | Limiar do Consórcio | Conteúdo local do produto, FAQs, portfólio, artigo e hero | **RESOLVIDO** — textos locais atualizados para contas a partir de R$ 700; textos embutidos em assets precisam de revisão |
 | C2 | "até 25% **ao mês**" vs "até 25% **por ano**" no mesmo produto | Consórcio, quickAnswers, artigos, hero | **RESOLVIDO** — padrão aprovado: "Até 25% de economia na conta de energia" / "Até 25% de economia" |
 | C3 | "mais de 100 usinas" (Consórcio) vs "14 complexos de geração" (Home/Usinas) | `consorcio-bc-energia/data.tsx`, `data/powerPlants.ts` | Pode ser usinas ≠ complexos; confirmar |
 | C4 | Estados: site cita GO, TO, MT, MG, PR e DF; materiais de campanha citam SP e não DF | `data/coverage.ts` | Confirmar cobertura atual |

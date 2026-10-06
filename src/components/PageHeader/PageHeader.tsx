@@ -79,12 +79,9 @@ const PageHeader = ({
                 target={secondaryCta.target}
                 aria-label={secondaryCta.ariaLabel}
                 data-cta-name={secondaryCta.label}
-                className="group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-md t-action-label text-white underline-offset-[6px] transition-colors duration-fast hover:text-bc-cyan hover:underline focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-bc-dark sm:justify-start motion-reduce:transition-none"
+                className="bc-arrow-action bc-arrow-action--dark"
               >
                 {secondaryCta.label}
-                <span aria-hidden="true" className="transition-transform duration-fast group-hover:translate-x-[3px] motion-reduce:transform-none">
-                  →
-                </span>
               </Link>
             )}
           </div>
@@ -107,9 +104,9 @@ const PageHeader = ({
           }
           className={`bc-reference-banner relative bg-cover bg-no-repeat ${bgImage ? 'hero-bg' : 'bg-surface-dark'} ${
             isBanner
-              ? `flex min-h-[520px] flex-col justify-center ${
+              ? `flex flex-col justify-center ${
                   bgPosition ?? 'bg-[position:center_center] lg:bg-[position:center_right]'
-                } lg:min-h-[600px]`
+                }`
               : 'bg-center'
           }`}
         >
@@ -139,13 +136,13 @@ const PageHeader = ({
                 ? 'pb-14 pt-24 sm:pt-28 lg:pb-20 lg:pt-32'
                 : isBanner
                   ? 'pb-20 pt-28 sm:pt-32 lg:pb-28 lg:pt-44'
-                    : 'min-h-[560px] pb-20 pt-28 sm:pt-32 lg:min-h-[680px] lg:pb-28 lg:pt-44'
+                    : 'pb-20 pt-28 sm:pt-32 lg:pb-28 lg:pt-44'
             }`}
           >
             {isSplit ? (
-              <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-14">
+              <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-14">
                 <div className="bc-banner-copy relative z-10 lg:col-span-5">{content}</div>
-                <div className="relative lg:col-span-7 lg:-my-10">
+                <div className="relative lg:col-span-7">
                   <img
                     src={media!.src}
                     srcSet={media!.srcSet}
@@ -155,9 +152,8 @@ const PageHeader = ({
                     height={media!.height ?? 800}
                     loading="eager"
                     decoding="async"
-                    className="h-[360px] w-full rounded-xl object-cover shadow-md sm:h-[460px] lg:h-[560px]"
+                    className="h-auto w-full rounded-xl object-contain"
                   />
-                  <span aria-hidden="true" className="absolute -bottom-5 -left-5 hidden h-24 w-24 rounded-full border border-bc-yellow/70 lg:block" />
                 </div>
               </div>
             ) : (

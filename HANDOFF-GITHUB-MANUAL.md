@@ -118,7 +118,7 @@ artigo, hero slide 2).
 
 | # | Conflito | Tratamento atual |
 |---|---|---|
-| C1 | Limiar do Consórcio: R$ 250 (site) × R$ 300 (campanhas) | Site mantém R$ 250 onde já existia; vitrine omite |
+| C1 | Limiar do Consórcio | **Resolvido no conteúdo textual local:** contas a partir de R$ 700; materiais gráficos/PDF ainda precisam de inspeção |
 | C3 | "mais de 100 usinas" (Consórcio) × "14 complexos de geração" | Mantido; confirmar se usinas ≠ complexos |
 | C4 | Estados: site cita DF e não SP; campanhas citam SP e não DF | Mantido |
 | C5 | Slide 1 do hero (H1) é Mercado Livre; vitrine prioriza Consórcio | Mantido — trocar muda o H1 (SEO) |

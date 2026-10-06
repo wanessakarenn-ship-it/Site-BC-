@@ -33,7 +33,8 @@ INDEX: 33 · NOINDEX: 7 · REDIRECT: 7 · 404: noindex,nofollow, sem canonical, 
 - `/sobre/nossas-usinas`: salto H1→H3; corrigir com conteúdo editorial real.
 - Lacunas de produto: "como funciona" em gestão de energia; público-alvo no I-REC;
   FAQ em arrendamento de usinas.
-- Valor mínimo de conta em baixa tensão: R$ 250,00 × R$ 300,00 (regra de negócio).
+- Valor mínimo do Consórcio BC Energia: contas a partir de R$ 700,00. As opções
+  de valor no formulário são faixas de resposta, não uma validação de elegibilidade.
 - Fonte única de verdade comercial (`src/config/business.ts`) inexistente.
 - Arte `/img/pages/consorcio-intro.webp` com "ATÉ 26%" embutido.
 

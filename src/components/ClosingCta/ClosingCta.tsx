@@ -8,8 +8,8 @@ import { ClosingCtaProps } from './ClosingCta.type'
  *
  * O bloco principal usa o padrão global `FinalCtaSection` (mesma arquitetura,
  * tipografia e hierarquia de ações de todas as CTAs do site). A faixa
- * "Conheça também" permanece como navegação editorial complementar,
- * agora sem ícones decorativos.
+ * "Conheça também" permanece como navegação editorial complementar, com links
+ * de títulos e indicadores direcionais.
  *
  * Textos, rotas, `data-cta-name` e `data-cta-location` preservados.
  */

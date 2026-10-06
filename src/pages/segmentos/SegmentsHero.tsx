@@ -52,15 +52,9 @@ const SegmentsHero = () => (
             <Link
               href="#todos-os-segmentos"
               data-cta-name="Ver todos os segmentos"
-              className="group inline-flex min-h-[44px] items-center gap-2 whitespace-nowrap t-action-label text-text-inverse underline-offset-4 transition-colors duration-200 hover:text-bc-cyan hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus motion-reduce:transition-none"
+              className="bc-arrow-action bc-arrow-action--dark whitespace-normal"
             >
               Ver todos os segmentos
-              <span
-                aria-hidden="true"
-                className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none"
-              >
-                →
-              </span>
             </Link>
           </div>
         </div>

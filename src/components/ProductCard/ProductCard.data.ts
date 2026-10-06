@@ -18,7 +18,7 @@ export const productCardData: Array<ProductCardProps> = [
     iconSize: [106, 104],
     title: 'Consórcio BC Energia',
     description:
-      'Para contas a partir de R$ 300,00. Solução sem investimento para consumidores conectados em baixa tensão terem acesso a energia solar sem a necessidade de construir usina.',
+      'Para contas a partir de R$ 700,00. Solução sem investimento para consumidores conectados em baixa tensão terem acesso a energia solar sem a necessidade de construir usina.',
     url: '/produtos/consorcio-bc-energia'
   },
   {

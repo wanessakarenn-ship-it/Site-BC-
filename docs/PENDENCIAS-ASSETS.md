@@ -1,16 +1,21 @@
 
-## PENDÊNCIA DE ASSET — IMAGEM DE PRODUTO SEM TEXTO
+## Verificação local de assets do Consórcio
 - Data: 2026-08-14 · Seção: /produtos → Mercado Livre de Energia e Consórcio BC Energia
-- `mercado-livre-de-energia-intro.webp` e `consorcio-intro.webp` possuem texto comercial embutido
-  ("ECONOMIZE NA CONTA DE ENERGIA...", CTA e condições).
+- A versão local de `/img/pages/consorcio-intro.webp` foi aberta e inspecionada:
+  é uma fotografia sem texto comercial legível embutido. A anotação anterior
+  que atribuía condições comerciais a esse arquivo não se confirma nesta cópia.
+- Os PDFs locais de campanha e condições gerais não foram editados; a extração
+  textual não está disponível neste ambiente. Verificar se há limiar de conta
+  impresso antes de reutilizar ou distribuir essas peças.
 - Não existe no projeto versão da MESMA fotografia sem texto (`mercado-livre-de-energia-intro2.jpg`
   é outra fotografia). Nenhum asset novo foi criado.
-- Ação necessária: fornecer a fotografia limpa (WebP), pois a informação comercial deve viver em HTML.
+- Ação necessária: confirmar os materiais PDF e manter informações comerciais
+  variáveis em HTML quando possível.
 
 ## Atualização — seção Consórcio BC Energia (/produtos)
 
-- A arte `/img/pages/consorcio-intro.webp` possui texto embutido "ECONOMIZE ATÉ 26%…"
-  e **foi retirada da seção** (não editada, não recortada, não escondida por CSS).
+- A anotação anterior de texto embutido em `/img/pages/consorcio-intro.webp` não
+  corresponde à fotografia verificada na cópia local. O arquivo não foi alterado.
 - Substituída pela fotografia institucional já existente no projeto
   `/img/pages/consorcio-de-energia-intro.jpg`, sem texto embutido, convertida para
   `/img/pages/consorcio-solucao.webp` (+ variante 600w).
@@ -26,6 +31,6 @@ Divergência de percentual entre páginas (fora do escopo desta alteração):
 - `src/pages/produtos/gestao-de-energia/page.tsx` — "26%"
 Não foram alteradas por estarem fora da seção solicitada; aguardando autorização.
 
-Condições comerciais sem fonte central no projeto (mantidas conforme conteúdo vigente):
-conta mínima R$ 250,00, baixa tensão (Grupo B), lista de estados atendidos,
+Condições comerciais sem fonte central no projeto: conta mínima do Consórcio
+R$ 700,00, baixa tensão (Grupo B), lista de estados atendidos,
 ausência de pagamento inicial/taxa administrativa.

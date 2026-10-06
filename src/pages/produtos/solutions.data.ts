@@ -78,7 +78,7 @@ export const consorcioSolution: SolutionShowcaseProps = {
   facts: [
     {
       label: 'Quem pode contratar?',
-      value: 'Consumidores conectados em baixa tensão (Grupo B), com conta a partir de R$ 250,00'
+      value: 'Consumidores conectados em baixa tensão (Grupo B), com conta a partir de R$ 700,00'
     },
     {
       label: 'Onde atendemos?',

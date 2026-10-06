@@ -1,7 +1,7 @@
 # Continuidade no Lovable — padronização editorial
 
-Base: `3bcc94ac7080c622edf1856a0c81ad2b8cad2393`, branch `main`.
-Esta rodada padroniza as páginas internas pela Home aprovada. Não realiza publicação.
+Registro de base da implementação anterior: `3bcc94ac7080c622edf1856a0c81ad2b8cad2393`, branch `main`. Esse registro não confirma o checkout atual.
+Esta cópia local não contém `.git`; branch, HEAD e remote não são verificáveis. Esta documentação não afirma correspondência com outro commit. Não realiza publicação.
 
 ## O que foi ajustado
 
@@ -27,7 +27,7 @@ Onest permanece principal; Barlow Condensed é seletiva nos displays e métricas
 - `src/pages/sobre/quem-somos/page.tsx`: proporção nativa da foto oficial da equipe.
 - `src/pages/simulador-de-economia/page.tsx`: escopo exclusivo para os ajustes acessíveis.
 
-Os estilos internos são delimitados por `.bc-inner-editorial`; o simulador tem escopo próprio `.bc-simulator-page`. Header, footer e Home ficam fora da padronização interna. Nenhum arquivo da Home foi alterado. Não substituir `HomeEditorial.tsx` por componentes legados nem copiar o CSS da Home indiscriminadamente.
+Os estilos internos são delimitados por `.bc-inner-editorial`; o simulador tem escopo próprio `.bc-simulator-page`. O `Navbar` e o `Footer` permanecem componentes compartilhados, fora do escopo editorial interno, e seus CTAs/alvos de navegação existentes foram mantidos. Refinamentos posteriores desta cópia local alcançam a composição responsiva da Home, o `PageHeader` compartilhado e CTAs secundários de banner/fechamento, sem substituir `HomeEditorial.tsx` por componentes legados nem copiar o CSS da Home indiscriminadamente. Indicadores direcionais permanecem em títulos-links editoriais, navegação e controles funcionais; CTAs secundários usam o estilo de ação compartilhado.
 
 ## Validação desta rodada
 
@@ -54,3 +54,13 @@ O build de produção também foi navegado em 47 rotas × duas larguras, com ass
 7. Validar integrações e conteúdo remoto no ambiente autorizado antes da futura publicação. Não inserir segredos no código ou no ZIP. Configurar somente pelo mecanismo seguro já usado pelo projeto.
 
 Textos, números, produtos, imagens oficiais, URLs, SEO, UTMs, tracking, formulários, simulador e integrações permanecem preservados. Refinamentos finais que exijam alteração desses conteúdos dependem de aprovação da cliente. A publicação e a configuração da hospedagem ficam para a etapa posterior no Lovable.
+
+## Validação da cópia local atual
+
+- Cópia local sem versão Git confirmada; não foi associada ao commit de referência nem ao registro histórico acima.
+- Prévia Vite iniciada diretamente, sem `predev`; a URL local respondeu HTTP 200.
+- 46 rotas ativas ou ligadas no conteúdo × 360, 390, 768, 1024 e 1440px: 230 inspeções, sem overflow horizontal ou ausência de H1.
+- Home: os quatro trechos refinados foram capturados e inspecionados em desktop e mobile. Movimento distribui os pilares em uma, duas ou quatro colunas conforme a largura; Equipe empilha no mobile e alinha imagem/título no desktop; Usinas preserva a sequência e a associação dos dados; BC Cast mantém mídia 16:9 e relacionados abaixo da primeira linha.
+- Menu mobile, FAQ, carrossel inicial, carrossel de usinas por controle e teclado, alvos de 44px e `prefers-reduced-motion` foram exercitados sem submeter formulários.
+- `npm.cmd run typecheck`: aprovado. `npm.cmd run lint`: sem erros; 23 avisos.
+- Não foram executados build, prerender, envio de formulários, publicação ou alterações de SEO. Nenhum aviso de hidratação React foi identificado. Em `/sobre/quem-somos`, `/segmentos/agronegocio` e `/conteudo/bc-cast`, a Edge Function `salesforce-numbers` respondeu HTTP 500; integração não alterada. Também apareceram avisos de preload não utilizado, GTM bloqueado e requisições automáticas de analytics/iframe abortadas durante a navegação entre rotas. A thumbnail do BC Cast carregou nesta inspeção.

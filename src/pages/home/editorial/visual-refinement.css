@@ -95,7 +95,7 @@
  padding-inline:max(5%,calc((100% - 1320px)/2));
  padding-block:var(--be-editorial-space);
 }
-.bc-reference-home .be-solutions--portfolio { background:color-mix(in srgb,hsl(var(--bc-gray)) 40%,var(--ui-white)); }
+.bc-reference-home .be-solutions--portfolio { background:color-mix(in srgb,hsl(var(--bc-gray)) 40%,var(--ui-white)); padding-bottom:clamp(32px,3vw,40px); }
 .bc-reference-home .be-field { background:var(--ui-white); color:var(--ui-navy); }
 .bc-reference-home .be-field :is(h2,h3,p,figcaption) { color:var(--ui-navy); }
 .bc-reference-home .be-field .be-editorial-eyebrow { color:var(--be-green-text); }
@@ -107,17 +107,16 @@
  gap:12px;
 }
 .bc-reference-home .be-solutions--portfolio .be-solution-description-group {
- display:grid;
- grid-template-rows:minmax(2.25em,auto) minmax(0,1fr);
+ display:flex;
+ flex-direction:column;
  gap:8px;
 }
 .bc-reference-home .be-solutions--portfolio .be-solution-claim {
- grid-row:1;
- color:var(--be-green-text);
+ color:var(--ui-navy);
  font:700 1.125rem/1.35 Onest,sans-serif;
 }
 .bc-reference-home .be-solutions--portfolio .be-solution-description {
- grid-row:2;
+ min-width:0;
 }
 .bc-reference-home .be-solutions--portfolio .be-solution-media span {
  display:block;
@@ -128,13 +127,20 @@
  overflow-wrap:anywhere;
 }
 .bc-reference-home .be-solutions--portfolio .be-service-row {
- grid-template-columns:minmax(0,1fr);
- gap:8px;
- align-items:start;
+ grid-template-columns:minmax(180px,.8fr) minmax(0,1.6fr) auto;
+ gap:12px 24px;
+ align-items:center;
 }
 .bc-reference-home .be-solutions--portfolio .be-service-row .be-service-actions {
  margin:0;
  justify-content:flex-start;
+}
+@media(max-width:1023px) {
+ .bc-reference-home .be-solutions--portfolio .be-service-row {
+  grid-template-columns:minmax(0,1fr);
+  gap:8px;
+  align-items:start;
+ }
 }
 
 .bc-reference-home .be-movement--editorial {
@@ -175,10 +181,11 @@
  font:400 1rem/1.6 Onest,sans-serif;
 }
 .bc-reference-home .be-movement-offer {
- display:grid;
- justify-items:start;
- gap:8px;
- margin-top:4px;
+ display:flex;
+ flex-wrap:wrap;
+ align-items:center;
+ gap:8px 16px;
+ margin:0;
 }
 .bc-reference-home .be-movement--editorial .be-movement-offer-label {
  margin:0;
@@ -292,9 +299,7 @@
 }
 
 .bc-reference-home .be-operation-layout {
- grid-template-columns:minmax(0,3fr) minmax(0,2fr);
- gap:var(--be-editorial-gap);
- align-items:start;
+ display:block;
 }
 .bc-reference-home .be-operation-copy {
  align-content:start;
@@ -307,7 +312,7 @@
  margin-top:4px;
 }
 .bc-reference-home .be-plant-carousel .be-plant-photo {
- aspect-ratio:1524 / 690;
+ aspect-ratio:auto;
 }
 .bc-reference-home .be-plant-carousel .swiper-slide {
  width:100%;
@@ -316,7 +321,7 @@
 .bc-reference-home .be-plant-specs {
  grid-template-columns:repeat(4,minmax(0,1fr));
  gap:12px 16px;
- margin-top:16px;
+ margin:0;
 }
 
 .bc-reference-home .be-field {
@@ -347,7 +352,7 @@
  display:grid;
  align-content:start;
  gap:16px;
- margin-top:clamp(24px,6vw,80px);
+ margin-top:0;
 }
 .bc-reference-home .be-about-copy p {
  max-width:52ch;
@@ -390,9 +395,7 @@
  width:100%;
  aspect-ratio:16 / 9;
 }
-.bc-reference-home .be-reading-list {
- margin-top:24px;
-}
+.bc-reference-home .be-reading-list { margin-top:0; }
 
 .bc-reference-home .be-conversion {
  padding-block:clamp(40px,4vw,56px);
@@ -459,6 +462,10 @@
  }
  .bc-reference-home .be-about-copy {
   margin-top:0;
+ }
+ .bc-reference-home .be-reading-list {
+  grid-template-columns:minmax(0,1fr);
+  margin-top:24px;
  }
  .bc-reference-home .bc-scale--interactive .bc-results-list {
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -642,16 +649,48 @@
 
 /* Final placement overrides: older editorial revisions above still assign
    the movement photo to the second grid column and crop it to 16:9. */
+.bc-reference-home .be-movement--editorial {
+ grid-template-columns:minmax(0,45fr) minmax(0,55fr);
+ gap:24px 40px;
+ align-items:start;
+ padding-block:clamp(24px,4vw,48px) clamp(40px,5vw,64px);
+}
 .bc-reference-home .be-movement--editorial .be-movement-photo,
 .bc-reference-home .be-movement--editorial .be-movement-copy {
  grid-column:auto;
  grid-row:auto;
+}
+.bc-reference-home .be-movement--editorial .be-movement-photo {
+ grid-column:1;
+ grid-row:1;
+ align-self:start;
+ padding:0;
 }
 .bc-reference-home .be-movement--editorial .be-movement-photo img {
  aspect-ratio:4 / 3;
  object-fit:cover;
  object-position:center 30%;
  filter:none;
+}
+.bc-reference-home .be-movement--editorial .be-movement-copy {
+ grid-column:2;
+ grid-row:1;
+ display:grid;
+ gap:16px;
+ align-content:start;
+}
+.bc-reference-home .be-movement--editorial .be-pillar-narrative {
+ grid-column:1/-1;
+ grid-row:2;
+ grid-template-columns:repeat(4,minmax(0,1fr));
+ gap:20px 24px;
+ margin:0;
+}
+.bc-reference-home .be-movement--editorial .be-movement-offer {
+ grid-column:1/-1;
+ grid-row:3;
+ gap:8px 16px;
+ margin:0;
 }
 .bc-reference-home .be-movement--editorial .be-movement-caption {
  margin-top:8px;
@@ -661,7 +700,7 @@
 @media(max-width:1023px) {
  .bc-reference-home .be-movement--editorial {
   grid-template-columns:minmax(0,1fr);
-  gap:24px;
+  gap:16px;
   align-items:start;
  }
  .bc-reference-home .be-movement--editorial .be-movement-photo,
@@ -670,21 +709,38 @@
   grid-row:auto;
  }
  .bc-reference-home .be-movement--editorial .be-movement-photo {
+  grid-column:1;
+  grid-row:1;
   align-self:auto;
  }
  .bc-reference-home .be-movement--editorial .be-pillar-narrative {
-  grid-column:auto;
-  grid-row:auto;
+  grid-column:1;
+  grid-row:4;
+ }
+ .bc-reference-home .be-movement--editorial .be-movement-copy {
+  display:contents;
+ }
+ .bc-reference-home .be-movement--editorial h2 {
+  grid-column:1;
+  grid-row:2;
+ }
+ .bc-reference-home .be-movement--editorial .be-lead {
+  grid-column:1;
+  grid-row:3;
  }
  .bc-reference-home .be-movement--editorial .be-pillar-narrative {
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:20px 24px;
+  gap:16px 24px;
+ }
+ .bc-reference-home .be-movement--editorial .be-movement-offer {
+  grid-column:1;
+  grid-row:5;
  }
 }
 @media(max-width:767px) {
  .bc-reference-home .be-movement--editorial {
   grid-template-columns:minmax(0,1fr);
-  gap:20px;
+  gap:12px;
  }
  .bc-reference-home .be-movement--editorial .be-movement-photo,
  .bc-reference-home .be-movement--editorial .be-movement-copy {
@@ -692,8 +748,7 @@
   grid-row:auto;
  }
  .bc-reference-home .be-movement--editorial .be-movement-copy {
-  display:grid;
-  gap:20px;
+  display:contents;
  }
  .bc-reference-home .be-movement--editorial h2 {
   font-size:clamp(1.75rem,7.5vw,2.125rem);
@@ -704,13 +759,19 @@
   line-height:1.6;
  }
  .bc-reference-home .be-movement--editorial .be-pillar-narrative {
-  gap:18px;
+  grid-template-columns:minmax(0,1fr);
+  gap:16px;
   margin:0;
  }
  .bc-reference-home .be-movement--editorial .be-pillar-narrative dt {
   font-size:1.125rem;
   font-weight:700;
   line-height:1.35;
+ }
+ .bc-reference-home .be-movement--editorial .be-movement-offer {
+  flex-direction:column;
+  align-items:flex-start;
+  gap:8px;
  }
 }
 @media(max-width:599px) {

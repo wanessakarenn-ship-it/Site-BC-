@@ -119,7 +119,7 @@ const energiaSolarPorAssinatura: Article = {
       type: 'list',
       items: [
         'ser consumidor de baixa tensão, o caso da maioria das residências e dos pequenos e médios pontos comerciais;',
-        'ter conta de energia a partir de R$ 250,00;',
+        'ter conta de energia a partir de R$ 700,00;',
         'estar localizado na mesma região da distribuidora em que a usina do Grupo BC Energia está conectada.'
       ]
     },
@@ -251,7 +251,7 @@ const energiaSolarPorAssinatura: Article = {
     {
       question: 'Quem pode contratar?',
       answer:
-        'Consumidores de baixa tensão com conta de energia a partir de R$ 250,00 que estejam na mesma região da distribuidora em que a usina do Grupo BC Energia está conectada.'
+        'Consumidores de baixa tensão com conta de energia a partir de R$ 700,00 que estejam na mesma região da distribuidora em que a usina do Grupo BC Energia está conectada.'
     },
     {
       question: 'Continuo sendo atendido pela minha distribuidora?',

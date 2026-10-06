@@ -109,23 +109,9 @@ const FinalCtaSection = ({
                 rel={secondaryCta.rel}
                 aria-label={secondaryCta.ariaLabel}
                 data-cta-name={secondaryCta.label}
-                className="group mt-4 inline-flex min-h-[44px] items-center gap-2 t-label uppercase tracking-[0.08em] text-text-inverse/90 underline-offset-4 transition-colors duration-200 hover:text-bc-cyan focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                className="bc-arrow-action bc-arrow-action--dark mt-4"
               >
                 {secondaryCta.label}
-                <span
-                  aria-hidden="true"
-                  className="transition-transform duration-200 ease-out group-hover:translate-x-[3px] motion-reduce:transform-none"
-                >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path
-                      d="M2.5 8h11m0 0L9.5 4m4 4-4 4"
-                      stroke="currentColor"
-                      strokeWidth="1.25"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
               </Link>
             ) : null}
           </div>

@@ -57,13 +57,12 @@ const HomeEditorial = () => {
   <Hero/>
   <section className="be-movement be-movement--editorial be-wrap" aria-labelledby="be-movement-title">
    <figure className="be-movement-photo"><img src="/img/home/illustrative-transmission-wind-sunset.jpg" alt="Torre de transmissão e aerogeradores ao pôr do sol" width={768} height={768} loading="lazy" decoding="async"/><figcaption className="be-movement-caption">Imagem ilustrativa</figcaption></figure>
-   <div className="be-movement-copy"><h2 id="be-movement-title">Energia que transforma consumo em resultado.</h2><p className="be-lead">Integramos tecnologia, pessoas e conhecimento para entregar soluções personalizadas, sustentáveis e alinhadas às necessidades de cada cliente.</p>
-    <dl className="be-pillar-narrative">{PILLARS.map(pillar=><div key={pillar.title}><dt>{pillar.title}</dt><dd>{pillar.text}</dd></div>)}</dl>
-    <div className="be-movement-offer">
-     <p className="be-movement-offer-label">Geração distribuída</p>
-     <p className="be-movement-offer-claim">Até 25% de economia</p>
-     <Link className="be-movement-adhesion bc-arrow-action bc-arrow-action--primary" href="https://www.appenergia.com.br/Grupo_BC_Energia/" target="_blank" rel="noopener noreferrer" data-cta-name="home_solucoes_adesao">Fazer adesão gratuita</Link>
-    </div>
+   <div className="be-movement-copy"><h2 id="be-movement-title">Energia que transforma consumo em resultado.</h2><p className="be-lead">Integramos tecnologia, pessoas e conhecimento para entregar soluções personalizadas, sustentáveis e alinhadas às necessidades de cada cliente.</p></div>
+   <dl className="be-pillar-narrative">{PILLARS.map(pillar=><div key={pillar.title}><dt>{pillar.title}</dt><dd>{pillar.text}</dd></div>)}</dl>
+   <div className="be-movement-offer">
+    <p className="be-movement-offer-label">Geração distribuída</p>
+    <p className="be-movement-offer-claim">Até 25% de economia</p>
+    <Link className="be-movement-adhesion bc-arrow-action bc-arrow-action--primary" href="https://www.appenergia.com.br/Grupo_BC_Energia/" target="_blank" rel="noopener noreferrer" data-cta-name="home_solucoes_adesao">Fazer adesão gratuita</Link>
    </div>
   </section>
   <section className="be-solutions be-solutions--editorial be-solutions--portfolio be-wrap" aria-labelledby="be-solutions-title">
@@ -72,7 +71,7 @@ const HomeEditorial = () => {
     <Link className="be-link" href="/produtos" data-cta-name="home_solucoes_todas" data-cta-location="solutions">Ver todas as soluções</Link>
    </header>
    <div className="be-solution-minigallery">{featuredSolutions.map(renderMiniature)}</div>
-   <div className="be-service-complementary">{complementarySolutions.map(item => <article key={item.href} className="be-service-entry be-service-row"><div className="be-service-copy"><h3>{item.title}</h3><p>{item.description}</p></div><div className="be-service-actions"><Link className="be-service-access bc-arrow-action" href={item.href} {...(item.external?{target:'_blank',rel:'noopener noreferrer'}:{})} data-cta-name={`home_solucoes_${item.title}`} data-cta-location="solutions">{item.external?'Acessar portal':contextualLinks[item.href] ?? 'Conhecer solução'}</Link></div></article>)}</div>
+   <div className="be-service-complementary">{complementarySolutions.map(item => <article key={item.href} className="be-service-entry be-service-row"><h3>{item.title}</h3><p>{item.description}</p><div className="be-service-actions"><Link className="be-service-access bc-arrow-action" href={item.href} {...(item.external?{target:'_blank',rel:'noopener noreferrer'}:{})} data-cta-name={`home_solucoes_${item.title}`} data-cta-location="solutions">{item.external?'Acessar portal':contextualLinks[item.href] ?? 'Conhecer solução'}</Link></div></article>)}</div>
   </section>
   <section className="be-segments" aria-labelledby="be-segments-title"><div className="be-wrap"><div className="be-section-heading"><div><h2 id="be-segments-title">A energia de cada negócio.</h2></div><Link className="be-link" href="/segmentos" data-cta-name="home_segmentos_todos">Conheça os segmentos atendidos</Link></div>
    <div className="be-sector-mosaic">{[[agro,'/img/reference-home/agronegocio.webp'],[retail,'/img/reference-home/varejo.webp'],[home,'/img/pages/segmentos/residencial.webp']].map(([item,file],index)=>{const entry=item as typeof agro;return entry?<Link key={entry.href} className={`be-sector be-sector-${index}`} href={entry.href} data-cta-name={`home_segmentos_${entry.title}`}><img src={file as string} alt="" width={1000} height={700} loading="lazy" decoding="async"/><span>{entry.title}</span></Link>:null})}</div>
@@ -80,8 +79,9 @@ const HomeEditorial = () => {
   </div></section>
   <MetricsScale/>
   <section className="be-field be-wrap" aria-labelledby="be-field-title">
-   <div className="be-operation-layout"><PlantCarousel plants={POWER_PLANTS}/>
-   <div className="be-operation-copy"><p className="be-editorial-eyebrow">ESTRUTURA PRÓPRIA</p><h2 id="be-field-title">Energia acontecendo</h2><p>A energia que comercializamos vem de usinas próprias de fonte renovável. Estrutura, operação e certificação I-REC garantem economia com origem limpa e comprovável.</p><div className="be-operation-metric"><p className="be-field-number">{POWER_PLANTS.length}</p><div><h3>Complexos de geração</h3><p>Usinas solares e hidrelétricas próprias no Centro-Oeste e Sudeste.</p></div></div><Link className="be-link bc-arrow-action" href="/sobre/nossas-usinas" data-cta-name="home_sustentabilidade_usinas">Conhecer nossas usinas</Link></div></div>
+   <PlantCarousel plants={POWER_PLANTS}>
+    <div className="be-operation-copy"><p className="be-editorial-eyebrow">ESTRUTURA PRÓPRIA</p><h2 id="be-field-title">Energia acontecendo</h2><p>A energia que comercializamos vem de usinas próprias de fonte renovável. Estrutura, operação e certificação I-REC garantem economia com origem limpa e comprovável.</p><div className="be-operation-metric"><p className="be-field-number">{POWER_PLANTS.length}</p><div><h3>Complexos de geração</h3><p>Usinas solares e hidrelétricas próprias no Centro-Oeste e Sudeste.</p></div></div><Link className="be-link bc-arrow-action" href="/sobre/nossas-usinas" data-cta-name="home_sustentabilidade_usinas">Conhecer nossas usinas</Link></div>
+   </PlantCarousel>
   </section>
   <section className="be-about" aria-labelledby="be-about-title"><div className="be-wrap"><div className="be-about-layout"><div className="be-about-visual"><div className="be-about-photo"><img src="/img/pages/sobre-nos-equipe.webp" width={1600} height={773} loading="lazy" decoding="async" alt="Equipe do Grupo BC Energia reunida em encontro interno"/></div></div><div className="be-about-copy"><h2 id="be-about-title">Energia para gerar valor, eficiência e crescimento.</h2><p>O Grupo BC Energia desenvolve soluções em geração, gestão e comercialização de energia para empresas e consumidores que buscam economia, eficiência e sustentabilidade.</p><Link className="be-button be-button-light" href="/sobre" data-cta-name="home_institucional_sobre">Conheça o Grupo BC Energia</Link><Link className="be-link" href="/sobre/quem-somos" data-cta-name="home_institucional_quem_somos">Quem somos</Link></div></div></div></section>
   <Customers eyebrow="" title="Empresas que confiam na BC Energia" className="be-client-band"/>

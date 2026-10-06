@@ -116,9 +116,10 @@ Pendências que BLOQUEIAM a liberação:
       projeto. O campo `image` ficou vazio e o cabeçalho usa a imagem
       institucional padrão. Não usar placeholder nem banco de imagens
       genérico.
-- [ ] Revisão humana das afirmações comerciais (valor mínimo de R$ 250,00,
-      ausência de fidelidade e de taxa de adesão, faixa de até 26%) —
-      confirmar que seguem vigentes.
+- [x] Valor mínimo do Consórcio atualizado para contas a partir de R$ 700,00
+      nos textos locais desta cópia.
+- [ ] Revisão humana das demais afirmações comerciais (ausência de fidelidade
+      e de taxa de adesão, faixa de até 26%) — confirmar que seguem vigentes.
 
 Nenhuma afirmação regulatória (ANEEL, Lei 14.300, tarifas, tributos) foi
 escrita no artigo. A explicação de créditos e de responsabilidade da

@@ -66,7 +66,7 @@ Grupo A); portfólio de contratos; Numbers; FAQ (4, com FAQPage schema);
 `FormularioMercadoLivre`.
 
 **Consórcio** — Hero com CTA para o app (fluxo já validado); Intro (até 25%,
-sem taxa, sem fidelidade, a partir de R$250,00); 4 benefícios; 4 passos
+sem taxa, sem fidelidade, a partir de R$ 700,00); 4 benefícios; 4 passos
 (geração → injeção → créditos → economia); "Para quem é" (residencial e
 comercial de baixa tensão + requisitos); contexto de Geração Distribuída (5
 cards); Numbers; FAQ (4, com FAQPage schema); `FormEmbed`.
@@ -118,10 +118,11 @@ Validado com Playwright (viewport 1800px de altura):
 
 ## 9. Pendências registradas (não resolvidas nesta etapa)
 
-- **Conflito comercial R$250 × R$300 e 25% × 26%**: os banners
-  `/img/pages/consorcio-intro.webp` e `/img/pages/gestao-de-energia-intro.webp`
-  são artes com texto embutido ("até 26%", "a partir de R$ 300,00"). Requer
-  validação de negócio e nova arte; nenhum texto de código foi alterado.
+- **Assets e conteúdo comercial**: os textos locais do Consórcio foram atualizados
+  para contas a partir de R$ 700,00. A fotografia local
+  `/img/pages/consorcio-intro.webp` foi inspecionada e não apresenta texto
+  comercial legível embutido. Os PDFs de campanha e condições gerais não tiveram
+  extração textual nesta verificação; confirmar se há valor mínimo impresso.
 - **Imagem repetida**: `/img/pages/arendamento-de-usinas-intro.webp` é usada no
   Consórcio (passos) e no Arrendamento. Sem asset melhor disponível hoje.
 - **`FormEmbed` externo**: `simulador.bcenergiacomdesconto.com.br` responde 404

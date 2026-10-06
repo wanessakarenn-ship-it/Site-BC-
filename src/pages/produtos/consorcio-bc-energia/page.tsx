@@ -91,7 +91,7 @@ const audience = [
 
 const requirements = [
   'Consumidor de baixa tensão',
-  'Conta de energia a partir de R$250,00',
+  'Conta de energia a partir de R$700,00',
   'Imóvel na mesma região da distribuidora onde a usina está conectada'
 ]
 
@@ -117,7 +117,7 @@ const SubscriptionEnergy = () => (
       paragraphs={[
         'O Consórcio BC Energia é a solução ideal para consumidores de baixa tensão que buscam reduzir a conta de luz sem a necessidade de investir em placas solares. Com o Consórcio BC Energia, você tem até 25% de economia na conta de energia, utilizando energia limpa gerada pelas mais de 100 usinas do Grupo BC Energia, sem alterar a estrutura física do seu imóvel.',
         'Aqui, você não paga taxas de adesão, não tem fidelidade e não precisa se preocupar com mudanças na instalação elétrica. Todo o processo é simples e eficiente: a energia gerada pelas usinas é injetada na rede de distribuição e os créditos são convertidos em descontos na sua conta de luz.',
-        'Se você é consumidor residencial ou comercial com conta de energia a partir de R$250,00, pode aderir ao consórcio sem complicações. Reduza seus custos com energia agora e aproveite os benefícios da energia sustentável!'
+        'Se você é consumidor residencial ou comercial com conta de energia a partir de R$700,00, pode aderir ao consórcio sem complicações. Reduza seus custos com energia agora e aproveite os benefícios da energia sustentável!'
       ]}
       image={{
         src: '/img/pages/consorcio-lead.webp',
@@ -130,7 +130,7 @@ const SubscriptionEnergy = () => (
         imageClassName: 'bc-fmt-portrait object-center'
       }}
       facts={[
-        { label: 'Quem pode?', value: 'Consumidores de baixa tensão com conta a partir de R$250,00' },
+        { label: 'Quem pode?', value: 'Consumidores de baixa tensão com conta a partir de R$700,00' },
         { label: 'Adesão', value: 'Sem taxa de adesão e sem fidelidade' }
       ]}
     />

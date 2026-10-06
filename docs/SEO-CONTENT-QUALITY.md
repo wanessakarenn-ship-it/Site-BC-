@@ -117,7 +117,7 @@ perfil de consumo) e cobertura multi-cidade no estadual.
 | Dimensão | Valores encontrados no HTML final | Conflito |
 | --- | --- | --- |
 | Percentual de economia | **25%** (único) | nenhum |
-| Valor mínimo de conta | R$ 250,00 / R$ 300,00 (baixa tensão) · R$ 10 mil (alta tensão) | ver nota |
+| Valor mínimo de conta | R$ 700,00 (Consórcio, baixa tensão) · R$ 10 mil (Mercado Livre, alta tensão) | textos locais alinhados |
 | Demanda mínima | 30 kW | nenhum |
 | Estados citados | Goiás, Tocantins, Minas Gerais, Mato Grosso, Paraná | nenhum removido/adicionado |
 | Fidelidade / adesão | "sem fidelidade, sem taxa de adesão" | consistente |
@@ -127,9 +127,10 @@ comercial vigente ("até 25%"), já validada pelo cliente:
 `consorcio-bc-energia/page.tsx`, `consorcio-bc-energia/data.tsx` (3),
 `gestao-de-energia/page.tsx`, `home/Sliders/Sliders.data.tsx`.
 
-**PENDÊNCIA DE CONTEÚDO (não corrigida):** o valor mínimo de conta em baixa tensão
-aparece como R$ 250,00 (artigos/consórcio) e R$ 300,00 (card de produto e select de
-formulário). Depende de regra de negócio — não alterado automaticamente.
+**Correção local:** os textos do Consórcio foram alinhados para contas a partir de
+R$ 700,00. As opções de R$ 300,00 no formulário são faixas para informar o valor
+da fatura e não foram alteradas como regra funcional. Materiais gráficos e PDFs
+não foram editados; qualquer limiar embutido neles deve ser revisado à parte.
 
 **PENDÊNCIA DE ARQUITETURA:** não existe `src/config/business.ts` ou equivalente.
 Percentuais, valores mínimos, demanda e estados continuam hardcoded em múltiplos

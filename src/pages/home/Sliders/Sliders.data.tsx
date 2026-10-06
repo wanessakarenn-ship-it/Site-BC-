@@ -57,7 +57,7 @@ export const slidersData: Array<WrapperProps> = [
     eyebrow: 'Consórcio BC Energia',
     title: <TitleSlider2 />,
     description:
-      'Consumidores com contas a partir de R$ 250 economizam por meio do consórcio, sem investir em placas solares.',
+      'Consumidores com contas a partir de R$ 700 economizam por meio do consórcio, sem investir em placas solares.',
     cta: {
       label: 'Fazer adesão gratuita',
       href: 'http://www.appenergia.com.br/Grupo_BC_Energia',
@@ -83,4 +83,3 @@ export const slidersData: Array<WrapperProps> = [
     alt: 'Resultados do Grupo BC Energia em economia gerada para clientes'
   }
 ]
-

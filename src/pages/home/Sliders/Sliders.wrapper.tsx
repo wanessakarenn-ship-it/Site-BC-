@@ -31,7 +31,7 @@ export default function SlidersWrapper({
         <Link href={cta.href} target={cta.target ?? '_self'} rel={cta.target === '_blank' ? 'noopener noreferrer' : undefined}
           className="be-button" data-cta-name={cta.label} data-cta-location="hero">{cta.label}</Link>
         {secondaryCta && <Link href={secondaryCta.href} target={secondaryCta.target ?? '_self'} rel={secondaryCta.target === '_blank' ? 'noopener noreferrer' : undefined}
-          className="bc-hero-secondary" data-cta-name={secondaryCta.label} data-cta-location="hero">{secondaryCta.label}</Link>}
+          className="bc-hero-secondary bc-arrow-action bc-arrow-action--dark" data-cta-name={secondaryCta.label} data-cta-location="hero">{secondaryCta.label}</Link>}
       </div>
       {trust && <p className="bc-hero-trust">{trust}</p>}
     </div></div>
