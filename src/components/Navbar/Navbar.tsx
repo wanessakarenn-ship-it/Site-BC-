@@ -51,7 +51,7 @@ const Navbar = () => {
           className="bc-logo-clearspace flex h-16 shrink-0 items-center transition-all duration-normal ease-bc"
         >
           <img
-            src="/logo-bc-energia.svg"
+            src="/bc-energia-logo.svg"
             alt="Grupo BC Energia"
             width={211}
             height={37}

@@ -119,7 +119,7 @@ const Footer: FC = () => {
         <div className="bc-footer-brand lg:col-span-4">
           <div className="bc-footer-identity">
           <img
-            src="/logo-bc-energia.svg"
+            src="/bc-energia-logo.svg"
             alt="Grupo BC Energia"
             width={211}
             height={37}
