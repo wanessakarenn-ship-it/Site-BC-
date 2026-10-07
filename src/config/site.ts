@@ -9,7 +9,7 @@
 export const SITE_URL = 'https://grupobcenergia.com.br'
 
 /**
- * Hosts considerados "produção". Qualquer outro host (preview da Lovable,
+ * Hosts considerados "produção". Qualquer outro host (preview,
  * localhost, staging) é tratado como ambiente de desenvolvimento.
  */
 export const PRODUCTION_HOSTS = ['grupobcenergia.com.br', 'www.grupobcenergia.com.br']

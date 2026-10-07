@@ -40,10 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Claude Code
-.claude/
-
-# Lovable sandbox (contém URL com token de acesso Git — nunca versionar)
+# Ambientes locais e workspaces temporários
 .workspace/
 
 # Variáveis de ambiente reais (o modelo .env.example continua versionado)

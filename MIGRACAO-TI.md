@@ -1,7 +1,7 @@
 # Migração Next.js → React + Vite — Pontos de integração para a TI
 
 Este projeto foi **portado de Next.js (App Router)** para **React + Vite + react-router-dom v6**
-(compatível com o editor Lovable). A migração foi **somente de front-end**: design, páginas,
+(SPA). A migração foi **somente de front-end**: design, páginas,
 componentes, estilos e assets. **Nenhum backend, API route ou segredo foi portado.**
 
 Toda a UI está intacta; as fontes de dados que dependiam de backend foram substituídas por

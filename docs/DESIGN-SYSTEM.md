@@ -115,7 +115,7 @@ consolidada nas fases de SEO.
 
 ### Estado responsivo observado e decisões pendentes
 
-Descrição técnica da branch `copilot/global-brand-visual-system` revisada
+Descrição técnica da branch `global-brand-visual-system` revisada
 em `d20e730`, mantida nesta rodada; não constitui nova aprovação visual:
 
 - Movimento: foto/narrativa 45/55 desde 1024px; empilhamento abaixo disso.

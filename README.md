@@ -1,7 +1,7 @@
 # Site Institucional — Grupo BC Energia
 
 Site institucional do Grupo BC Energia, construído com **React + Vite + TypeScript**,
-**Tailwind CSS** e **react-router-dom v6** (SPA compatível com o editor Lovable).
+**Tailwind CSS** e **react-router-dom v6** (SPA).
 
 > Este projeto foi **migrado de Next.js (App Router)** para React + Vite. A migração cobriu
 > apenas o front-end (design, páginas, componentes, estilos e assets). A camada de dados/backend

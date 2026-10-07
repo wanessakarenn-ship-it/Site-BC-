@@ -11,19 +11,19 @@
 
 | Item | Valor |
 |---|---|
-| Base original do export | Lovable `Marketing-BC` @ `7e977c3` |
-| Última base Lovable conhecida | **`9508940`** ("Corrigiu slider desktop e mobile"), reproduzida localmente no commit `b58ac55` |
+| Base original do export | Export inicial @ `7e977c3` |
+| Última base consolidada | **`9508940`** ("Corrigiu slider desktop e mobile"), reproduzida localmente no commit `b58ac55` |
 | Versão consolidada | Árvore local com todos os blocos abaixo (hashes locais — não existem no GitHub até o upload) |
-| Relação com o Lovable | O Lovable **não** contém nada posterior a `9508940`. Se voltar a ser usado, deve partir do GitHub |
+| Relação com upstream | O repositório upstream não contém nada posterior a `9508940`. As evoluções devem partir do GitHub |
 
 Arquivos em relação à base `7e977c3`: 61 alterados, 6 adicionados, 1 removido.
 Desde o ZIP da rev. 2: **27 arquivos alterados**, nenhum adicionado, nenhum removido.
 (As contagens acima contra `7e977c3` e `9508940` são históricas: o histórico local foi
 reinicializado em 29/09 a partir da árvore consolidada, e esses dois commits não existem
 mais localmente. A árvore continua com 822 arquivos versionados.)
-Em relação ao Lovable `9508940`: 50 alterados, 5 adicionados.
+Em relação à base `9508940`: 50 alterados, 4 adicionados.
 
-Adicionados: `CLAUDE.md`, `HANDOFF-GITHUB-MANUAL.md`, `docs/EDITORIAL-ENERGY-PREMIUM.md`,
+Adicionados: `HANDOFF-GITHUB-MANUAL.md`, `docs/EDITORIAL-ENERGY-PREMIUM.md`,
 `src/config/formWidgetTheme.ts`,
 `src/components/Content/ArticleToc.tsx`, `src/data/content/toc.ts`.
 Removido: `src/pages/home/Sections/SolutionHighlight.tsx` (órfão).
@@ -188,13 +188,13 @@ artigo, hero slide 2).
 | .workspace removido | SIM (e `.workspace/` no `.gitignore`) |
 | node_modules removido | SIM (não existe na árvore) |
 | dist removido | SIM (não existe na árvore) |
-| tokens encontrados | SIM — no export original do Lovable (`.workspace/.git/config`, token de acesso Git) |
+| tokens encontrados | SIM — no export original (`.workspace/.git/config`, token de acesso Git) |
 | tokens removidos | SIM — o diretório nunca entrou na árvore consolidada |
 | secrets identificados | NÃO — varredura por JWT, chaves privadas, tokens de GitHub/AWS/Stripe/Google/Slack, chave de serviço do Supabase, cabeçalhos de autorização e URLs com credencial: nenhum resultado |
 | .env reais incluídos | NÃO — só `.env.example` (placeholders e links públicos); `.env` real ignorado no `.gitignore` |
 
 Observação: `src/lib/supabase.ts` contém uma chave **publicável** do Supabase como fallback. É pública por design (vai ao navegador; proteção via RLS) e foi mantida para não quebrar formulários. Recomendado definir `VITE_SUPABASE_ANON_KEY` no ambiente de deploy.
-**Ação recomendada:** o ZIP original do Lovable (`bc-energia-frontend-completo.zip`) contém o token — não compartilhe esse arquivo.
+**Ação recomendada:** o ZIP original exportado (`bc-energia-frontend-completo.zip`) contém o token — não compartilhe esse arquivo.
 
 ---
 
@@ -215,8 +215,8 @@ Também em `src/data/segments/*.json` há spans `text-amber-400` em um campo `ti
 
 ## 11. Como subir manualmente no GitHub
 
-1. **Veja o estado do repositório:** branch padrão, último commit e se ele já contém o projeto (ex.: `AGENTS.md` com bloco LOVABLE). Não sobrescreva nada sem comparar.
-2. **Crie uma branch** pela interface (seletor de branch → `claude/editorial-energy-premium` → "Create branch").
+1. **Veja o estado do repositório:** branch padrão e último commit. Não sobrescreva nada sem comparar.
+2. **Crie uma branch** pela interface (seletor de branch → branch de trabalho → "Create branch").
 3. **Envie o conteúdo do ZIP descompactado** para essa branch:
    - Repositório já com o projeto: prefira o editor web `github.dev` (tecla `.` no repositório) ou um Codespace — arraste a pasta inteira para o explorador, revise as diferenças na aba Source Control e faça o commit. A interface "Upload files" aceita no máximo 100 arquivos por envio.
    - Exclua `src/pages/home/Sections/SolutionHighlight.tsx` se existir no repositório.
@@ -227,6 +227,6 @@ Também em `src/data/segments/*.json` há spans `text-amber-400` em um campo `ti
 
 ## 12. Como continuar
 
-- Leia `CLAUDE.md` (regras de trabalho) e `docs/EDITORIAL-ENERGY-PREMIUM.md` (conceito, decisões por bloco e conflitos).
-- Novas entregas por chat devem partir **do estado do GitHub** (enviar um ZIP atualizado do repositório), não do Lovable nem de ZIPs antigos.
+- Leia `docs/EDITORIAL-ENERGY-PREMIUM.md` (conceito, decisões por bloco e conflitos).
+- Novas entregas devem partir **do estado do GitHub** (repositório oficial).
 - Próximos passos: validar build e visual desta entrega; decidir C1, C3–C8; produzir as fotos listadas na seção 7; remover os assets órfãos da seção 10.

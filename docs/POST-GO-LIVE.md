@@ -84,9 +84,8 @@ Verificado localmente (Blocos 07/08 + reconferência neste bloco):
 
 ## 4. Checklist de cut-over (TI) — pré-requisito para o Bloco 09 continuar
 
-1. Publicar este projeto no Lovable (gera a URL `.lovable.app`).
-2. Conectar `grupobcenergia.com.br` **e** `www.grupobcenergia.com.br` em
-   Project settings → Domains deste projeto.
+1. Publicar este projeto na infraestrutura de hospedagem (gera a URL de preview/staging).
+2. Conectar `grupobcenergia.com.br` **e** `www.grupobcenergia.com.br` nas configurações de domínio deste projeto.
 3. Definir a raiz como **Primary** (faz o `www` redirecionar 301).
 4. Aguardar emissão do SSL para o novo projeto.
 5. Confirmar que `https://grupobcenergia.com.br/robots.txt` retorna 200 e que a Home traz

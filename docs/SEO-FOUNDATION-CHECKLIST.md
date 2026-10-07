@@ -38,7 +38,7 @@ INDEX: 33 · NOINDEX: 7 · REDIRECT: 7 · 404: noindex,nofollow, sem canonical, 
 - Fonte única de verdade comercial (`src/config/business.ts`) inexistente.
 - Arte `/img/pages/consorcio-intro.webp` com "ATÉ 26%" embutido.
 
-## PENDING INFRA (fora do escopo do Lovable — cut-over)
+## PENDING INFRA (fora do escopo do front-end — cut-over)
 
 - HTTP 404 real (status code) para rotas desconhecidas.
 - 301 real de `/produtos/irec` → `/produtos/certificacao-renovavel-irec`.

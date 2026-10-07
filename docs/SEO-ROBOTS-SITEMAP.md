@@ -33,7 +33,7 @@ Sitemap: https://grupobcenergia.com.br/sitemap.xml
 - Não existem rotas públicas `/admin`, `/api`, `/internal`, `/private`,
   `/debug`, `/test` no projeto — nenhuma regra inventada.
 
-### Preview / staging / Lovable (qualquer outro valor)
+### Preview / staging (qualquer outro valor)
 
 ```
 User-agent: *
@@ -46,7 +46,7 @@ Camada **adicional**. A proteção principal continua sendo o meta robots.
 
 | Ambiente | robots.txt | Meta robots |
 | --- | --- | --- |
-| Preview / Lovable / localhost | `Disallow: /` | `noindex,nofollow` (todas as páginas) |
+| Preview / staging / localhost | `Disallow: /` | `noindex,nofollow` (todas as páginas) |
 | Produção — página INDEX | `Allow: /` | `index,follow` |
 | Produção — página NOINDEX | `Allow: /` | `noindex,follow` |
 

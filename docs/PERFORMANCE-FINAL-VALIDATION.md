@@ -10,7 +10,7 @@ de design, copy, imagens ou estrutura comercial.
 | Ambiente | Usado nesta etapa | Confiabilidade |
 |---|---|---|
 | LAB LOCAL (build de produção servido por `vite preview`, Chromium headless, CPU 4x, rede ~4G lenta) | **sim** | comparativa (não é dado de campo) |
-| PREVIEW LOVABLE | apenas verificação funcional (terceiros desativados) | baixa para vitals |
+| PREVIEW DE DESENVOLVIMENTO | apenas verificação funcional (terceiros desativados) | baixa para vitals |
 | PRODUÇÃO SIMULADA | build + prerender local | boa para bytes/requests, não para TTFB |
 | PRODUÇÃO REAL / CrUX | **não disponível** (domínio ainda no site legado) | pendente de go-live |
 

@@ -44,10 +44,10 @@ Fontes de verdade: Manual de Marca Rev. 01, relatório visual/técnico (46 rotas
 
 ### Histórico de decisão
 - v1 (11/09): Mercado Livre como protagonista (1º item do hub e slide 1 do hero).
-  Aplicada no Lovable pelo agente (commit `cc27f0d`), seguida da correção de
-  slider do próprio Lovable (`9508940`: bullets a 32/24px, slides de altura igual).
+  Aplicada inicialmente (commit `cc27f0d`), seguida da correção de
+  slider (`9508940`: bullets a 32/24px, slides de altura igual).
 - v2 (11/09): invertido para Consórcio após orientação de que o protagonista
-  deve seguir prioridade comercial, não a ordem do código. **Não está no Lovable.**
+  deve seguir prioridade comercial, não a ordem do código.
 
 ## Conflitos de conteúdo — decidir antes de publicar
 

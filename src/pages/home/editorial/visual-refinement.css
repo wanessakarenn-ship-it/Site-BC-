@@ -555,8 +555,8 @@
 .bc-reference-home .be-field .be-plant-label { background:var(--ui-navy); color:var(--ui-white); }
 .bc-reference-home .be-field .be-plant-name { color:var(--ui-white); }
 .bc-reference-home .be-field .be-plant-location { color:var(--ui-turquoise); }
-.bc-reference-home .be-field .be-plant-specs dt { color:var(--be-green-text); }
-.bc-reference-home .be-field .be-plant-specs dd { color:var(--ui-navy); }
+.bc-reference-home .be-field .be-plant-specs dt { color:var(--ui-turquoise); }
+.bc-reference-home .be-field .be-plant-specs dd { color:var(--ui-white); }
 .bc-reference-home .be-field .be-plant-arrows button {
  color:var(--ui-navy);
  border-color:var(--ui-navy);

@@ -57,7 +57,7 @@ Nenhuma chain (`A → B → C`), nenhum loop, todos os destinos existem.
 
 ### LIMITAÇÃO DE INFRAESTRUTURA
 
-O hosting utilizado (Lovable) não processa `_redirects`, `netlify.toml`, `vercel.json`
+O hosting estático SPA não processa `_redirects`, `netlify.toml`, `vercel.json`
 nem configuração de edge/rewrites — apenas o fallback SPA. Portanto **não é possível
 emitir HTTP 301 real neste ambiente**. Os redirects permanecem client-side.
 

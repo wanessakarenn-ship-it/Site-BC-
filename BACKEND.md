@@ -1,7 +1,7 @@
 # Backend (Supabase externo)
 
-Este projeto usa o **seu** projeto Supabase (`ufbkblkahyzfsjsoqmzg.supabase.co`),
-**não** o Lovable Cloud. As chamadas de API/formulário passam por **Edge Functions**
+Este projeto usa o projeto Supabase (`ufbkblkahyzfsjsoqmzg.supabase.co`).
+As chamadas de API/formulário passam por **Edge Functions**
 e a config pública do site vem da tabela `app_config`.
 
 ## Edge Functions

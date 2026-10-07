@@ -143,7 +143,7 @@ revisar a CSP **depois** que o container de produção estiver publicado.
 | `robots.txt` (diretiva Sitemap) | grupobcenergia.com.br | Sim |
 | JSON-LD (`@id`, `url`, logo) | grupobcenergia.com.br | Sim |
 
-Nenhuma referência a URL de preview/Lovable nos artefatos de SEO.
+Nenhuma referência a URL de preview nos artefatos de SEO.
 
 ## 9. Proteção de preview
 

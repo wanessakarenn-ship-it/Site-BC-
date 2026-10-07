@@ -62,10 +62,17 @@ const SEGMENT_CLUSTER: Record<string, ClusterId | undefined> = {
  * Todas as fotos já existiam no projeto.
  */
 const SEGMENT_HERO_MEDIA: Record<string, string> = {
+  agronegocio: '/img/pages/segmentos/agronegocio-hero.webp',
   'bares-e-restaurantes': '/img/pages/segmentos/bares-e-restaurantes.webp',
+  condominio: '/img/pages/segmentos/condominio-hero.webp',
   educacional: '/img/pages/segmentos/educacional.webp',
   lazer: '/img/pages/segmentos/lazer-v2.webp',
-  religioso: '/img/pages/segmentos/religioso.webp'
+  religioso: '/img/pages/segmentos/religioso.webp',
+  residencial: '/img/pages/segmentos/residencial-hero.webp',
+  saude: '/img/pages/segmentos/saude-hero.webp',
+  servico: '/img/pages/segmentos/servico-hero.webp',
+  turismo: '/img/pages/segmentos/turismo-hero.webp',
+  varejo: '/img/pages/segmentos/varejo-hero.webp'
 }
 
 const INSTITUTIONAL_CLAIM =

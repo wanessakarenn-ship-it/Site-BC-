@@ -49,7 +49,7 @@ Controle: `/produtos` continua com metadata própria, canonical self e Breadcrum
 
 | Ambiente | Rota inexistente |
 | --- | --- |
-| Preview Lovable / dev (Vite) | **HTTP 200** com fallback SPA |
+| Preview / dev (Vite) | **HTTP 200** com fallback SPA |
 | Produção simulada (`VITE_SEO_ENV=production` + build) | **HTTP 200** (mesmo fallback) |
 | Servidor estático (`vite preview`) | **HTTP 200** |
 

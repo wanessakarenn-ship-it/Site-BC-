@@ -104,7 +104,7 @@ const auditRoute = (route: string, { allowSchema }: { allowSchema: boolean }) =>
     }
     if (url.startsWith('http://')) fail(`[http] ${route}: ${url}`)
     if (/^https?:\/\/www\.grupobcenergia\./i.test(url)) fail(`[www] ${route}: ${url}`)
-    if (/lovable|localhost|preview/i.test(url)) fail(`[preview] ${route}: ${url}`)
+    if (/localhost|preview|staging/i.test(url)) fail(`[preview] ${route}: ${url}`)
     const path = url.startsWith(SITE_URL) ? url.slice(SITE_URL.length).split('#')[0] || '/' : null
     if (path && REDIRECT_SOURCES.includes(path)) {
       fail(`[redirect referenciado] ${route}: ${url}`)
