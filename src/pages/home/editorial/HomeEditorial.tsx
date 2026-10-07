@@ -10,14 +10,7 @@ import HomeFaq from '../Sections/HomeFaq'
 import { PILLARS } from '../Sections/positioning.data'
 import Hero from '../Sections/Hero'
 import { Customers } from '@/components/Customers'
-import './bc-editorial.css'
-import './reference-home.css'
-import './energy-in-motion.css'
-import './solutions-portfolio.css'
-import './operation-knowledge.css'
-import './trust-to-action.css'
-import './visual-refinement.css'
-import './approved-direction.css'
+import './home-design.css'
 
 const HomeEditorial = () => {
  const solutions=[...PRODUCT_HUB_ITEMS].sort((a,b)=>{const priority=['/produtos/consorcio-bc-energia','/produtos/mercado-livre-de-energia'];return (priority.indexOf(a.href)<0?2:priority.indexOf(a.href))-(priority.indexOf(b.href)<0?2:priority.indexOf(b.href))})
@@ -41,7 +34,7 @@ const HomeEditorial = () => {
   return <article className={`be-solution-mini ${index === 0 ? 'be-solution-mini--lead' : ''}`} key={item.href}>
    <Link className="be-solution-media" href={item.href} {...(item.external?{target:'_blank',rel:'noopener noreferrer'}:{})} data-cta-name={`home_solucoes_${item.title}`} data-cta-location="solutions">
     <img src={solutionThumbs[item.href] ?? '/img/global/energia-por-assinatura.webp'} alt={item.title} width={1000} height={700} loading="lazy" decoding="async"/>
-    <span>{item.title}</span>
+    <h3>{item.title}</h3>
    </Link>
    <div className="be-solution-mini-copy">
     <div className="be-solution-description-group">
@@ -75,8 +68,9 @@ const HomeEditorial = () => {
    <div className="be-solution-minigallery">{featuredSolutions.map(renderMiniature)}</div>
    <div className="be-service-complementary">{complementarySolutions.map(item => <article key={item.href} className="be-service-entry be-service-row"><h3>{item.title}</h3><p>{item.description}</p><div className="be-service-actions"><Link className="be-service-access bc-arrow-action" href={item.href} {...(item.external?{target:'_blank',rel:'noopener noreferrer'}:{})} data-cta-name={`home_solucoes_${item.title}`} data-cta-location="solutions">{item.external?'Acessar portal':contextualLinks[item.href] ?? 'Conhecer solução'}</Link></div></article>)}</div>
   </section>
-  <section className="be-segments" aria-labelledby="be-segments-title"><div className="be-wrap"><div className="be-section-heading"><div><h2 id="be-segments-title">A energia de cada negócio.</h2></div><nav className="be-other-sectors" aria-label="Segmentos atendidos">{SEGMENT_HUB_ITEMS.filter(x=>![agro?.href,retail?.href,home?.href].includes(x.href)).map(item=><Link key={item.href} href={item.href} data-cta-name={`home_segmentos_${item.title}`}>{item.title}</Link>)}<Link className="be-link bc-arrow-action" href="/segmentos" data-cta-name="home_segmentos_todos">Conheça os segmentos atendidos</Link></nav></div>
+  <section className="be-segments" aria-labelledby="be-segments-title"><div className="be-wrap"><div className="be-section-heading"><div><h2 id="be-segments-title">A energia de cada negócio.</h2></div></div>
    <div className="be-sector-mosaic">{[[agro,'/img/reference-home/agronegocio.webp'],[retail,'/img/reference-home/varejo.webp'],[home,'/img/pages/segmentos/residencial.webp']].map(([item,file],index)=>{const entry=item as typeof agro;return entry?<Link key={entry.href} className={`be-sector be-sector-${index}`} href={entry.href} data-cta-name={`home_segmentos_${entry.title}`}><img src={file as string} alt="" width={1000} height={700} loading="lazy" decoding="async"/><span>{entry.title}</span></Link>:null})}</div>
+   <nav className="be-other-sectors" aria-label="Segmentos atendidos">{SEGMENT_HUB_ITEMS.filter(x=>![agro?.href,retail?.href,home?.href].includes(x.href)).map(item=><Link key={item.href} href={item.href} data-cta-name={`home_segmentos_${item.title}`}>{item.title}</Link>)}<Link className="be-link bc-arrow-action" href="/segmentos" data-cta-name="home_segmentos_todos">Conheça os segmentos atendidos</Link></nav>
   </div></section>
   <MetricsScale/>
   <Customers variant="carousel" eyebrow="PARCERIA E CONFIANÇA" title="Empresas que confiam na BC Energia" className="be-client-band"/>

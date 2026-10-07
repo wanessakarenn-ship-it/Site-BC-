@@ -38,9 +38,10 @@ const app = (
   </StrictMode>
 )
 
-// Rotas pré-renderizadas (SSG) chegam com HTML no #root → hidratar.
-// Demais rotas (noindex, 404, documentos) seguem com render de SPA.
-if (container.hasChildNodes()) {
+// Um fallback SPA pode receber o HTML da Home em outra URL. Só hidratar
+// quando o marcador SSG identifica a própria rota, evitando markup divergente.
+const currentPath = window.location.pathname.replace(/\/+$/, '') || '/'
+if (container.hasChildNodes() && container.dataset.prerenderPath === currentPath) {
   hydrateRoot(container, app)
 } else {
   createRoot(container).render(app)

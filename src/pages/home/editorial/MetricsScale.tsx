@@ -31,6 +31,7 @@ export default function MetricsScale() {
 
   return (
     <section className="bc-scale bc-scale--reference bc-scale--interactive" aria-labelledby={`${id}-title`}>
+      <img className="bc-scale-photo" src="/img/hero/hero-resultados.webp" alt="" width={1920} height={1080} loading="lazy" decoding="async" aria-hidden="true" />
       <div className="be-wrap bc-scale-grid">
         <div className="bc-results">
           <h2 id={`${id}-title`}>Resultados que movem o mercado.</h2>

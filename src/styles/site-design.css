@@ -1,0 +1,63 @@
+/* Padrões compartilhados de composição e interação da marca. */
+:root { --site-gutter: clamp(20px, 3.5vw, 56px); --site-section-space: clamp(56px, 6vw, 96px); }
+.bc-site-shell { color: var(--ui-navy); }
+.bc-site-shell .bc-container { width: 100%; max-width: 1392px; padding-inline: var(--site-gutter); }
+.bc-site-shell :is(button, a, input, select, textarea):focus-visible { outline: 3px solid var(--ui-green); outline-offset: 4px; }
+.bc-site-shell header.fixed :is(button, a):focus-visible, .bc-site-shell footer :is(button, a):focus-visible { outline-color: var(--ui-yellow); }
+.bc-site-shell :is(h1, h2, h3) { text-wrap: balance; }
+.bc-site-shell :is(p, li, dd) { overflow-wrap: break-word; }
+.bc-site-shell img { max-width: 100%; }
+.bc-site-shell .bc-navbar { background: var(--ui-navy); border-bottom: 1px solid rgb(255 255 255 / 15%); box-shadow: none; }
+.bc-site-shell .bc-navbar > .bc-container { min-height: 80px; }
+.bc-navbar .bc-logo-clearspace { padding-right: 20px; }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner { position: relative; min-height: 540px; display: flex; align-items: center; background-color: var(--ui-navy); }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner > .bc-container { padding-top: 152px; padding-bottom: 80px; }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner .bc-banner-copy { max-width: 680px; }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner .hero-panel { max-width: 680px; }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner .hero-title { font: 700 clamp(3.25rem,5.2vw,5.25rem)/1.02 'Barlow Condensed',sans-serif; letter-spacing: -.025em; max-width: 20ch; }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner .hero-eyebrow { font: 600 .8125rem/1.5 Onest,sans-serif; letter-spacing: .12em; margin-top: 32px; text-transform: uppercase; }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner .hero-description { max-width: 52ch; margin-top: 24px; font-size: 1.0625rem; line-height: 1.7; }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-top: 32px; }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner .hero-actions a { min-height: 52px; }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner :is(a,button):focus-visible { outline-color: var(--ui-yellow); }
+.bc-site-shell .bc-inner-editorial .bc-reference-banner .bc-ovl-readable-left { background: linear-gradient(90deg,rgb(36 47 64 / 94%),rgb(36 47 64 / 75%) 35%,rgb(36 47 64 / 14%) 80%); }
+.bc-site-shell .bc-inner-editorial :is(.bc-section, .bc-section-md, .bc-section-lg, .bc-level-lead, .bc-level-mid, .bc-level-support) { padding-block: var(--site-section-space); }
+.bc-site-shell .bc-inner-editorial :is(.t-h2, .t-h2-lead, .t-h2-mid) { font: 700 clamp(2.3rem,3.8vw,3.75rem)/1.08 'Barlow Condensed',sans-serif; letter-spacing: -.02em; }
+.bc-site-shell .bc-inner-editorial .t-h2-support { font: 700 clamp(2rem,3vw,2.75rem)/1.12 'Barlow Condensed',sans-serif; }
+.bc-site-shell .bc-inner-editorial :is(.t-body,.t-body-lg) { font-size: 1rem; line-height: 1.75; }
+.bc-site-shell .bc-inner-editorial .bc-media-composition:has(img) { grid-template-columns: minmax(0,1.1fr) minmax(0,1fr); align-items: center; gap: clamp(32px,5vw,72px); }
+.bc-site-shell .bc-inner-editorial .bc-media-composition img { border-radius: 4px; }
+.bc-site-shell .bc-inner-editorial .bc-card { border-radius: 4px; box-shadow: none; border-color: #d5e1df; }
+.bc-site-shell .bc-inner-editorial .bc-card:hover { border-color: var(--ui-green); box-shadow: none; }
+.bc-site-shell .bc-arrow-action { min-height: 44px; }
+.bc-site-shell :is(input:not([type=checkbox]):not([type=radio]):not([type=file]),select,textarea) { min-height: 52px; border-radius: 4px; }
+.bc-site-shell :is(input,select,textarea):disabled { cursor: not-allowed; opacity: .65; }
+.bc-site-shell :is(input,select,textarea)[aria-invalid=true] { border-color: #ac3131; }
+.bc-site-shell button:disabled { cursor: not-allowed; }
+.bc-site-shell footer { background: var(--ui-navy); }
+.bc-site-shell footer .bc-footer-main { gap: 48px; }
+.bc-site-shell footer .bc-footer-brand > .bc-footer-identity > p { font-size: 1.75rem; text-transform: none; color: var(--ui-yellow); }
+.bc-site-shell footer .bc-footer-addresses p:last-child { color: rgb(255 255 255 / 80%); font-size: .875rem; line-height: 1.7; }
+.bc-site-shell footer nav a { color: rgb(255 255 255 / 85%); }
+.bc-site-shell footer nav a:hover { color: var(--ui-turquoise); }
+.bc-footer-overview { width: min(100% - 48px,1280px); margin-inline: auto; padding-block: 24px; border-bottom: 1px solid rgb(255 255 255 / 18%); }
+.bc-footer-overview nav { display: flex; flex-wrap: wrap; gap: 8px 32px; }
+.bc-footer-overview a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9375rem; }
+@media(max-width:1023px) {
+  .bc-site-shell .bc-navbar > .bc-container { min-height: 72px; }
+  .bc-site-shell .bc-inner-editorial .bc-reference-banner { min-height: 500px; }
+  .bc-site-shell .bc-inner-editorial .bc-media-composition:has(img) { grid-template-columns: 1fr; gap: 32px; }
+}
+@media(max-width:767px) {
+  .bc-site-shell .bc-inner-editorial .bc-reference-banner { min-height: 560px; }
+  .bc-site-shell .bc-inner-editorial .bc-reference-banner > .bc-container { padding-block: 128px 64px; }
+  .bc-site-shell .bc-inner-editorial .bc-reference-banner .hero-title { font-size: clamp(2.5rem,10.5vw,3.5rem); }
+  .bc-site-shell .bc-inner-editorial .bc-reference-banner .hero-description { font-size: 1rem; }
+  .bc-site-shell .bc-inner-editorial .bc-reference-banner .hero-actions { align-items: start; flex-direction: column; gap: 12px; }
+  .bc-site-shell .bc-inner-editorial .bc-reference-banner .bc-ovl-readable-left { background: linear-gradient(90deg,rgb(36 47 64 / 90%),rgb(36 47 64 / 65%)); }
+  .bc-site-shell footer .bc-footer-main { gap: 32px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .bc-site-shell *, .bc-site-shell *::before, .bc-site-shell *::after { scroll-behavior: auto !important; transition-duration: 0s !important; animation-duration: 0s !important; }
+}
+.bc-carousel-shell:not(#home_slider .bc-carousel-shell) .bc-carousel-toggle { position: static; margin: 16px auto 0; color: var(--ui-navy); border-color: #b8c5c9; min-height: 44px; padding: 8px 16px; }

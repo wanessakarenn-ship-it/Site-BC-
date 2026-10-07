@@ -8,11 +8,16 @@ const Accordion: React.FC<AccordionType> = ({ title, content, open, variant = 'd
   const [maxHeight, setMaxHeight] = useState<string | number>('0px')
 
   useEffect(() => {
-    if (isOpen && contentRef.current) {
-      setMaxHeight(contentRef.current.scrollHeight)
-    } else {
+    const node = contentRef.current
+    if (!isOpen || !node) {
       setMaxHeight('0px')
+      return
     }
+    const measure = () => setMaxHeight(node.scrollHeight)
+    measure()
+    const observer = new ResizeObserver(measure)
+    if (node.firstElementChild) observer.observe(node.firstElementChild)
+    return () => observer.disconnect()
   }, [isOpen])
 
   const toggleAccordion = () => setIsOpen(!isOpen)
@@ -51,7 +56,7 @@ const Accordion: React.FC<AccordionType> = ({ title, content, open, variant = 'd
         className={`overflow-hidden transition-[max-height] duration-slow ease-bc motion-reduce:transition-none ${variant === 'faq' ? 'bg-surface-card/35' : ''}`}
         style={{ maxHeight }}
       >
-        <p className={`px-4 pb-5 t-body leading-relaxed text-text-secondary ${variant === 'faq' ? 'max-w-[68ch] px-5 pb-6 sm:px-6' : ''}`}>{content}</p>
+        <div className={`px-4 pb-5 t-body leading-relaxed text-text-secondary ${variant === 'faq' ? 'max-w-[68ch] px-5 pb-6 sm:px-6' : ''}`}>{content}</div>
       </div>
     </div>
   )

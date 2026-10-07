@@ -15,6 +15,16 @@ const LogoCarousel = ({ logos, label }: { logos: CustomersLogo[]; label: string 
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    const node = viewport.current
+    if (!node) return
+    const measure = () => node.style.setProperty('--logo-viewport-width', `${node.clientWidth}px`)
+    measure()
+    const observer = new ResizeObserver(measure)
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
     const query = window.matchMedia('(prefers-reduced-motion: reduce)')
     const update = () => setReduced(query.matches)
     update()
@@ -39,7 +49,7 @@ const LogoCarousel = ({ logos, label }: { logos: CustomersLogo[]; label: string 
       const node = viewport.current
       const list = original.current
       if (node && list && previous) {
-        const period = list.getBoundingClientRect().width + 24
+        const period = list.getBoundingClientRect().width + parseFloat(getComputedStyle(node).gap)
         position += Math.min(now - previous, 50) * 0.024
         if (position >= period) position -= period
         node.scrollLeft = position
@@ -56,10 +66,12 @@ const LogoCarousel = ({ logos, label }: { logos: CustomersLogo[]; label: string 
     const list = original.current
     if (!node || !list) return
     setPaused(true)
-    const period = list.getBoundingClientRect().width + 24
+    const period = list.getBoundingClientRect().width + parseFloat(getComputedStyle(node).gap)
     // Ao voltar no início, a cópia visual mantém a sequência do último logo.
     if (direction < 0 && node.scrollLeft < 1 && !reduced) node.scrollLeft = period
-    node.scrollBy({ left: direction * node.clientWidth * 0.75, behavior: reduced ? 'instant' : 'smooth' })
+    const item = list.firstElementChild as HTMLElement | null
+    const step = item ? item.getBoundingClientRect().width + parseFloat(getComputedStyle(list).gap) : node.clientWidth
+    node.scrollBy({ left: direction * step, behavior: reduced ? 'instant' : 'smooth' })
   }
 
   const renderLogos = (duplicate: boolean) => logos.map(logo => (

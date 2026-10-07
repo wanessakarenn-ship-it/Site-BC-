@@ -75,7 +75,7 @@ const run = async () => {
 
     const page = template
       .replace('</head>', `  ${head}\n  </head>`)
-      .replace('<div id="root"></div>', `<div id="root">${html}</div>`)
+      .replace('<div id="root"></div>', `<div id="root" data-prerender-path="${route}">${html}</div>`)
 
     const dir = route === '/' ? DIST : resolve(DIST, route.replace(/^\//, ''))
     mkdirSync(dir, { recursive: true })
@@ -102,7 +102,7 @@ const run = async () => {
     resolve(DIST, '404.html'),
     template
       .replace('</head>', `  ${notFound.head}\n  </head>`)
-      .replace('<div id="root"></div>', `<div id="root">${notFound.html}</div>`)
+      .replace('<div id="root"></div>', `<div id="root" data-prerender-path="/__not-found__">${notFound.html}</div>`)
   )
 
   rmSync(SSR_DIST, { recursive: true, force: true })

@@ -47,6 +47,7 @@ export default function PlantCarousel({ plants, children }: PlantCarouselProps) 
     <div className="be-plant-carousel be-operation-layout" role="region" aria-roledescription="carrossel"
       aria-label="Complexos de geração do Grupo BC Energia" tabIndex={0}
       onKeyDown={navigateWithKeyboard}>
+      <div className="be-plant-gallery">
       <Swiper modules={[A11y]} slidesPerView="auto" spaceBetween={24}
         loop={plants.length > 1} speed={reducedMotion ? 0 : 400}
         onSwiper={(swiper) => { swiperRef.current = swiper }}
@@ -80,7 +81,6 @@ export default function PlantCarousel({ plants, children }: PlantCarouselProps) 
                     </dl>
                   </figcaption>
                 </figure>
-                {index === current && children}
               </div>
             </SwiperSlide>
           )
@@ -97,6 +97,8 @@ export default function PlantCarousel({ plants, children }: PlantCarouselProps) 
         </div>
         <div className="be-plant-status" aria-live="polite">Complexo {current + 1} de {plants.length}</div>
       </div>}
+      </div>
+      {children}
     </div>
   )
 }

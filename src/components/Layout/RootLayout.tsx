@@ -3,6 +3,7 @@ import '@/styles/editorial-pages.css'
 import '@/styles/brand-alignment.css'
 import '@/styles/institutional-standardization.css'
 import '@/styles/approved-internal-direction.css'
+import '@/styles/site-design.css'
 import { Outlet, useLocation } from 'react-router-dom'
 
 import { Header } from '@/components/Layout/Header'

@@ -12,6 +12,6 @@
  .bc-logo-carousel .bc-logo-controls { justify-content:flex-start; }
  .bc-logo-carousel .bc-logo-viewport { gap:16px; }
  .bc-logo-carousel .bc-logo-viewport .bc-logo-list { gap:16px; }
- .bc-logo-carousel .bc-logo-viewport .bc-logo-list li { flex:0 0 calc((100% - 16px) / 2); max-width:calc((100% - 16px) / 2); }
+ .bc-logo-carousel .bc-logo-viewport .bc-logo-list li { flex:0 0 calc((var(--logo-viewport-width, 280px) - 16px) / 2); width:calc((var(--logo-viewport-width, 280px) - 16px) / 2); max-width:calc((var(--logo-viewport-width, 280px) - 16px) / 2); }
  .bc-logo-carousel .bc-logo-viewport .bc-logo-list li img { max-width:100%; max-height:48px; object-fit:contain; }
 }

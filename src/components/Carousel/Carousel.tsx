@@ -4,115 +4,79 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import type SwiperClass from 'swiper'
 
 import { CarouselProps } from './Carousel.type'
-
 import '@/styles/carousel.css'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 const Carousel = ({
-  slides,
-  slidesPerView = 1,
-  arrows = false,
-  dots = false,
-  space = 0,
-  autoplay = true,
-  autoplayDelay = 2500,
-  loop = true,
-  ...rest
+  slides, slidesPerView = 1, arrows = false, dots = false, space = 0,
+  autoplay = true, autoplayDelay = 2500, loop = true, ...rest
 }: CarouselProps) => {
-  // Respeita prefers-reduced-motion: sem troca automática de slides.
-  const [reducedMotion, setReducedMotion] = useState(false)
-
-  useEffect(() => {
-    if (typeof window === 'undefined' || !window.matchMedia) return
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const update = () => setReducedMotion(mq.matches)
-    update()
-    mq.addEventListener('change', update)
-    return () => mq.removeEventListener('change', update)
-  }, [])
-
+  const [reducedMotion, setReducedMotion] = useState(true)
+  const [paused, setPaused] = useState(false)
+  const [hovered, setHovered] = useState(false)
+  const [focused, setFocused] = useState(false)
   const swiperRef = useRef<SwiperClass | null>(null)
 
-  const autoplayEnabled = autoplay && !reducedMotion
-  const modules = [A11y, Keyboard]
-
-  if (autoplayEnabled) modules.push(Autoplay)
-
-  if (dots) modules.push(Pagination)
-
-  if (arrows) modules.push(Navigation)
-
-  // Updating Swiper's autoplay prop does not stop an already running timer.
-  // Keep the live instance in sync with the existing motion preference.
   useEffect(() => {
-    const autoplayInstance = swiperRef.current?.autoplay
-    if (!autoplayInstance) return
-    if (!autoplayEnabled) autoplayInstance.stop()
-    else if (!autoplayInstance.running) autoplayInstance.start()
+    const query = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const update = () => setReducedMotion(query.matches)
+    update()
+    query.addEventListener('change', update)
+    return () => query.removeEventListener('change', update)
+  }, [])
+
+  const autoplayEnabled = autoplay && !reducedMotion && !paused && !hovered && !focused
+  useEffect(() => {
+    const instance = swiperRef.current?.autoplay
+    if (!instance) return
+    if (autoplayEnabled) instance.start()
+    else instance.stop()
   }, [autoplayEnabled])
 
-  /**
-   * Acessibilidade: slides fora de tela não devem ser alcançáveis por Tab.
-   * `inert` desativa interação/foco sem alterar nada visualmente.
-   */
+  // Todos os slides visíveis permanecem navegáveis, inclusive em faixas múltiplas.
   const syncInert = (swiper: SwiperClass) => {
-    swiper.slides?.forEach((slide, index) => {
-      const inactive = index !== swiper.activeIndex
-      if (inactive) slide.setAttribute('inert', '')
-      else slide.removeAttribute('inert')
+    swiper.slides?.forEach((slide) => {
+      const inactive = !slide.classList.contains('swiper-slide-visible')
+      slide.toggleAttribute('inert', inactive)
     })
   }
 
   return (
-    <Swiper
-      {...rest}
-      onSwiper={(swiper) => { swiperRef.current = swiper; rest.onSwiper?.(swiper) }}
-      onFocusCapture={(event) => {
-        swiperRef.current?.autoplay?.pause()
-        rest.onFocusCapture?.(event)
-      }}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget as Node) && autoplayEnabled && swiperRef.current?.autoplay?.running) {
-          swiperRef.current.autoplay.resume()
-        }
-        rest.onBlurCapture?.(event)
-      }}
-      keyboard={{ enabled: true, onlyInViewport: true, pageUpDown: false }}
-      onAfterInit={syncInert}
-      onSlideChangeTransitionEnd={syncInert}
-      a11y={{
-        enabled: true,
-        prevSlideMessage: 'Slide anterior',
-        nextSlideMessage: 'Próximo slide',
-        firstSlideMessage: 'Este é o primeiro slide',
-        lastSlideMessage: 'Este é o último slide',
-        paginationBulletMessage: 'Ir para o slide {{index}}',
-        slideLabelMessage: 'Slide {{index}} de {{slidesLength}}',
-        containerMessage: 'Carrossel de destaques'
-      }}
-      autoplay={
-        autoplayEnabled
-          ? {
-              delay: autoplayDelay,
-              disableOnInteraction: true,
-              pauseOnMouseEnter: true
-            }
-          : false
-      }
-      loop={loop}
-      slidesPerView={slidesPerView}
-      spaceBetween={space}
-      pagination={dots ? { clickable: true } : false}
-      navigation={arrows}
-      modules={modules}
-      className="mySwiper"
-    >
-      {slides.map((el, index) => (
-        <SwiperSlide key={index}>{el}</SwiperSlide>
-      ))}
-    </Swiper>
+    <div className="bc-carousel-shell relative"
+      onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={event => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false)
+      }}>
+      <Swiper {...rest}
+        onSwiper={swiper => { swiperRef.current = swiper; rest.onSwiper?.(swiper) }}
+        onAfterInit={swiper => { syncInert(swiper); rest.onAfterInit?.(swiper) }}
+        onSlideChangeTransitionEnd={swiper => { syncInert(swiper); rest.onSlideChangeTransitionEnd?.(swiper) }}
+        onFocusCapture={rest.onFocusCapture}
+        onBlurCapture={rest.onBlurCapture}
+        watchSlidesProgress
+        speed={reducedMotion ? 0 : (rest.speed ?? 300)}
+        keyboard={{ enabled: true, onlyInViewport: true, pageUpDown: false }}
+        a11y={{ enabled: true, prevSlideMessage: 'Slide anterior', nextSlideMessage: 'Próximo slide',
+          firstSlideMessage: 'Este é o primeiro slide', lastSlideMessage: 'Este é o último slide',
+          paginationBulletMessage: 'Ir para o slide {{index}}', slideLabelMessage: 'Slide {{index}} de {{slidesLength}}',
+          containerMessage: 'Carrossel de destaques' }}
+        autoplay={autoplay && !reducedMotion ? { delay: autoplayDelay, disableOnInteraction: false, pauseOnMouseEnter: false } : false}
+        loop={loop} slidesPerView={slidesPerView} spaceBetween={space}
+        pagination={dots ? { clickable: true } : false} navigation={arrows}
+        modules={[A11y, Keyboard, Autoplay, ...(dots ? [Pagination] : []), ...(arrows ? [Navigation] : [])]}
+        className="mySwiper">
+        {slides.map((slide, index) => <SwiperSlide key={index}>{slide}</SwiperSlide>)}
+      </Swiper>
+      {autoplay && <button type="button" className="bc-carousel-toggle" disabled={reducedMotion}
+        aria-pressed={paused || reducedMotion} onClick={() => setPaused(value => !value)}
+        aria-label={reducedMotion ? 'Troca automática desativada: movimento reduzido' : paused ? 'Retomar carrossel' : 'Pausar carrossel'}>
+        <span aria-hidden="true">{paused || reducedMotion ? '▷' : 'Ⅱ'}</span>
+        {reducedMotion ? 'Movimento reduzido' : paused ? 'Retomar' : 'Pausar'}
+      </button>}
+    </div>
   )
 }
 
