@@ -22,7 +22,7 @@ const linkTargetProps = (external?: boolean) =>
   external ? { target: '_blank', rel: 'noopener noreferrer' } : {}
 
 /** Item com filhos: link para o hub + accordion com os destinos. */
-const MobileEntry = ({ entry, active }: { entry: NavEntry; active: boolean }) => {
+const MobileEntry = ({ entry, active, onClose }: { entry: NavEntry; active: boolean; onClose: () => void }) => {
   const [expanded, setExpanded] = useState(active)
   const panelId = `mobile-panel-${entry.id}`
 
@@ -30,6 +30,7 @@ const MobileEntry = ({ entry, active }: { entry: NavEntry; active: boolean }) =>
     return (
       <Link
         href={entry.href}
+        onClick={onClose}
         aria-current={active ? 'page' : undefined}
         className={`flex min-h-[52px] items-center border-b border-white/10 t-label uppercase tracking-wide transition-colors duration-fast ${
           active
@@ -47,6 +48,7 @@ const MobileEntry = ({ entry, active }: { entry: NavEntry; active: boolean }) =>
       <div className="flex items-center justify-between gap-2">
         <Link
           href={entry.href}
+          onClick={onClose}
           aria-current={active ? 'page' : undefined}
           className={`flex min-h-[52px] flex-1 items-center t-label uppercase tracking-wide transition-colors duration-fast ${
             active ? 'border-l-2 border-l-bc-cyan pl-3 text-bc-cyan' : 'pl-0 text-white'
@@ -60,7 +62,7 @@ const MobileEntry = ({ entry, active }: { entry: NavEntry; active: boolean }) =>
           aria-controls={panelId}
           aria-label={`${expanded ? 'Fechar' : 'Abrir'} opções de ${entry.label}`}
           onClick={() => setExpanded((value) => !value)}
-          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-white/80"
+          className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-white/80 transition-colors duration-fast hover:text-white"
         >
           <svg
             aria-hidden="true"
@@ -86,8 +88,9 @@ const MobileEntry = ({ entry, active }: { entry: NavEntry; active: boolean }) =>
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    onClick={onClose}
                     {...linkTargetProps(link.external)}
-                    className={`flex min-h-11 items-center rounded-md pl-1 t-body-sm ${ group.secondary ? 'text-white/70' : 'text-white/90' }`}
+                    className={`flex min-h-11 items-center rounded-md pl-1 t-body-sm transition-colors duration-fast hover:text-bc-cyan ${ group.secondary ? 'text-white/70' : 'text-white/90' }`}
                   >
                     {link.label}
                   </Link>
@@ -100,7 +103,8 @@ const MobileEntry = ({ entry, active }: { entry: NavEntry; active: boolean }) =>
         {entry.viewAll ? (
           <Link
             href={entry.viewAll.href}
-            className="bc-arrow-action bc-arrow-action--dark t-label"
+            onClick={onClose}
+            className="bc-arrow-action bc-arrow-action--dark flex min-h-11 items-center t-label"
           >
             {entry.viewAll.label}
           </Link>
@@ -146,12 +150,12 @@ const MobileMenu = ({ open, onClose, pathname, returnFocusRef }: MobileMenuProps
     >
       <nav aria-label="Navegação principal (mobile)">
         {MAIN_NAV.map((entry) => (
-          <MobileEntry key={entry.id} entry={entry} active={isNavEntryActive(entry, pathname)} />
+          <MobileEntry key={entry.id} entry={entry} active={isNavEntryActive(entry, pathname)} onClose={onClose} />
         ))}
       </nav>
 
       <div className="mt-6 flex flex-col gap-3">
-        <ButtonLink block size="lg" href={HEADER_CTA.href} variant="primary">
+        <ButtonLink block size="lg" href={HEADER_CTA.href} variant="primary" onClick={onClose}>
           {HEADER_CTA.labelLong}
         </ButtonLink>
         <a

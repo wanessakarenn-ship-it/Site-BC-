@@ -18,6 +18,7 @@ const PageHeader = ({
   description,
   category,
   bgImage,
+  bannerAlt,
   align = 'center',
   compact = false,
   variant = 'default',
@@ -92,6 +93,7 @@ const PageHeader = ({
     return (
       <>
         <header
+          aria-label={bannerAlt ?? (bgImage ? title : undefined)}
           style={
             bgImage
               ? ({
@@ -110,6 +112,7 @@ const PageHeader = ({
               : 'bg-center'
           }`}
         >
+          {bannerAlt && <span className="sr-only">{bannerAlt}</span>}
 
           {/* Sem fotografia, o banner é um campo navy sólido: as duas camadas
               abaixo existem para dar leitura SOBRE imagem e, sem ela, só

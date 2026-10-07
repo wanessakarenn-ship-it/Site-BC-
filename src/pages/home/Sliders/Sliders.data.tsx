@@ -60,7 +60,7 @@ export const slidersData: Array<WrapperProps> = [
       'Consumidores com contas a partir de R$ 700 economizam por meio do consórcio, sem investir em placas solares.',
     cta: {
       label: 'Fazer adesão gratuita',
-      href: 'http://www.appenergia.com.br/Grupo_BC_Energia',
+      href: 'https://www.appenergia.com.br/Grupo_BC_Energia',
       target: '_blank'
     },
     secondaryCta: { label: 'Como funciona', href: '/produtos/consorcio-bc-energia' },

@@ -54,7 +54,7 @@ const HomeEditorial = () => {
  }
  const episodes=getEpisodes(),articles=getArticles(),featured=episodes[0]
  const [agro,retail,home]=['/segmentos/agronegocio','/segmentos/varejo','/segmentos/residencial'].map(href=>SEGMENT_HUB_ITEMS.find(x=>x.href===href))
- return <main className="bc-editorial bc-reference-home">
+ return <div className="bc-editorial bc-reference-home">
   <Hero/>
   <section className="be-movement be-movement--editorial be-wrap" aria-labelledby="be-movement-title">
    <figure className="be-movement-photo"><img src="/img/home/illustrative-transmission-wind-sunset.jpg" alt="Torre de transmissão e aerogeradores ao pôr do sol" width={768} height={768} loading="lazy" decoding="async"/><figcaption className="be-movement-caption">Imagem ilustrativa</figcaption></figure>
@@ -92,6 +92,6 @@ const HomeEditorial = () => {
   </div></section>:null}
   <div className="be-faq"><HomeFaq/></div>
   <section className="be-conversion" aria-labelledby="be-conversion-title"><div className="be-wrap"><div><div className="be-conversion-copy"><div className="be-closing-copy"><p className="be-closing-eyebrow">PRÓXIMO PASSO</p><h2 id="be-conversion-title">Descubra quanto a sua empresa pode economizar em energia.</h2><p className="be-conversion-note">Simulação gratuita e sem compromisso.</p></div><div className="be-actions"><Link href="/simulador-de-economia" className="be-button" data-cta-name="Simular minha economia" data-cta-location="page_closing">Simular minha economia</Link><Link className="be-link bc-arrow-action" href={HEADER_CLIENT_LINK.href} target="_blank" rel="noopener noreferrer" data-cta-name="Falar com um consultor" data-cta-location="page_closing">Falar com um consultor</Link></div></div><div className="be-conversion-media" aria-hidden="true"><img src="/img/editorial/infrastructure.webp" alt="" width={1600} height={1066} loading="lazy" decoding="async"/></div></div></div></section>
- </main>
+ </div>
 }
 export default HomeEditorial

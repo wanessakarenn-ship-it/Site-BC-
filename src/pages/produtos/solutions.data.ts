@@ -55,7 +55,7 @@ export const mercadoLivreSolution: SolutionShowcaseProps = {
   },
   cta: {
     label: 'Quero economizar',
-    href: 'http://www.appenergia.com.br/Grupo_BC_Energia/',
+    href: 'https://www.appenergia.com.br/Grupo_BC_Energia/',
     target: '_blank'
   }
 }
@@ -122,7 +122,7 @@ export const consorcioSolution: SolutionShowcaseProps = {
   },
   cta: {
     label: 'Quero economizar',
-    href: 'http://www.appenergia.com.br/Grupo_BC_Energia/',
+    href: 'https://www.appenergia.com.br/Grupo_BC_Energia/',
     target: '_blank',
     note: 'Consulte a disponibilidade e as condições para o seu perfil.'
   }

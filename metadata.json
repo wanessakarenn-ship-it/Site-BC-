@@ -1,6 +1,7 @@
 {
   "name": "Grupo BC Energia",
-  "description": "Comercializadora de energia solar, mercado livre de energia e soluções em geração distribuída e gestão energética.",
+  "description": "Site institucional do Grupo BC Energia — Soluções em energia limpa, mercado livre, geração distribuída e sustentabilidade.",
+  "permissions": [],
   "capabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
   ]

@@ -1,5 +1,7 @@
 import { QuickAnswers } from '@/components/QuickAnswers'
-import { QUICK_ANSWERS } from '@/data/quickAnswers'
+import { QUICK_ANSWERS, quickAnswerSchemaItems } from '@/data/quickAnswers'
+import StructuredData from '@/components/Seo/StructuredData'
+import { faqSchema } from '@/components/Seo/structuredDataBuilders'
 import {
   FormEmbed,
   PageHeader,
@@ -76,6 +78,14 @@ const IRECRenewableCertification = () => (
       facts={[
         { label: 'Equivalência', value: '1 I-REC = 1 MWh renovável' },
         { label: 'Alcance', value: 'Disponível inclusive para o mercado cativo' }
+      ]}
+    />
+
+    {/* FAQPage: reflete exatamente as perguntas/respostas visíveis na página
+        (bloco de respostas rápidas) para mecanismos de busca e GEO. */}
+    <StructuredData
+      schemas={[
+        faqSchema(quickAnswerSchemaItems('/produtos/certificacao-renovavel-irec'))
       ]}
     />
 

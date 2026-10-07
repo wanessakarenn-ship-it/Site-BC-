@@ -67,7 +67,7 @@ const BrazilMap = ({
             strokeLinejoin="round"
             style={
               active
-                ? { fill: focused ? '#24D2C8' : '#18857D' }
+                ? { fill: focused ? 'var(--ui-turquoise)' : 'var(--ui-green)' }
                 : undefined
             }
           />

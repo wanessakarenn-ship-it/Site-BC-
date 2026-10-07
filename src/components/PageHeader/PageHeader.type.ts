@@ -15,6 +15,8 @@ export type PageHeaderProps = {
   description?: string
   category?: string
   bgImage?: string
+  /** Texto alternativo para acessibilidade quando há imagem de fundo no banner. */
+  bannerAlt?: string
   /** Composição do conteúdo. `left` = abertura institucional compacta. */
   align?: 'center' | 'left'
   /** Reduz a altura vertical do hero. */

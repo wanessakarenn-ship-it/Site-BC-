@@ -1,5 +1,7 @@
 import { QuickAnswers } from '@/components/QuickAnswers'
-import { QUICK_ANSWERS } from '@/data/quickAnswers'
+import { QUICK_ANSWERS, quickAnswerSchemaItems } from '@/data/quickAnswers'
+import StructuredData from '@/components/Seo/StructuredData'
+import { faqSchema } from '@/components/Seo/structuredDataBuilders'
 import {
   PageHeader,
   ProductFormSection,
@@ -59,6 +61,14 @@ const PlantLeasing = () => (
       facts={[
         { label: 'Parcerias', value: 'Mais de 70 parceiros em projetos de usinas arrendadas' },
         { label: 'Gestão comercial', value: 'Prospecção e contratos por conta da BC Energia' }
+      ]}
+    />
+
+    {/* FAQPage: reflete exatamente as perguntas/respostas visíveis na página
+        (bloco de respostas rápidas) para mecanismos de busca e GEO. */}
+    <StructuredData
+      schemas={[
+        faqSchema(quickAnswerSchemaItems('/produtos/arrendamento-de-usinas'))
       ]}
     />
 

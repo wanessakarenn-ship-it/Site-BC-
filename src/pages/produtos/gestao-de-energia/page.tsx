@@ -1,5 +1,7 @@
 import { QuickAnswers } from '@/components/QuickAnswers'
-import { QUICK_ANSWERS } from '@/data/quickAnswers'
+import { QUICK_ANSWERS, quickAnswerSchemaItems } from '@/data/quickAnswers'
+import StructuredData from '@/components/Seo/StructuredData'
+import { faqSchema } from '@/components/Seo/structuredDataBuilders'
 import {
   PageHeader,
   ProductFormSection,
@@ -85,6 +87,14 @@ const PowerManagement = () => (
       facts={[
         { label: 'Potencial de redução', value: 'Até 25% nas despesas com conta e consumo' },
         { label: 'Ferramenta', value: 'Sistema de Gerenciamento de Energia' }
+      ]}
+    />
+
+    {/* FAQPage: reflete exatamente as perguntas/respostas visíveis na página
+        (bloco de respostas rápidas) para mecanismos de busca e GEO. */}
+    <StructuredData
+      schemas={[
+        faqSchema(quickAnswerSchemaItems('/produtos/gestao-de-energia'))
       ]}
     />
 

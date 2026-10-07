@@ -57,22 +57,52 @@ const SEGMENT_CLUSTER: Record<string, ClusterId | undefined> = {
 }
 
 /**
- * Mídia do hero para os segmentos em split. Antes, os quatro usavam o mesmo
- * `coverUrl` (arrendamento-de-usinas.webp), e as páginas pareciam clones.
- * Todas as fotos já existiam no projeto.
+ * Mídia do hero (banner inicial) para cada uma das 11 páginas de segmento.
+ * Cada página possui agora seu próprio asset de alta definição, coerente com o
+ * setor e alinhado aos padrões visuais e institucionais da BC Energia.
  */
 const SEGMENT_HERO_MEDIA: Record<string, string> = {
   agronegocio: '/img/pages/segmentos/agronegocio-hero.webp',
-  'bares-e-restaurantes': '/img/pages/segmentos/bares-e-restaurantes.webp',
+  'bares-e-restaurantes': '/img/pages/segmentos/bares-e-restaurantes-hero.jpg',
   condominio: '/img/pages/segmentos/condominio-hero.webp',
-  educacional: '/img/pages/segmentos/educacional.webp',
-  lazer: '/img/pages/segmentos/lazer-v2.webp',
-  religioso: '/img/pages/segmentos/religioso.webp',
+  educacional: '/img/pages/segmentos/educacional-hero.jpg',
+  lazer: '/img/pages/segmentos/lazer-hero.jpg',
+  religioso: '/img/pages/segmentos/religioso-hero.jpg',
   residencial: '/img/pages/segmentos/residencial-hero.webp',
   saude: '/img/pages/segmentos/saude-hero.webp',
   servico: '/img/pages/segmentos/servico-hero.webp',
   turismo: '/img/pages/segmentos/turismo-hero.webp',
   varejo: '/img/pages/segmentos/varejo-hero.webp'
+}
+
+/** Enquadramento responsivo calibrado por segmento (evita cortes indesejados). */
+const SEGMENT_BG_POSITION: Record<string, string> = {
+  agronegocio: 'bg-[position:center_center] md:bg-[position:65%_center] lg:bg-[position:right_center]',
+  'bares-e-restaurantes': 'bg-[position:center_center] md:bg-[position:65%_center] lg:bg-[position:right_center]',
+  condominio: 'bg-[position:60%_center] md:bg-[position:65%_center] lg:bg-[position:right_center]',
+  educacional: 'bg-[position:center_center] md:bg-[position:65%_center] lg:bg-[position:right_center]',
+  lazer: 'bg-[position:center_center] md:bg-[position:65%_center] lg:bg-[position:right_center]',
+  religioso: 'bg-[position:center_center] md:bg-[position:65%_center] lg:bg-[position:right_center]',
+  residencial: 'bg-[position:48%_30%] md:bg-[position:60%_20%] lg:bg-[position:70%_8%]',
+  saude: 'bg-[position:64%_center] md:bg-[position:70%_center] lg:bg-[position:center_right]',
+  servico: 'bg-[position:72%_center] md:bg-[position:68%_center] lg:bg-[position:right_center]',
+  turismo: 'bg-[position:center_center] md:bg-[position:65%_center] lg:bg-[position:right_center]',
+  varejo: 'bg-[position:68%_center] md:bg-[position:72%_center] lg:bg-[position:center_right]'
+}
+
+/** Texto alternativo descritivo para o banner inicial de cada segmento. */
+const SEGMENT_BANNER_ALT: Record<string, string> = {
+  agronegocio: 'Operação do agronegócio e lavoura com infraestrutura atendida pelo Grupo BC Energia',
+  'bares-e-restaurantes': 'Ambiente gastronômico de restaurante e bar atendido pelo Grupo BC Energia',
+  condominio: 'Edifícios e condomínios modernos atendidos pelo Grupo BC Energia',
+  educacional: 'Campus e instalações de ensino atendidos pelo Grupo BC Energia',
+  lazer: 'Complexo esportivo e espaço de lazer atendido pelo Grupo BC Energia',
+  religioso: 'Templo e instituição religiosa com espaço amplo atendido pelo Grupo BC Energia',
+  residencial: 'Residência moderna atendida por energia solar por assinatura do Grupo BC Energia',
+  saude: 'Instalações de saúde, clínica e hospital atendidas pelo Grupo BC Energia',
+  servico: 'Ambiente corporativo de empresa de serviços atendido pelo Grupo BC Energia',
+  turismo: 'Hotelaria, resort e turismo atendidos pelo Grupo BC Energia',
+  varejo: 'Operação de varejo e supermercado atendida pelo Grupo BC Energia'
 }
 
 const INSTITUTIONAL_CLAIM =
@@ -106,23 +136,12 @@ const Page = () => {
     icon?: string
   }>
 
-  // Agronegócio, Turismo e Residencial usam hero em banner: imagem como fundo
-  // integral, sem card de imagem à direita (demais segmentos seguem o split).
-  const isAgroBanner = segmento === 'agronegocio'
-  const isTurismoBanner = segmento === 'turismo'
+  // Todas as 11 páginas de segmento utilizam agora o banner inicial imersivo
+  // com overlay institucional, preservando contraste, tipografia e legibilidade.
+  const isBanner = true
   const isResidencialBanner = segmento === 'residencial'
-  const isServicoBanner = segmento === 'servico'
-  const isCondominioBanner = segmento === 'condominio'
-  const isSaudeBanner = segmento === 'saude'
-  const isVarejoBanner = segmento === 'varejo'
-  const isBanner =
-    isAgroBanner ||
-    isTurismoBanner ||
-    isResidencialBanner ||
-    isServicoBanner ||
-    isCondominioBanner ||
-    isSaudeBanner ||
-    isVarejoBanner
+  const bgPosition = SEGMENT_BG_POSITION[segmento]
+  const bannerAlt = SEGMENT_BANNER_ALT[segmento]
 
   return (
     <div>
@@ -130,53 +149,15 @@ const Page = () => {
         align="left"
         flush
         eyebrowRule={false}
-        variant={isBanner ? 'banner' : 'default'}
+        variant="banner"
         lightOverlay={isResidencialBanner}
-        bgPosition={
-          isResidencialBanner
-            ? 'bg-[position:48%_30%] md:bg-[position:60%_20%] lg:bg-[position:70%_8%]'
-            : isServicoBanner
-              ? 'bg-[position:72%_center] md:bg-[position:68%_center] lg:bg-[position:right_center]'
-              : isCondominioBanner
-                ? 'bg-[position:60%_center] md:bg-[position:65%_center] lg:bg-[position:right_center]'
-                : isSaudeBanner
-                  ? 'bg-[position:64%_center] md:bg-[position:70%_center] lg:bg-[position:center_right]'
-                  : isVarejoBanner
-                    ? 'bg-[position:68%_center] md:bg-[position:72%_center] lg:bg-[position:center_right]'
-                    : undefined
-        }
-
-        bgImage={
-          isAgroBanner
-            ? '/img/pages/segmentos/agronegocio-hero.webp'
-            : isTurismoBanner
-              ? '/img/pages/segmentos/turismo-hero.webp'
-              : isResidencialBanner
-                ? '/img/pages/segmentos/residencial-hero.webp'
-                : isServicoBanner
-                  ? '/img/pages/segmentos/servico-hero.webp'
-                  : isCondominioBanner
-                    ? '/img/pages/segmentos/condominio-hero.webp'
-                    : isSaudeBanner
-                      ? '/img/pages/segmentos/saude-hero.webp'
-                      : isVarejoBanner
-                        ? '/img/pages/segmentos/varejo-hero.webp'
-                        : undefined
-        }
-
-
+        bgPosition={bgPosition}
+        bgImage={heroMediaSrc}
+        bannerAlt={bannerAlt}
         eyebrow={content?.eyebrow}
         title={content?.h1 ?? `Soluções de energia para ${segmentName}`}
         description={content?.heroDescription || data.description}
         category="Segmentos"
-        media={
-          !isBanner && heroMediaSrc
-            ? {
-                src: heroMediaSrc,
-                alt: `Operação do segmento ${segmentName.toLowerCase()} atendida pelo Grupo BC Energia`
-              }
-            : undefined
-        }
         cta={{ label: 'Enviar minha conta para análise', href: '/contato' }}
         secondaryCta={{ label: 'Ver todos os segmentos', href: '/segmentos' }}
       />

@@ -15,6 +15,7 @@ export default defineConfig({
     noExternal: ['react-helmet-async']
   },
   build: {
+    assetsInlineLimit: 0,
     rollupOptions: {
       output: {
         // Separa vendors grandes em chunks próprios: melhora cache entre deploys
@@ -32,8 +33,8 @@ export default defineConfig({
     }
   },
   server: {
-    host: '0.0.0.0',
-    port: 3000
+    host: true,
+    port: 8080
   }
 })
 
