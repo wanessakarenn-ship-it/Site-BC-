@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 import RootLayout from '@/components/Layout/RootLayout'
 
@@ -86,17 +86,8 @@ const App = () => (
         <Route path="produtos/mercado-livre-de-energia" element={<ProdutoMercadoLivre />} />
         <Route path="produtos/consorcio-bc-energia" element={<ProdutoConsorcio />} />
         <Route path="produtos/gestao-de-energia" element={<ProdutoGestao />} />
-        {/*
-          ETAPA SEO 04 — consolidação I-REC.
-          `/produtos/irec` deixou de ser página indexável e redireciona para a
-          rota preferencial. O 301 real deve ser configurado no hosting no
-          cut-over (ver docs/SEO-INDEXATION-MAP.md); aqui o SPA garante que o
-          usuário nunca veja conteúdo duplicado.
-        */}
-        <Route
-          path="produtos/irec"
-          element={<Navigate to="/produtos/certificacao-renovavel-irec" replace />}
-        />
+        {/* Mantém a rota legada funcional sem remover o conteúdo existente. */}
+        <Route path="produtos/irec" element={<ProdutoCertificacaoIrec />} />
         <Route path="produtos/certificacao-renovavel-irec" element={<ProdutoCertificacaoIrec />} />
         <Route path="produtos/arrendamento-de-usinas" element={<ProdutoArrendamento />} />
 
