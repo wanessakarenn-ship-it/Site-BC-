@@ -33,6 +33,8 @@ export default defineConfig({
   },
   server: {
     host: true,
+    // O preview do Sandbox usa um hostname dinâmico externo ao processo Vite.
+    allowedHosts: true,
     port: 8080
   }
 })
